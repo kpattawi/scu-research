@@ -144,8 +144,8 @@ public class Socket extends SocketBase {
                 
                 if(varName.equals("epSendOutdoorAirTemp")){
               	  
-                	stringArr = stringArr +varName+",";
-              	  	doubleArr = doubleArr +value+",";  
+                	stringArr = stringArr +varName+"@";
+              	  	doubleArr = doubleArr +value+"$";  
               	  	size = size +1;
               	  
                 }
@@ -166,7 +166,7 @@ public class Socket extends SocketBase {
               	  
                 }
                 
-                ReceiveData sendEPData = create_ReceiveData();
+                Socket_Controller sendEPData = create_ReceiveData();
                 sendEPData.set_simID(simID);
                 sendEPData.set_size(size);
                 sendEPData.set_doubleArray(doubleArr);
