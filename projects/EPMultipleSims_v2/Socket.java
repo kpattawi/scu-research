@@ -27,11 +27,15 @@ public class Socket extends SocketBase {
     int simID = 0;   // Change simID based on socket number
     int numVars;
     String eGSH=null, eGSC=null, setName=null, ePeople=null;
-    String holder,dummy, varNames[];
+    String holder, varNames[];
     String doubles[];
-    int receivedID;
+    int receivedID, dummy=0;
     int j=0;
     boolean empty=true;
+
+    String varNameSeparater = "@";
+    String doubleSeparater = "$";
+    String dataString = "";
     
     // Kaleb //
 
@@ -63,7 +67,7 @@ public class Socket extends SocketBase {
         /////////////////////////////////////////////
 
         // Kaleb // Add socket here:
-        InetAddress addr = InetAddress.getByName("192.168.56.101");  // the address needs to be changed
+        InetAddress addr = InetAddress.getByName("192.168.1.111");  // the address needs to be changed
         ServerSocket welcomeSocket = new ServerSocket(6789, 50, addr);  // 6789 is port number. Can be changed
         java.net.Socket connectionSocket = welcomeSocket.accept(); // initial connection will be made at this point
         System.out.println("connection successful");
@@ -101,7 +105,7 @@ public class Socket extends SocketBase {
         
         String header, time="0", varName, value;        
         double varValue;
-        String dataString;
+        String dataString ="";
         int size = 0;
 
         // Kaleb //
@@ -172,8 +176,8 @@ public class Socket extends SocketBase {
                 Socket_Controller sendEPData = create_Socket_Controller();
                 sendEPData.set_simID(simID);
                 sendEPData.set_size(size);
-                sendEPData.set_dataString(dataArr);
-                log.info("Sent sendEPData interaction from socket{} with {} = {}", simID , stringArr , doubleArr);
+                sendEPData.set_dataString(dataString);
+                log.info("Sent sendEPData interaction from socket{} with {}", simID , dataString);
                 sendEPData.sendInteraction(getLRC(), currentTime + getLookAhead());
                 
                 
@@ -184,11 +188,11 @@ public class Socket extends SocketBase {
                     outToClient.writeBytes("SET\r\n" + time + "\r\n"+ "epGetStartCooling\r\n" + eGSC + "\r\n" + "epGetStartHeating\r\n" + eGSH + "\r\n" + "\r\n");
                     System.out.println("SET\r\n" + time +  "\r\n"+ "epGetStartCooling\r\n" + eGSC + "\r\n" + "epGetStartHeating\r\n" + eGSH + "\r\n" + "\r\n");
                   }
-                  outToClient.flush();
+                outToClient.flush();
                 
                 // Kaleb //
                 
-            
+            }
             ////////////////////////////////////////////////////////////////////
             // TODO break here if ready to resign and break out of while loop //
             ////////////////////////////////////////////////////////////////////
@@ -209,6 +213,7 @@ public class Socket extends SocketBase {
         //////////////////////////////////////////////////////////////////////
         // TODO Perform whatever cleanups are needed before exiting the app //
         //////////////////////////////////////////////////////////////////////
+        
     }
 
     private void handleInteractionClass(Controller_Socket interaction) {
@@ -227,17 +232,14 @@ public class Socket extends SocketBase {
 
             for(int i=0; i<holder.length(); i++){
 
-                if(holder[i].equals("@")){
-                    varNames[j] = dummy;
-                    dummy = "";
+                if(holder.substring(i,i).equals(varNameSeparater)){
+                    varNames[j] = holder.substring(dummy,i-1);
+                    dummy =  i+1;
                 }
-                else if(holder[i].equals("$")){
-                    doubles[j] = dummy;
-                    dummy = "";
+                else if(holder.substring(i,i).equals(doubleSeparater)){
+                    doubles[j] = holder.substring(dummy,i-1);
+                    dummy =  i+1;
                     j = j+1;
-                }
-                else{
-                    dummy = dummy + holder[i];
                 }
             }
 

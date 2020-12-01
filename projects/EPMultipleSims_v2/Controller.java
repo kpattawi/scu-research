@@ -37,15 +37,22 @@ public class Controller extends ControllerBase {
     double event_p=0, duration_p=1, duration_q=0, nextevent_p=0;
     int occupancy = 2, check = 0, p=0, r2=0;
     double outTemp=23.0, coolTemp=23, heatTemp=21, zoneTemp=23.0, zoneHumidity=0,clo=1;
-    String varname; 
+    String varname, varNames[], doubles[]; 
     double value;
     
     double Last_cool=23, Last_heat=21;
     int Fuzzycool=0,Fuzzyheat=0;
 
-    String dataStrings[], numVars[], dataString;
+    String dataStrings[], dataString;
     double outTemps[], coolTemps[], heatTemps[], zoneTemps[], zoneRHs[];
-    int size, simID;
+    int size, simID, numVars[];
+
+    String holder[];
+    int length_holder;
+    int j = 0;
+    String dummy;
+    int length_zoneTemps;
+
     // Kaleb //
     
     private void checkReceivedSubscriptions() {
@@ -228,7 +235,9 @@ public class Controller extends ControllerBase {
           // determine heating and cooling setpoints for each simID
           // will eventually change this part for transactive energy
 
-          for(i=0;i<length(zoneTemps);i++){
+          length_zoneTemps = zoneTemps.length;
+
+          for(int i=0;i<length_zoneTemps;i++){
             outTemp = outTemps[i];
             zoneTemp = zoneTemps[i];
             // zoneHumidity = zoneRHs[i];
@@ -310,11 +319,13 @@ public class Controller extends ControllerBase {
           // before @ is varName and before $ is value
           // varName first!!!
 
-          for(i=0;i<length(zoneTemps);i++){
+          length_zoneTemps = zoneTemps.length;
+
+          for(int i=0;i<length_zoneTemps;i++){
             simID = i;
             size = 0;
-            dataString[simID] = "epGetStartCooling@";
-            dataString[simID] = dataStrings[simID] + String.valueOf(coolTemps[i]) + "$";
+            dataStrings[simID] = "epGetStartCooling@";
+            dataStrings[simID] = dataStrings[simID] + String.valueOf(coolTemps[i]) + "$";
             size = size +1;
             dataStrings[simID] = "epGetStartHeating@";
             dataStrings[simID] = dataStrings[simID] + String.valueOf(heatTemps[i]) + "$";
@@ -362,14 +373,20 @@ public class Controller extends ControllerBase {
 
         // Kaleb // 
 
-        simID = interaction.getID;
+        
+
+        simID = interaction.get_simID();
     		numVars[simID] = interaction.get_size();
-    		holder = interaction.get_dataString();
+    		holder[simID] = interaction.get_dataString();
 
     		// before @ is varName and before $ is value
         // varName first!!!
 
-        for(int i=0; i<holder.length(); i++){
+        
+        length_holder = holder[simID].length();
+        
+
+        for(int i=0; i<length_holder; i++){
 
             if(holder[i].equals("@")){
                 varNames[j] = dummy;
