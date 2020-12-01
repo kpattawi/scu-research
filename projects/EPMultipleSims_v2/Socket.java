@@ -23,13 +23,14 @@ public class Socket extends SocketBase {
     private double currentTime = 0;
     
     // Kaleb // Define variables
-
-    int simID = 1;   // Change simID based on socket number
+    // START WITH simID as ZERO because java is zero indexed
+    int simID = 0;   // Change simID based on socket number
     int numVars;
     String eGSH=null, eGSC=null, setName=null, ePeople=null;
-    String holder, varNames[];
-    double doubles[];
+    String holder,dummy, varNames[];
+    String doubles[];
     int receivedID;
+    int j=0;
     boolean empty=true;
     
     // Kaleb //
@@ -41,8 +42,8 @@ public class Socket extends SocketBase {
     private void checkReceivedSubscriptions() {
         InteractionRoot interaction = null;
         while ((interaction = getNextInteractionNoWait()) != null) {
-            if (interaction instanceof SendData) {
-                handleInteractionClass((SendData) interaction);
+            if (interaction instanceof Controller_Socket) {
+                handleInteractionClass((Controller_Socket) interaction);
             }
             else {
                 log.debug("unhandled interaction: {}", interaction.getClassName());
@@ -100,7 +101,7 @@ public class Socket extends SocketBase {
         
         String header, time="0", varName, value;        
         double varValue;
-        String stringArr, doubleArr;
+        String dataString;
         int size = 0;
 
         // Kaleb //
@@ -116,16 +117,15 @@ public class Socket extends SocketBase {
 
             // Set the interaction's parameters.
             //
-            //    ReceiveData vReceiveData = create_ReceiveData();
-            //    vReceiveData.set_actualLogicalGenerationTime( < YOUR VALUE HERE > );
-            //    vReceiveData.set_doubleArray( < YOUR VALUE HERE > );
-            //    vReceiveData.set_federateFilter( < YOUR VALUE HERE > );
-            //    vReceiveData.set_originFed( < YOUR VALUE HERE > );
-            //    vReceiveData.set_simID( < YOUR VALUE HERE > );
-            //    vReceiveData.set_size( < YOUR VALUE HERE > );
-            //    vReceiveData.set_sourceFed( < YOUR VALUE HERE > );
-            //    vReceiveData.set_stringArray( < YOUR VALUE HERE > );
-            //    vReceiveData.sendInteraction(getLRC(), currentTime + getLookAhead());
+            //    Socket_Controller vSocket_Controller = create_Socket_Controller();
+            //    vSocket_Controller.set_actualLogicalGenerationTime( < YOUR VALUE HERE > );
+            //    vSocket_Controller.set_dataString( < YOUR VALUE HERE > );
+            //    vSocket_Controller.set_federateFilter( < YOUR VALUE HERE > );
+            //    vSocket_Controller.set_originFed( < YOUR VALUE HERE > );
+            //    vSocket_Controller.set_simID( < YOUR VALUE HERE > );
+            //    vSocket_Controller.set_size( < YOUR VALUE HERE > );
+            //    vSocket_Controller.set_sourceFed( < YOUR VALUE HERE > );
+            //    vSocket_Controller.sendInteraction(getLRC(), currentTime + getLookAhead());
 
             checkReceivedSubscriptions();
             
@@ -142,35 +142,37 @@ public class Socket extends SocketBase {
                 value = buffDummy.readLine();
                 System.out.println("Received: " + varName + " as " + value);
                 
+                // before @ is varName and before $ is value
+                // varName first!!!
+
                 if(varName.equals("epSendOutdoorAirTemp")){
               	  
-                	stringArr = stringArr +varName+"@";
-              	  	doubleArr = doubleArr +value+"$";  
+                	dataString = dataString +varName+"@";
+              	  	dataString = dataString +value+"$";  
               	  	size = size +1;
               	  
                 }
                 
                 if(varName.equals("epSendZoneMeanAirTemp")){
             
-                	stringArr = stringArr +varName+",";
-                	doubleArr = doubleArr +value+",";  
-                	size = size +1;
+                	dataString = dataString +varName+"@";
+              	  	dataString = dataString +value+"$";  
+              	  	size = size +1;
                 	  
                 }
                 
                 if(varName.equals("epSendZoneHumidity")){
               	  
-              	  	stringArr = stringArr +varName+",";
-              	  	doubleArr = doubleArr +value+",";  
+              	  	dataString = dataString +varName+"@";
+              	  	dataString = dataString +value+"$";  
               	  	size = size +1;
               	  
                 }
                 
-                Socket_Controller sendEPData = create_ReceiveData();
+                Socket_Controller sendEPData = create_Socket_Controller();
                 sendEPData.set_simID(simID);
                 sendEPData.set_size(size);
-                sendEPData.set_doubleArray(doubleArr);
-                sendEPData.set_stringArray(stringArr);
+                sendEPData.set_dataString(dataArr);
                 log.info("Sent sendEPData interaction from socket{} with {} = {}", simID , stringArr , doubleArr);
                 sendEPData.sendInteraction(getLRC(), currentTime + getLookAhead());
                 
@@ -209,7 +211,7 @@ public class Socket extends SocketBase {
         //////////////////////////////////////////////////////////////////////
     }
 
-    private void handleInteractionClass(SendData interaction) {
+    private void handleInteractionClass(Controller_Socket interaction) {
         ///////////////////////////////////////////////////////////////
         // TODO implement how to handle reception of the interaction //
         ///////////////////////////////////////////////////////////////
@@ -219,18 +221,34 @@ public class Socket extends SocketBase {
     	receivedID = interaction.get_simID();
     	if(receivedID == simID){
     		numVars = interaction.get_size();
-    		holder = interaction.get_stringArray();
-    		varNames = split faenroigbnaeob nr;
-    		holder = interaction.get_doubleArray();
-    		doubles = split 0seinrtbnrte;
-    		
+    		holder = interaction.get_dataString();
+    		// before @ is varName and before $ is value
+            // varName first!!!
+
+            for(int i=0; i<holder.length(); i++){
+
+                if(holder[i].equals("@")){
+                    varNames[j] = dummy;
+                    dummy = "";
+                }
+                else if(holder[i].equals("$")){
+                    doubles[j] = dummy;
+                    dummy = "";
+                    j = j+1;
+                }
+                else{
+                    dummy = dummy + holder[i];
+                }
+            }
+
+
     		String value = "20";
         	empty = false;
         	
     		for(int i =0; i<numVars; i++){
 
     			setName = varNames[i];
-    			value = String.valueOf(doubles[i]);
+    			value = doubles[i];
 	        	System.out.println("ReceivedData interaction " + setName + " as " + value);
 	        	if(setName.equals("epGetStartHeating")){
 	        		eGSH = value;
