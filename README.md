@@ -12,3 +12,6 @@ This directory contains java files from projects made in UCEF:
 - EnergyPlusPMV: This is the original project used for the occupancy drive/ schedule based/ always on simulations in different cities.
 - EPMultipleSims_v1: This is the first attempt at making a federation that can run multiple Energy Plus simulations.  This was successful but the number of federates/interactions can be reduced making the structure more scalable.
 - EPMultipleSims_v2: This project is the second attempt at making a federation that can run multiple Energy Plus simulations simultaneously. This version uses only one controller (thermostat) for all the Energy Plus simulations and also uses an improved interaction method that will have a single interaction to and from each socket.
+
+## energyPlus_config:
+This directory contains a python file that will automatically change the timestep for multiple .idf files
