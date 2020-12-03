@@ -25,11 +25,12 @@ public class Socket extends SocketBase {
     // Kaleb // Define variables
     // START WITH simID as ZERO because java is zero indexed
     int simID = 0;   // Change simID based on socket number
-    int numVars;
+    int numVars = 0;
     String eGSH=null, eGSC=null, setName=null, ePeople=null;
-    String holder, varNames[];
-    String doubles[];
-    int receivedID, dummy=0;
+    String holder=null;
+    String[] varNames=new String[]{"","","","","","","","","",""};
+    String[] doubles= new String[]{"","","","","","","","","",""};
+    int receivedID = 0, dummy=0;
     int j=0;
     boolean empty=true;
 
@@ -103,8 +104,8 @@ public class Socket extends SocketBase {
         
         // Kaleb // Define variables
         
-        String header, time="0", varName, value;        
-        double varValue;
+        String header, time="0", varName="", value="";        
+        double varValue=0;
         String dataString ="";
         int size = 0;
 
@@ -243,9 +244,9 @@ public class Socket extends SocketBase {
                 }
             }
 
-
-    		String value = "20";
+            String value = "20";
         	empty = false;
+
         	
     		for(int i =0; i<numVars; i++){
 
@@ -268,6 +269,8 @@ public class Socket extends SocketBase {
 	        		log.info("Received People as {} = {}" , setName , ePeople);
 	        	}
     		}
+
+            
     	}
     	
     	

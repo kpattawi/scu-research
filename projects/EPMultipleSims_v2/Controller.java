@@ -32,26 +32,36 @@ public class Controller extends ControllerBase {
     
     // Kaleb // defining variables
     int hour=0, nexthour=0, quarter=0, fivemin=0, onemin=0, simulatetime=0;
-    double r1 =0;
-    double Preset_cool=23, Preset_heat=21;
-    double event_p=0, duration_p=1, duration_q=0, nextevent_p=0;
+    double r1 =0.0;
+    double Preset_cool=23.0, Preset_heat=21.0;
+    double event_p=0.0, duration_p=1.0, duration_q=0.0, nextevent_p=0.0;
     int occupancy = 2, check = 0, p=0, r2=0;
-    double outTemp=23.0, coolTemp=23, heatTemp=21, zoneTemp=23.0, zoneHumidity=0,clo=1;
-    String varname, varNames[], doubles[]; 
-    double value;
+    double outTemp=23.0, coolTemp=23.0, heatTemp=21.0, zoneTemp=23.0, zoneHumidity=0.0,clo=1.0;
+
+    String varname="";
+    String[] varNames = new String[]{"","","","","","","","","",""};
+    String[] doubles = new String[]{"","","","","","","","","",""}; 
+    double value=0.0;
     
-    double Last_cool=23, Last_heat=21;
+    double Last_cool=23.0, Last_heat=21.0;
     int Fuzzycool=0,Fuzzyheat=0;
 
-    String dataStrings[], dataString;
-    double outTemps[], coolTemps[], heatTemps[], zoneTemps[], zoneRHs[];
-    int size, simID, numVars[];
+    String[] dataStrings = new String[]{"","","","","","","","","",""};
+    String dataString="";
+    double[] outTemps=new double[]{0,0,0,0,0,0,0,0,0,0};
+    double[] coolTemps= new double[]{0,0,0,0,0,0,0,0,0,0}; 
+    double[] heatTemps= new double[]{0,0,0,0,0,0,0,0,0,0};
+    double[] zoneTemps= new double[]{0,0,0,0,0,0,0,0,0,0};
+    double[] zoneRHs= new double[]{0,0,0,0,0,0,0,0,0,0};
+    // Potential future problem:  Might have to predefine these arrays to be big enough for expected number of sockets
+    int size =0 , simID =0;
+    int[] numVars = new int[]{0,0,0,0,0,0,0,0,0,0};
 
-    String holder[];
-    int length_holder;
+    String[] holder=new String[]{"","","","","","","","","",""};
+    int length_holder = 0;
     int j = 0;
-    String dummy;
-    int length_zoneTemps;
+    String dummy ="";
+    int length_zoneTemps = 0;
 
     // Kaleb //
     
@@ -157,6 +167,7 @@ public class Controller extends ControllerBase {
           //    vController_Socket.sendInteraction(getLRC(), currentTime + getLookAhead());
 
           checkReceivedSubscriptions();
+
           
           // Kaleb //
           
@@ -236,6 +247,9 @@ public class Controller extends ControllerBase {
           // will eventually change this part for transactive energy
 
           length_zoneTemps = zoneTemps.length;
+          length_zoneTemps = 1; // Need to predefine to correct size
+          // System.out.println("zoneTemps: {}" + zoneTemps[0]);
+          System.out.println("determine values loop");
 
           for(int i=0;i<length_zoneTemps;i++){
             outTemp = outTemps[i];
@@ -320,6 +334,8 @@ public class Controller extends ControllerBase {
           // varName first!!!
 
           length_zoneTemps = zoneTemps.length;
+          length_zoneTemps = 1; // Need to predefine to correct size
+          System.out.println("send interactions loop");
 
           for(int i=0;i<length_zoneTemps;i++){
             simID = i;
@@ -335,7 +351,7 @@ public class Controller extends ControllerBase {
             sendControls.set_dataString(dataStrings[simID]);
             sendControls.set_simID(simID);
             sendControls.set_size(size);
-            System.out.println("Send sendControls interaction: " + coolTemp + "to socket #" + simID);
+            System.out.println("Send sendControls interaction: " + coolTemp + " to socket #" + simID);
             sendControls.sendInteraction(getLRC(), currentTime + getLookAhead());
 
           }
@@ -384,7 +400,8 @@ public class Controller extends ControllerBase {
 
         
         length_holder = holder[simID].length();
-        
+        length_holder = 1; // Change to correct size
+        System.out.println("handle interaction loop");
 
         for(int i=0; i<length_holder; i++){
 
