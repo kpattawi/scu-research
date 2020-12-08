@@ -31,38 +31,33 @@ public class Controller extends ControllerBase {
     }
     
     // Kaleb // defining variables
+    int numSockets = 1;
+    String[] varNames = new String[]{"","",""};   // Right now zoneTemp, outTemp, zoneRH... add more empty vals if sending more vars
+    String[] doubles = new String[]{"","",""};
+    String[] dataStrings = new String[]{""};
+    String[] holder=new String[]{""};
+    double[] outTemps=new double[]{23};
+    double[] coolTemps= new double[]{23}; 
+    double[] heatTemps= new double[]{21};
+    double[] zoneTemps= new double[]{23};
+    double[] zoneRHs= new double[]{0};
+    int[] numVars = new int[]{0};
+    String varNameSeparater = "@";
+    String doubleSeparater = ",";
+    
+
+
     int hour=0, nexthour=0, quarter=0, fivemin=0, onemin=0, simulatetime=0;
     double r1 =0.0;
     double Preset_cool=23.0, Preset_heat=21.0;
     double event_p=0.0, duration_p=1.0, duration_q=0.0, nextevent_p=0.0;
     int occupancy = 2, check = 0, p=0, r2=0;
-    double outTemp=23.0, coolTemp=23.0, heatTemp=21.0, zoneTemp=23.0, zoneHumidity=0.0,clo=1.0;
+    
 
     String varname="";
-    String[] varNames = new String[]{"","","","","","","","","",""};
-    String[] doubles = new String[]{"","","","","","","","","",""}; 
     double value=0.0;
-    
     double Last_cool=23.0, Last_heat=21.0;
-    int Fuzzycool=0,Fuzzyheat=0;
-
-    String[] dataStrings = new String[]{"","","","","","","","","",""};
-    String dataString="";
-    double[] outTemps=new double[]{23,0,0,0,0,0,0,0,0,0};
-    double[] coolTemps= new double[]{23,0,0,0,0,0,0,0,0,0}; 
-    double[] heatTemps= new double[]{21,0,0,0,0,0,0,0,0,0};
-    double[] zoneTemps= new double[]{23,0,0,0,0,0,0,0,0,0};
-    double[] zoneRHs= new double[]{0,0,0,0,0,0,0,0,0,0};
-    // Potential future problem:  Might have to predefine these arrays to be big enough for expected number of sockets
-    int size =0 , simID =0;
-    int[] numVars = new int[]{0,0,0,0,0,0,0,0,0,0};
-
-    String[] holder=new String[]{"","","","","","","","","",""};
-    int length_holder = 0;
-    int j = 0;
-    String dummy ="";
-    int length_zoneTemps = 0;
-
+    
     // Kaleb //
     
     private void checkReceivedSubscriptions() {
@@ -91,10 +86,8 @@ public class Controller extends ControllerBase {
         
         // Kaleb // Adding probability for occupancy
         double[] pro; 
-        
         // allocating memory for 24 doubles. 
         pro = new double[24]; 
-                
         // initialize the  elements of the probability array 
         pro[0] = 0.875;           
         pro[1] = 0.817; 
@@ -120,7 +113,6 @@ public class Controller extends ControllerBase {
         pro[21] = 0.858; 
         pro[22] = 0.883; 
         pro[23] = 0.85;
-        
         // Kaleb //
         
         AdvanceTimeRequest atr = new AdvanceTimeRequest(currentTime);
@@ -169,24 +161,19 @@ public class Controller extends ControllerBase {
           checkReceivedSubscriptions();
 
           
-          // Kaleb //
-          
+          // Kaleb //  Occupancy stuff
           System.out.println("Logical Time is = " + currentTime);
           // quarter = (int) (currentTime%96);
           // fivemin = (int) (currentTime%288);
           onemin = (int) (currentTime%1440);
-          
           hour = (int) (onemin/60);
           System.out.println("Hour is = " + hour);
           
           // Start Occupancy
-          
           if (hour==simulatetime){
             System.out.println("Simulate at this time step!!!!!");
             event_p=pro[hour];
             System.out.println("Occupied Probability: "+ event_p);
-            
-              
             //  Occupancy Duration Simulator Based on Monte Carlo Method
             while (check ==0){
             //  r2 = (int) (Math.random()*24+1);
@@ -201,10 +188,8 @@ public class Controller extends ControllerBase {
                 duration_p = duration_p * event_p ;
                 duration_q = duration_q *(1 - event_p) ;
               }
-                
               System.out.println("The probability of OCCUPIED for "+ r2 +" hours is "+ duration_p );
               System.out.println("The probability of NOT OCCUPIED for "+ r2 +" hours is "+ duration_q ); 
-              
               r1 = (double) (Math.random());
               System.out.println("Random Number(Event): "+ r1 );
               if (r1 < duration_p){
@@ -217,7 +202,6 @@ public class Controller extends ControllerBase {
                 } 
                 System.out.println("Next simulating time at hour = "+ simulatetime );
               } 
-              
               else if(r1 > (1-duration_q)){
                 System.out.println("Continuously Not Occupied for "+r2+ " Hours Accepted!!!" );
                 check = 1;
@@ -235,67 +219,65 @@ public class Controller extends ControllerBase {
               duration_q=1;
             }
             check =0;
-              
           }
           else{
             System.out.println("Keep the same Occupancy information as previous timestamp.");
           }
           // End determine Occupancy
 
+
+
           // Kaleb //
           // determine heating and cooling setpoints for each simID
           // will eventually change this part for transactive energy
-
-          length_zoneTemps = zoneTemps.length;
-          length_zoneTemps = 1; // Need to predefine to correct size
-          // System.out.println("zoneTemps: {}" + zoneTemps[0]);
-          System.out.println("determine values loop");
-
-          for(int i=0;i<length_zoneTemps;i++){
-            outTemp = outTemps[i];
+          System.out.println("determine setpoints loop");
+          
+          double clo=1.0; // was here from old code... idk what for
+          
+          int Fuzzycool=0,Fuzzyheat=0;
+          for(int i=0;i<numSockets;i++){
             System.out.println("outTemps[i] = "+ outTemps[i] );
-            zoneTemp = zoneTemps[i];
-
+            zoneTemps[i] = zoneTemps[i];
             System.out.println("zoneTemps[i] = "+ zoneTemps[i] );
-            // zoneHumidity = zoneRHs[i];
+            // zoneRHs[i] can add this but need to check FMU file and also edit socket.java
 
             // Adaptive Control
             // Always-On
-            if (outTemp<=10){
-              heatTemp=18.9;
-              coolTemp=22.9;
-            }else if (outTemp>=33.5){
-              heatTemp=26.2;
-              coolTemp=30.2;
+            if (outTemps[i]<=10){
+              heatTemps[i]=18.9;
+              coolTemps[i]=22.9;
+            }else if (outTemps[i]>=33.5){
+              heatTemps[i]=26.2;
+              coolTemps[i]=30.2;
             }else {
-              heatTemp = 0.31*outTemp + 17.8-2;
-              coolTemp = 0.31*outTemp + 17.8+2;
+              heatTemps[i] = 0.31*outTemps[i] + 17.8-2;
+              coolTemps[i] = 0.31*outTemps[i] + 17.8+2;
             }
 
             // // Occupancy-Driven Control
             // if (occupancy == 0 ){
-            //    coolTemp = 32;
-            //    heatTemp = 12;
+            //    coolTemps[i] = 32;
+            //    heatTemps[i] = 12;
             // }
             
             //0.5 degree fuzzy control 
             double offset=0.6;
-            if (zoneTemp>=coolTemp+0.5-offset){
+            if (zoneTemps[i]>=coolTemps[i]+0.5-offset){
             Fuzzyheat = -1;
             Fuzzycool = -1;
-            }else if (zoneTemp>=coolTemp-0.5-offset){
+            }else if (zoneTemps[i]>=coolTemps[i]-0.5-offset){
             Fuzzyheat = -1;
-            }else if (zoneTemp>=heatTemp+0.5+offset){
+            }else if (zoneTemps[i]>=heatTemps[i]+0.5+offset){
               Fuzzyheat = -1;
             Fuzzycool = 1;
-            }else if (zoneTemp>=heatTemp-0.5+offset){
+            }else if (zoneTemps[i]>=heatTemps[i]-0.5+offset){
             Fuzzycool = 1;
             }else{
             Fuzzyheat = 1;
             Fuzzycool = 1;
             }
-            coolTemp = coolTemp -offset+ Fuzzycool*offset;
-            heatTemp = heatTemp +offset+ Fuzzyheat*offset;
+            coolTemps[i] = coolTemps[i] -offset+ Fuzzycool*offset;
+            heatTemps[i] = heatTemps[i] +offset+ Fuzzyheat*offset;
 
             //  //================================
             //   // write to data to record occupancy information
@@ -319,9 +301,7 @@ public class Controller extends ControllerBase {
             //     }
             // //=====================================
 
-            heatTemps[i] = heatTemp;
             System.out.println("heatTemps[i] = "+ heatTemps[i] );
-            coolTemps[i] = coolTemp;
             System.out.println("coolTemps[i] = "+ coolTemps[i] );
           }
           // Kaleb //
@@ -334,39 +314,32 @@ public class Controller extends ControllerBase {
           // Send the Cooling Setpoint interaction's.
 
           // Kaleb //
-
-          // before @ is varName and before $ is value
           // varName first!!!
 
-          length_zoneTemps = zoneTemps.length;
-          length_zoneTemps = 1; // Need to predefine to correct size
           System.out.println("send interactions loop");
-
-          for(int i=0;i<length_zoneTemps;i++){
-            simID = i;
+          int size = 0;
+          for(int i=0;i<numSockets;i++){
+            // simID = i;  I am leaving this here to remind myself that i is simID for each socket
             size = 0;
-            dataStrings[simID] = "epGetStartCooling@";
-            dataStrings[simID] = dataStrings[simID] + String.valueOf(coolTemps[i]) + "$";
+            dataStrings[i] = "epGetStartCooling"+varNameSeparater;
+            dataStrings[i] = dataStrings[i] + String.valueOf(coolTemps[i]) + doubleSeparater;
             size = size +1;
-            dataStrings[simID] = dataStrings[simID] + "epGetStartHeating@";
-            dataStrings[simID] = dataStrings[simID] + String.valueOf(heatTemps[i]) + "$";
+            dataStrings[i] = dataStrings[i] + "epGetStartHeating"+varNameSeparater;
+            dataStrings[i] = dataStrings[i] + String.valueOf(heatTemps[i]) + doubleSeparater;
             size = size +1;
-            System.out.println("dataStrings[simID] = "+ dataStrings[simID] );
-
-            System.out.println("dataString[simID] before removing last char: "+dataString[simID]);
-            dataString[simID] = dataString[simID].substring(0,dataString[simID].length()-2);
-            System.out.println("dataString[simID] after removing last char: "+dataString[simID]);
+            System.out.println("dataStrings[simID] = "+ dataStrings[i] );
 
             Controller_Socket sendControls = create_Controller_Socket();
-            sendControls.set_dataString(dataStrings[simID]);
-            sendControls.set_simID(simID);
+            sendControls.set_dataString(dataStrings[i]);
+            sendControls.set_simID(i);
             sendControls.set_size(size);
-            System.out.println("Send sendControls interaction: " + coolTemp + " to socket #" + simID);
+            System.out.println("Send sendControls interaction: " + coolTemps[i] + " to socket #" + i);
             sendControls.sendInteraction(getLRC(), currentTime + getLookAhead());
-
+            
+            // Empty Data String and size
+            dataStrings[i]="";
+            size = 0;
           }
-
-          
 
           // Kaleb //
 
@@ -398,55 +371,37 @@ public class Controller extends ControllerBase {
         ///////////////////////////////////////////////////////////////
 
         // Kaleb // 
-
-        
-
+        // Could make global var that holds simIDs but it would just be 0,1,2,...
+        int simID;
         simID = interaction.get_simID();
     		numVars[simID] = interaction.get_size();
+        System.out.println("numVars[simID] = " + numVars[simID]);
     		holder[simID] = interaction.get_dataString();
         System.out.println("holder[simID] = "+ holder[simID] );
 
-    		// before @ is varName and before $ is value
         // varName first!!!
         System.out.println("handle interaction loop");
 
-        // // ----------------------- This method did not work
-        // length_holder = holder[simID].length();
-        // length_holder = 1; // Change to correct size
-
-        // for(int i=0; i<length_holder; i++){
-
-        //     if(holder[i].equals("@")){
-        //         varNames[j] = dummy;
-        //         dummy = "";
-        //     }
-        //     else if(holder[i].equals("$")){
-        //         doubles[j] = dummy;
-        //         dummy = "";
-        //         j = j+1;
-        //     }
-        //     else{
-        //         dummy = dummy + holder[i];
-        //     }
-        // }
-        // // ------------------------------------
-
-        String vars[] = holder[simID].split("$");
+        String vars[] = holder[simID].split(doubleSeparater);
+        System.out.println("vars[0] = "+vars[0]);
+        System.out.println("length of vars = " + vars.length);
+        int j;
         j=0;
         for( String token : vars){
-            System.out.println("token before removing last char = " +token);
-            token = token.substring(0,token.length()-2);
-            System.out.println("token after removing last char = " +token);
-            String token1[] = token.split("@");
-            varNames[j] = token1[0].substring(0,token1[0].length()-2);
-            doubles[j] = token1[1].substring(0,token1[1].length()-2);
-            System.out.println("varNames = "+ varNames[j] );
-            System.out.println("doubles = "+ doubles[j] );
-            j = j+1;
-        }
-          
+              System.out.println("j = "+j);
+                System.out.println("token = " +token);
+                String token1[] = token.split(varNameSeparater);
+                System.out.println("token1[0] = "+token1[0]);
+                System.out.println("token1[1] = "+token1[1]);
+                varNames[j] = token1[0];
+                doubles[j] = token1[1];
+                System.out.println("varNames[j] = "+ varNames[j] );
+                System.out.println("doubles[j] = "+ doubles[j] );
+                j = j+1;
+            }
 
-        for(int i=0; i<numVars[simID];i++){
+        for(int i=0; i<varNames.length;i++){
+          System.out.println("i = "+i);
           if(varNames[i].equals("epSendZoneMeanAirTemp")){
             zoneTemps[simID] = Double.valueOf(doubles[i]);
           }

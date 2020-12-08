@@ -25,18 +25,14 @@ public class Socket extends SocketBase {
     // Kaleb // Define variables
     // START WITH simID as ZERO because java is zero indexed
     int simID = 0;   // Change simID based on socket number
-    int numVars = 0;
-    String eGSH=null, eGSC=null, setName=null, ePeople=null;
-    String holder=null;
-    String[] varNames=new String[]{"","","","","","","","","",""};
-    String[] doubles= new String[]{"","","","","","","","","",""};
-    int receivedID = 0, dummy=0;
-    int j=0;
-    boolean empty=true;
-
+    String[] varNames=new String[]{"",""};  // will have to add more empty strings based on how many strings we send/receive
+    String[] doubles= new String[]{"",""};  // will have to add more empty strings based on how many strings we send/receive
     String varNameSeparater = "@";
-    String doubleSeparater = "$";
-    String dataString = "";
+    String doubleSeparater = ",";
+
+    int numVars = 0;  
+    String eGSH=null, eGSC=null, ePeople=null;
+    boolean empty=true;
     
     // Kaleb //
 
@@ -102,7 +98,7 @@ public class Socket extends SocketBase {
         log.info("started logical time progression");
         
         
-        // Kaleb // Define variables
+        // Kaleb // Define variables for getting EP data
         
         String header, time="0", varName="", value="";        
         double varValue=0;
@@ -147,38 +143,38 @@ public class Socket extends SocketBase {
                 value = buffDummy.readLine();
                 System.out.println("Received: " + varName + " as " + value);
                 
-                // before @ is varName and before $ is value
+                // before @ is varName and before , is value
                 // varName first!!!
 
                 if(varName.equals("epSendOutdoorAirTemp")){
               	  
-                	dataString = dataString +varName+"@";
-              	  	dataString = dataString +value+"$";  
+                	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater;  
               	  	size = size +1;
               	  
                 }
                 
                 if(varName.equals("epSendZoneMeanAirTemp")){
             
-                	dataString = dataString +varName+"@";
-              	  	dataString = dataString +value+"$";  
+                	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater;  
               	  	size = size +1;
                 	  
                 }
                 
                 if(varName.equals("epSendZoneHumidity")){
               	  
-              	  	dataString = dataString +varName+"@";
-              	  	dataString = dataString +value+"$";  
+              	  	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater;  
               	  	size = size +1;
               	  
                 }
                 
             }
-
-            System.out.println("dataString before removing last char: "+dataString);
-            dataString = dataString.substring(0,dataString.length()-2);
-            System.out.println("dataString after removing last char: "+dataString);
+            // // Hopefully dont need this:
+            // System.out.println("dataString before removing last char: "+dataString);
+            // dataString = dataString.substring(0,dataString.length()-2);
+            // System.out.println("dataString after removing last char: "+dataString);
 
             Socket_Controller sendEPData = create_Socket_Controller();
             sendEPData.set_simID(simID);
@@ -186,7 +182,10 @@ public class Socket extends SocketBase {
             sendEPData.set_dataString(dataString);
             log.info("Sent sendEPData interaction from socket{} with {}", simID , dataString);
             sendEPData.sendInteraction(getLRC(), currentTime + getLookAhead());
-            
+
+            // Empty Data String and size
+            dataString = "";
+            size = 0;
             
             if (empty==true) {
                 outToClient.writeBytes("NOUPDATE\r\n\r\n");
@@ -230,68 +229,50 @@ public class Socket extends SocketBase {
     	
     	// Kaleb // 
     	
-    	receivedID = interaction.get_simID();
+    	int receivedID = interaction.get_simID();
+        String holder = null;
     	if(receivedID == simID){
-    		numVars = interaction.get_size();
     		holder = interaction.get_dataString();
             System.out.println("holder = "+ holder );
-    		// before @ is varName and before $ is value
-            // varName first!!!
-            
-            // // ------------------------------ This method didnt work
-            // for(int i=0; i<holder.length(); i++){
-
-            //     if(holder.substring(i,i).equals(varNameSeparater)){
-            //         varNames[j] = holder.substring(dummy,i-1);
-            //         dummy =  i+1;
-            //     }
-            //     else if(holder.substring(i,i).equals(doubleSeparater)){
-            //         doubles[j] = holder.substring(dummy,i-1);
-            //         dummy =  i+1;
-            //         j = j+1;
-            //     }
-            // }
-            // // -------------------------------------------------
-
-            String vars[] = holder.split("$");
-            j=0;
+    		
+            String vars[] = holder.split(doubleSeparater);
+            System.out.println("vars[0] = "+vars[0]);
+            int j=0;
             for( String token : vars){
-                System.out.println("token before removing last char = " +token);
-                token = token.substring(0,token.length()-2);
-                System.out.println("token after removing last char = " +token);
-                String token1[] = token.split("@");
-                varNames[j] = token1[0].substring(0,token1[0].length()-2);
-                doubles[j] = token1[1].substring(0,token1[1].length()-2);
-                System.out.println("varNames = "+ varNames[j] );
-                System.out.println("doubles = "+ doubles[j] );
+                System.out.println("token = " +token);
+                String token1[] = token.split(varNameSeparater);
+                System.out.println("token1[0] = "+token1[0]);
+                System.out.println("token1[1] = "+token1[1]);
+                varNames[j] = token1[0];
+                doubles[j] = token1[1];
+                System.out.println("varNames[j] = "+ varNames[j] );
+                System.out.println("doubles[j] = "+ doubles[j] );
                 j = j+1;
             }
-
+            
             
 
-            String value = "20";
+            // String value = "20";  // Dont need this I think
         	empty = false;
 
-        	
-    		for(int i =0; i<numVars; i++){
+    		numVars = interaction.get_size();
+    		for(int i =0; i<varNames.length; i++){
 
-    			setName = varNames[i];
-    			value = doubles[i];
-	        	System.out.println("ReceivedData interaction " + setName + " as " + value);
-	        	if(setName.equals("epGetStartHeating")){
-	        		eGSH = value;
-	        		System.out.println("Received Heating setpoint as" + setName + eGSH);
-	        		log.info("Received Heating setpoint as {} = {}" , setName , eGSH);
+	        	System.out.println("ReceivedData interaction " + varNames[i] + " as " + doubles[i]);
+	        	if(varNames[i].equals("epGetStartHeating")){
+	        		eGSH = doubles[i];
+	        		System.out.println("Received Heating setpoint as" + varNames[i] + eGSH);
+	        		log.info("Received Heating setpoint as {} = {}" , varNames[i] , eGSH);
 	        	}
-	        	if(setName.equals("epGetStartCooling")){
-	        		eGSC = value;
-	        		System.out.println("Received Cooling setpoint as" + setName + eGSC);
-	        		log.info("Received Cooling setpoint as {} = {}" , setName , eGSC);
+	        	if(varNames[i].equals("epGetStartCooling")){
+	        		eGSC = doubles[i];
+	        		System.out.println("Received Cooling setpoint as" + varNames[i] + eGSC);
+	        		log.info("Received Cooling setpoint as {} = {}" , varNames[i] , eGSC);
 	        	}
-	        	if(setName.equals("epGetPeople")){
-	        		ePeople = value;
-	        		System.out.println("Received People as" + setName + ePeople);
-	        		log.info("Received People as {} = {}" , setName , ePeople);
+	        	if(varNames[i].equals("epGetPeople")){
+	        		ePeople = doubles[i];
+	        		System.out.println("Received People as" + varNames[i] + ePeople);
+	        		log.info("Received People as {} = {}" , varNames[i] , ePeople);
 	        	}
     		}
 
