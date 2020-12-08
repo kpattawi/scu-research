@@ -174,26 +174,32 @@ public class Socket extends SocketBase {
               	  
                 }
                 
-                Socket_Controller sendEPData = create_Socket_Controller();
-                sendEPData.set_simID(simID);
-                sendEPData.set_size(size);
-                sendEPData.set_dataString(dataString);
-                log.info("Sent sendEPData interaction from socket{} with {}", simID , dataString);
-                sendEPData.sendInteraction(getLRC(), currentTime + getLookAhead());
-                
-                
-                if (empty==true) {
-                    outToClient.writeBytes("NOUPDATE\r\n\r\n");
-                  } 
-                else {
-                    outToClient.writeBytes("SET\r\n" + time + "\r\n"+ "epGetStartCooling\r\n" + eGSC + "\r\n" + "epGetStartHeating\r\n" + eGSH + "\r\n" + "\r\n");
-                    System.out.println("SET\r\n" + time +  "\r\n"+ "epGetStartCooling\r\n" + eGSC + "\r\n" + "epGetStartHeating\r\n" + eGSH + "\r\n" + "\r\n");
-                  }
-                outToClient.flush();
-                
-                // Kaleb //
-                
             }
+
+            System.out.println("dataString before removing last char: "+dataString);
+            dataString = dataString.substring(0,dataString.length()-2);
+            System.out.println("dataString after removing last char: "+dataString);
+
+            Socket_Controller sendEPData = create_Socket_Controller();
+            sendEPData.set_simID(simID);
+            sendEPData.set_size(size);
+            sendEPData.set_dataString(dataString);
+            log.info("Sent sendEPData interaction from socket{} with {}", simID , dataString);
+            sendEPData.sendInteraction(getLRC(), currentTime + getLookAhead());
+            
+            
+            if (empty==true) {
+                outToClient.writeBytes("NOUPDATE\r\n\r\n");
+                } 
+            else {
+                outToClient.writeBytes("SET\r\n" + time + "\r\n"+ "epGetStartCooling\r\n" + eGSC + "\r\n" + "epGetStartHeating\r\n" + eGSH + "\r\n" + "\r\n");
+                System.out.println("SET\r\n" + time +  "\r\n"+ "epGetStartCooling\r\n" + eGSC + "\r\n" + "epGetStartHeating\r\n" + eGSH + "\r\n" + "\r\n");
+                }
+            outToClient.flush();
+            
+            // Kaleb //
+                
+            
             ////////////////////////////////////////////////////////////////////
             // TODO break here if ready to resign and break out of while loop //
             ////////////////////////////////////////////////////////////////////
@@ -228,21 +234,40 @@ public class Socket extends SocketBase {
     	if(receivedID == simID){
     		numVars = interaction.get_size();
     		holder = interaction.get_dataString();
+            System.out.println("holder = "+ holder );
     		// before @ is varName and before $ is value
             // varName first!!!
+            
+            // // ------------------------------ This method didnt work
+            // for(int i=0; i<holder.length(); i++){
 
-            for(int i=0; i<holder.length(); i++){
+            //     if(holder.substring(i,i).equals(varNameSeparater)){
+            //         varNames[j] = holder.substring(dummy,i-1);
+            //         dummy =  i+1;
+            //     }
+            //     else if(holder.substring(i,i).equals(doubleSeparater)){
+            //         doubles[j] = holder.substring(dummy,i-1);
+            //         dummy =  i+1;
+            //         j = j+1;
+            //     }
+            // }
+            // // -------------------------------------------------
 
-                if(holder.substring(i,i).equals(varNameSeparater)){
-                    varNames[j] = holder.substring(dummy,i-1);
-                    dummy =  i+1;
-                }
-                else if(holder.substring(i,i).equals(doubleSeparater)){
-                    doubles[j] = holder.substring(dummy,i-1);
-                    dummy =  i+1;
-                    j = j+1;
-                }
+            String vars[] = holder.split("$");
+            j=0;
+            for( String token : vars){
+                System.out.println("token before removing last char = " +token);
+                token = token.substring(0,token.length()-2);
+                System.out.println("token after removing last char = " +token);
+                String token1[] = token.split("@");
+                varNames[j] = token1[0].substring(0,token1[0].length()-2);
+                doubles[j] = token1[1].substring(0,token1[1].length()-2);
+                System.out.println("varNames = "+ varNames[j] );
+                System.out.println("doubles = "+ doubles[j] );
+                j = j+1;
             }
+
+            
 
             String value = "20";
         	empty = false;

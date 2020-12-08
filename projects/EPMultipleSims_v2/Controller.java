@@ -48,10 +48,10 @@ public class Controller extends ControllerBase {
 
     String[] dataStrings = new String[]{"","","","","","","","","",""};
     String dataString="";
-    double[] outTemps=new double[]{0,0,0,0,0,0,0,0,0,0};
-    double[] coolTemps= new double[]{0,0,0,0,0,0,0,0,0,0}; 
-    double[] heatTemps= new double[]{0,0,0,0,0,0,0,0,0,0};
-    double[] zoneTemps= new double[]{0,0,0,0,0,0,0,0,0,0};
+    double[] outTemps=new double[]{23,0,0,0,0,0,0,0,0,0};
+    double[] coolTemps= new double[]{23,0,0,0,0,0,0,0,0,0}; 
+    double[] heatTemps= new double[]{21,0,0,0,0,0,0,0,0,0};
+    double[] zoneTemps= new double[]{23,0,0,0,0,0,0,0,0,0};
     double[] zoneRHs= new double[]{0,0,0,0,0,0,0,0,0,0};
     // Potential future problem:  Might have to predefine these arrays to be big enough for expected number of sockets
     int size =0 , simID =0;
@@ -253,7 +253,10 @@ public class Controller extends ControllerBase {
 
           for(int i=0;i<length_zoneTemps;i++){
             outTemp = outTemps[i];
+            System.out.println("outTemps[i] = "+ outTemps[i] );
             zoneTemp = zoneTemps[i];
+
+            System.out.println("zoneTemps[i] = "+ zoneTemps[i] );
             // zoneHumidity = zoneRHs[i];
 
             // Adaptive Control
@@ -317,7 +320,9 @@ public class Controller extends ControllerBase {
             // //=====================================
 
             heatTemps[i] = heatTemp;
+            System.out.println("heatTemps[i] = "+ heatTemps[i] );
             coolTemps[i] = coolTemp;
+            System.out.println("coolTemps[i] = "+ coolTemps[i] );
           }
           // Kaleb //
 
@@ -343,9 +348,14 @@ public class Controller extends ControllerBase {
             dataStrings[simID] = "epGetStartCooling@";
             dataStrings[simID] = dataStrings[simID] + String.valueOf(coolTemps[i]) + "$";
             size = size +1;
-            dataStrings[simID] = "epGetStartHeating@";
+            dataStrings[simID] = dataStrings[simID] + "epGetStartHeating@";
             dataStrings[simID] = dataStrings[simID] + String.valueOf(heatTemps[i]) + "$";
             size = size +1;
+            System.out.println("dataStrings[simID] = "+ dataStrings[simID] );
+
+            System.out.println("dataString[simID] before removing last char: "+dataString[simID]);
+            dataString[simID] = dataString[simID].substring(0,dataString[simID].length()-2);
+            System.out.println("dataString[simID] after removing last char: "+dataString[simID]);
 
             Controller_Socket sendControls = create_Controller_Socket();
             sendControls.set_dataString(dataStrings[simID]);
@@ -394,30 +404,47 @@ public class Controller extends ControllerBase {
         simID = interaction.get_simID();
     		numVars[simID] = interaction.get_size();
     		holder[simID] = interaction.get_dataString();
+        System.out.println("holder[simID] = "+ holder[simID] );
 
     		// before @ is varName and before $ is value
         // varName first!!!
-
-        
-        length_holder = holder[simID].length();
-        length_holder = 1; // Change to correct size
         System.out.println("handle interaction loop");
 
-        for(int i=0; i<length_holder; i++){
+        // // ----------------------- This method did not work
+        // length_holder = holder[simID].length();
+        // length_holder = 1; // Change to correct size
 
-            if(holder[i].equals("@")){
-                varNames[j] = dummy;
-                dummy = "";
-            }
-            else if(holder[i].equals("$")){
-                doubles[j] = dummy;
-                dummy = "";
-                j = j+1;
-            }
-            else{
-                dummy = dummy + holder[i];
-            }
+        // for(int i=0; i<length_holder; i++){
+
+        //     if(holder[i].equals("@")){
+        //         varNames[j] = dummy;
+        //         dummy = "";
+        //     }
+        //     else if(holder[i].equals("$")){
+        //         doubles[j] = dummy;
+        //         dummy = "";
+        //         j = j+1;
+        //     }
+        //     else{
+        //         dummy = dummy + holder[i];
+        //     }
+        // }
+        // // ------------------------------------
+
+        String vars[] = holder[simID].split("$");
+        j=0;
+        for( String token : vars){
+            System.out.println("token before removing last char = " +token);
+            token = token.substring(0,token.length()-2);
+            System.out.println("token after removing last char = " +token);
+            String token1[] = token.split("@");
+            varNames[j] = token1[0].substring(0,token1[0].length()-2);
+            doubles[j] = token1[1].substring(0,token1[1].length()-2);
+            System.out.println("varNames = "+ varNames[j] );
+            System.out.println("doubles = "+ doubles[j] );
+            j = j+1;
         }
+          
 
         for(int i=0; i<numVars[simID];i++){
           if(varNames[i].equals("epSendZoneMeanAirTemp")){
