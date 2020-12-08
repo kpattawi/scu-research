@@ -1,0 +1,44 @@
+{
+  "federateTypesAllowed": [
+    "Controller",
+    "Market",
+    "Reader",
+    "Socket"
+  ],
+  "expectedFederates": [
+    {
+      "federateType": "Controller",
+      "count": 1
+    },
+    {
+      "federateType": "Market",
+      "count": 1
+    },
+    {
+      "federateType": "Reader",
+      "count": 1
+    },
+    {
+      "federateType": "Socket",
+      "count": 1
+    }
+  ],
+  "lateJoinerFederates": [
+    {
+      "federateType": "Controller",
+      "count": 0
+    },
+    {
+      "federateType": "Market",
+      "count": 0
+    },
+    {
+      "federateType": "Reader",
+      "count": 0
+    },
+    {
+      "federateType": "Socket",
+      "count": 0
+    }
+  ]
+}
