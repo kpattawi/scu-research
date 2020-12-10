@@ -31,19 +31,20 @@ public class Controller extends ControllerBase {
     }
     
     // Kaleb // defining variables
-    int numSockets = 1;
+    int numSockets = 1;  // Change this
     String[] varNames = new String[]{"","",""};   // Right now zoneTemp, outTemp, zoneRH... add more empty vals if sending more vars
     String[] doubles = new String[]{"","",""};
-    String[] dataStrings = new String[]{""};
-    String[] holder=new String[]{""};
-    double[] outTemps=new double[]{23};
-    double[] coolTemps= new double[]{23}; 
-    double[] heatTemps= new double[]{21};
-    double[] zoneTemps= new double[]{23};
-    double[] zoneRHs= new double[]{0};
-    int[] numVars = new int[]{0};
+    String[] dataStrings = new String[numSockets];
+    String[] holder=new String[numSockets];
+    double[] outTemps=new double[numSockets];
+    double[] coolTemps= new double[numSockets]; 
+    double[] heatTemps= new double[numSockets];
+    double[] zoneTemps= new double[numSockets];
+    double[] zoneRHs= new double[numSockets];
+    int[] numVars = new int[numSockets];
     String varNameSeparater = "@";
     String doubleSeparater = ",";
+
     
 
 
@@ -233,7 +234,13 @@ public class Controller extends ControllerBase {
           System.out.println("determine setpoints loop");
           
           double clo=1.0; // was here from old code... idk what for
-          
+          for(int i=0;i<numSockets;i++){
+            dataStrings[i] = "";
+            coolTemps[i] = 23; 
+            heatTemps[i] = 21;
+          }
+
+
           int Fuzzycool=0,Fuzzyheat=0;
           for(int i=0;i<numSockets;i++){
             System.out.println("outTemps[i] = "+ outTemps[i] );
@@ -336,9 +343,9 @@ public class Controller extends ControllerBase {
             System.out.println("Send sendControls interaction: " + coolTemps[i] + " to socket #" + i);
             sendControls.sendInteraction(getLRC(), currentTime + getLookAhead());
             
-            // Empty Data String and size
-            dataStrings[i]="";
-            size = 0;
+            // Empty Data String and size ... I dont thinnk I need this anymore
+            // dataStrings[i]="";
+            // size = 0;
           }
 
           // Kaleb //
@@ -369,19 +376,24 @@ public class Controller extends ControllerBase {
         ///////////////////////////////////////////////////////////////
         // TODO implement how to handle reception of the interaction //
         ///////////////////////////////////////////////////////////////
-
+        for(int i=0;i<numSockets;i++){
+          holder[i]= "";
+          outTemps[i]= 23;
+          zoneTemps[i]= 23;
+          zoneRHs[i] = 0;
+          numVars[i] = 0;
+        }
         // Kaleb // 
         // Could make global var that holds simIDs but it would just be 0,1,2,...
-        int simID;
-        simID = interaction.get_simID();
-    		numVars[simID] = interaction.get_size();
+        int simID = interaction.get_simID();
+    		numVars[simID] = interaction.get_size();  // not used for anything
         System.out.println("numVars[simID] = " + numVars[simID]);
     		holder[simID] = interaction.get_dataString();
         System.out.println("holder[simID] = "+ holder[simID] );
 
-        // varName first!!!
         System.out.println("handle interaction loop");
 
+        // "varName{varNameSplitter}double{doubleSplitter}"!!!
         String vars[] = holder[simID].split(doubleSeparater);
         System.out.println("vars[0] = "+vars[0]);
         System.out.println("length of vars = " + vars.length);

@@ -1,0 +1,16 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building EPMultipleSims_v2_exec 0.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- exec-maven-plugin:1.5.0:java (default-cli) @ EPMultipleSims_v2_exec ---
+
+-------------------------------------------------------------------
+GMS: address=vagrant-2728, cluster=EPMultipleSims_v2, physical address=192.168.1.111:55361
+-------------------------------------------------------------------
+22:31:24.147 [org.webgme.guest.reader.Reader.main()] INFO  org.webgme.guest.reader.Reader - waiting on readyToPopulate...
+22:35:39.800 [org.webgme.guest.reader.Reader.main()] INFO  org.webgme.guest.reader.Reader - ...synchronized on readyToPopulate
+22:35:39.800 [org.webgme.guest.reader.Reader.main()] INFO  org.webgme.guest.reader.Reader - waiting on readyToRun...
+22:35:40.051 [org.webgme.guest.reader.Reader.main()] INFO  org.webgme.guest.reader.Reader - ...synchronized on readyToRun
+22:35:40.053 [org.webgme.guest.reader.Reader.main()] INFO  org.webgme.guest.reader.Reader - started logical time progression

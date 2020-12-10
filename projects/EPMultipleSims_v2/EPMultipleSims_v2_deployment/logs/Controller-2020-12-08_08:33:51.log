@@ -1,0 +1,330 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building EPMultipleSims_v2_exec 0.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- exec-maven-plugin:1.5.0:java (default-cli) @ EPMultipleSims_v2_exec ---
+
+-------------------------------------------------------------------
+GMS: address=vagrant-5516, cluster=EPMultipleSims_v2, physical address=192.168.1.111:47373
+-------------------------------------------------------------------
+08:34:12.197 [org.webgme.guest.controller.Controller.main()] INFO  org.webgme.guest.controller.Controller - waiting on readyToPopulate...
+08:35:41.163 [org.webgme.guest.controller.Controller.main()] INFO  org.webgme.guest.controller.Controller - ...synchronized on readyToPopulate
+08:35:41.163 [org.webgme.guest.controller.Controller.main()] INFO  org.webgme.guest.controller.Controller - waiting on readyToRun...
+08:35:41.415 [org.webgme.guest.controller.Controller.main()] INFO  org.webgme.guest.controller.Controller - ...synchronized on readyToRun
+08:35:41.419 [org.webgme.guest.controller.Controller.main()] INFO  org.webgme.guest.controller.Controller - started logical time progression
+Logical Time is = 0.0
+Hour is = 0
+Simulate at this time step!!!!!
+Occupied Probability: 0.875
+Random Number(Duration): 1
+The probability of OCCUPIED for 1 hours is 0.875
+The probability of NOT OCCUPIED for 1 hours is 0.0
+Random Number(Event): 0.06909597736521822
+Continuously Occupied for 1 Hours Accepted!!!
+Next simulating time at hour = 1
+determine setpoints loop
+outTemps[i] = 23.0
+zoneTemps[i] = 23.0
+heatTemps[i] = 24.130000000000003
+coolTemps[i] = 26.93
+send interactions loop
+dataStrings[simID] = epGetStartCooling@26.93,epGetStartHeating@24.130000000000003,
+Send sendControls interaction: 26.93 to socket #0
+numVars[simID] = 3
+holder[simID] = epSendZoneMeanAirTemp@22.917412,epSendOutdoorAirTemp@6.791667,epSendZoneHumidity@34.703114,
+handle interaction loop
+vars[0] = epSendZoneMeanAirTemp@22.917412
+length of vars = 3
+j = 0
+token = epSendZoneMeanAirTemp@22.917412
+token1[0] = epSendZoneMeanAirTemp
+token1[1] = 22.917412
+varNames[j] = epSendZoneMeanAirTemp
+doubles[j] = 22.917412
+j = 1
+token = epSendOutdoorAirTemp@6.791667
+token1[0] = epSendOutdoorAirTemp
+token1[1] = 6.791667
+varNames[j] = epSendOutdoorAirTemp
+doubles[j] = 6.791667
+j = 2
+token = epSendZoneHumidity@34.703114
+token1[0] = epSendZoneHumidity
+token1[1] = 34.703114
+varNames[j] = epSendZoneHumidity
+doubles[j] = 34.703114
+i = 0
+i = 1
+i = 2
+Logical Time is = 1.0
+Hour is = 0
+Keep the same Occupancy information as previous timestamp.
+determine setpoints loop
+outTemps[i] = 6.791667
+zoneTemps[i] = 22.917412
+heatTemps[i] = 18.9
+coolTemps[i] = 21.699999999999996
+send interactions loop
+dataStrings[simID] = epGetStartCooling@21.699999999999996,epGetStartHeating@18.9,
+Send sendControls interaction: 21.699999999999996 to socket #0
+numVars[simID] = 3
+holder[simID] = epSendZoneMeanAirTemp@22.837814,epSendOutdoorAirTemp@6.741667,epSendZoneHumidity@34.858116,
+handle interaction loop
+vars[0] = epSendZoneMeanAirTemp@22.837814
+length of vars = 3
+j = 0
+token = epSendZoneMeanAirTemp@22.837814
+token1[0] = epSendZoneMeanAirTemp
+token1[1] = 22.837814
+varNames[j] = epSendZoneMeanAirTemp
+doubles[j] = 22.837814
+j = 1
+token = epSendOutdoorAirTemp@6.741667
+token1[0] = epSendOutdoorAirTemp
+token1[1] = 6.741667
+varNames[j] = epSendOutdoorAirTemp
+doubles[j] = 6.741667
+j = 2
+token = epSendZoneHumidity@34.858116
+token1[0] = epSendZoneHumidity
+token1[1] = 34.858116
+varNames[j] = epSendZoneHumidity
+doubles[j] = 34.858116
+i = 0
+i = 1
+i = 2
+Logical Time is = 2.0
+Hour is = 0
+Keep the same Occupancy information as previous timestamp.
+determine setpoints loop
+outTemps[i] = 6.741667
+zoneTemps[i] = 22.837814
+heatTemps[i] = 18.9
+coolTemps[i] = 21.699999999999996
+send interactions loop
+dataStrings[simID] = epGetStartCooling@21.699999999999996,epGetStartHeating@18.9,
+Send sendControls interaction: 21.699999999999996 to socket #0
+numVars[simID] = 3
+holder[simID] = epSendZoneMeanAirTemp@22.803209,epSendOutdoorAirTemp@6.783333,epSendZoneHumidity@34.932590,
+handle interaction loop
+vars[0] = epSendZoneMeanAirTemp@22.803209
+length of vars = 3
+j = 0
+token = epSendZoneMeanAirTemp@22.803209
+token1[0] = epSendZoneMeanAirTemp
+token1[1] = 22.803209
+varNames[j] = epSendZoneMeanAirTemp
+doubles[j] = 22.803209
+j = 1
+token = epSendOutdoorAirTemp@6.783333
+token1[0] = epSendOutdoorAirTemp
+token1[1] = 6.783333
+varNames[j] = epSendOutdoorAirTemp
+doubles[j] = 6.783333
+j = 2
+token = epSendZoneHumidity@34.932590
+token1[0] = epSendZoneHumidity
+token1[1] = 34.932590
+varNames[j] = epSendZoneHumidity
+doubles[j] = 34.932590
+i = 0
+i = 1
+i = 2
+Logical Time is = 3.0
+Hour is = 0
+Keep the same Occupancy information as previous timestamp.
+determine setpoints loop
+outTemps[i] = 6.783333
+zoneTemps[i] = 22.803209
+heatTemps[i] = 18.9
+coolTemps[i] = 21.699999999999996
+send interactions loop
+dataStrings[simID] = epGetStartCooling@21.699999999999996,epGetStartHeating@18.9,
+Send sendControls interaction: 21.699999999999996 to socket #0
+numVars[simID] = 3
+holder[simID] = epSendZoneMeanAirTemp@22.776356,epSendOutdoorAirTemp@6.825000,epSendZoneHumidity@35.001663,
+handle interaction loop
+vars[0] = epSendZoneMeanAirTemp@22.776356
+length of vars = 3
+j = 0
+token = epSendZoneMeanAirTemp@22.776356
+token1[0] = epSendZoneMeanAirTemp
+token1[1] = 22.776356
+varNames[j] = epSendZoneMeanAirTemp
+doubles[j] = 22.776356
+j = 1
+token = epSendOutdoorAirTemp@6.825000
+token1[0] = epSendOutdoorAirTemp
+token1[1] = 6.825000
+varNames[j] = epSendOutdoorAirTemp
+doubles[j] = 6.825000
+j = 2
+token = epSendZoneHumidity@35.001663
+token1[0] = epSendZoneHumidity
+token1[1] = 35.001663
+varNames[j] = epSendZoneHumidity
+doubles[j] = 35.001663
+i = 0
+i = 1
+i = 2
+Logical Time is = 4.0
+Hour is = 0
+Keep the same Occupancy information as previous timestamp.
+determine setpoints loop
+outTemps[i] = 6.825
+zoneTemps[i] = 22.776356
+heatTemps[i] = 18.9
+coolTemps[i] = 22.299999999999997
+send interactions loop
+dataStrings[simID] = epGetStartCooling@22.299999999999997,epGetStartHeating@18.9,
+Send sendControls interaction: 22.299999999999997 to socket #0
+numVars[simID] = 3
+holder[simID] = epSendZoneMeanAirTemp@21.943586,epSendOutdoorAirTemp@6.866667,epSendZoneHumidity@36.817837,
+handle interaction loop
+vars[0] = epSendZoneMeanAirTemp@21.943586
+length of vars = 3
+j = 0
+token = epSendZoneMeanAirTemp@21.943586
+token1[0] = epSendZoneMeanAirTemp
+token1[1] = 21.943586
+varNames[j] = epSendZoneMeanAirTemp
+doubles[j] = 21.943586
+j = 1
+token = epSendOutdoorAirTemp@6.866667
+token1[0] = epSendOutdoorAirTemp
+token1[1] = 6.866667
+varNames[j] = epSendOutdoorAirTemp
+doubles[j] = 6.866667
+j = 2
+token = epSendZoneHumidity@36.817837
+token1[0] = epSendZoneHumidity
+token1[1] = 36.817837
+varNames[j] = epSendZoneHumidity
+doubles[j] = 36.817837
+i = 0
+i = 1
+i = 2
+Logical Time is = 5.0
+Hour is = 0
+Keep the same Occupancy information as previous timestamp.
+determine setpoints loop
+outTemps[i] = 6.866667
+zoneTemps[i] = 21.943586
+heatTemps[i] = 18.9
+coolTemps[i] = 22.299999999999997
+send interactions loop
+dataStrings[simID] = epGetStartCooling@22.299999999999997,epGetStartHeating@18.9,
+Send sendControls interaction: 22.299999999999997 to socket #0
+numVars[simID] = 3
+holder[simID] = epSendZoneMeanAirTemp@21.532583,epSendOutdoorAirTemp@6.908333,epSendZoneHumidity@37.729229,
+handle interaction loop
+vars[0] = epSendZoneMeanAirTemp@21.532583
+length of vars = 3
+j = 0
+token = epSendZoneMeanAirTemp@21.532583
+token1[0] = epSendZoneMeanAirTemp
+token1[1] = 21.532583
+varNames[j] = epSendZoneMeanAirTemp
+doubles[j] = 21.532583
+j = 1
+token = epSendOutdoorAirTemp@6.908333
+token1[0] = epSendOutdoorAirTemp
+token1[1] = 6.908333
+varNames[j] = epSendOutdoorAirTemp
+doubles[j] = 6.908333
+j = 2
+token = epSendZoneHumidity@37.729229
+token1[0] = epSendZoneHumidity
+token1[1] = 37.729229
+varNames[j] = epSendZoneHumidity
+doubles[j] = 37.729229
+i = 0
+i = 1
+i = 2
+Logical Time is = 6.0
+Hour is = 0
+Keep the same Occupancy information as previous timestamp.
+determine setpoints loop
+outTemps[i] = 6.908333
+zoneTemps[i] = 21.532583
+heatTemps[i] = 18.9
+coolTemps[i] = 22.9
+send interactions loop
+dataStrings[simID] = epGetStartCooling@22.9,epGetStartHeating@18.9,
+Send sendControls interaction: 22.9 to socket #0
+numVars[simID] = 3
+holder[simID] = epSendZoneMeanAirTemp@21.234251,epSendOutdoorAirTemp@6.950000,epSendZoneHumidity@38.438656,
+handle interaction loop
+vars[0] = epSendZoneMeanAirTemp@21.234251
+length of vars = 3
+j = 0
+token = epSendZoneMeanAirTemp@21.234251
+token1[0] = epSendZoneMeanAirTemp
+token1[1] = 21.234251
+varNames[j] = epSendZoneMeanAirTemp
+doubles[j] = 21.234251
+j = 1
+token = epSendOutdoorAirTemp@6.950000
+token1[0] = epSendOutdoorAirTemp
+token1[1] = 6.950000
+varNames[j] = epSendOutdoorAirTemp
+doubles[j] = 6.950000
+j = 2
+token = epSendZoneHumidity@38.438656
+token1[0] = epSendZoneHumidity
+token1[1] = 38.438656
+varNames[j] = epSendZoneHumidity
+doubles[j] = 38.438656
+i = 0
+i = 1
+i = 2
+Logical Time is = 7.0
+Hour is = 0
+Keep the same Occupancy information as previous timestamp.
+determine setpoints loop
+outTemps[i] = 6.95
+zoneTemps[i] = 21.234251
+heatTemps[i] = 18.9
+coolTemps[i] = 22.9
+send interactions loop
+dataStrings[simID] = epGetStartCooling@22.9,epGetStartHeating@18.9,
+Send sendControls interaction: 22.9 to socket #0
+numVars[simID] = 3
+holder[simID] = epSendZoneMeanAirTemp@20.965820,epSendOutdoorAirTemp@6.991667,epSendZoneHumidity@39.122128,
+handle interaction loop
+vars[0] = epSendZoneMeanAirTemp@20.965820
+length of vars = 3
+j = 0
+token = epSendZoneMeanAirTemp@20.965820
+token1[0] = epSendZoneMeanAirTemp
+token1[1] = 20.965820
+varNames[j] = epSendZoneMeanAirTemp
+doubles[j] = 20.965820
+j = 1
+token = epSendOutdoorAirTemp@6.991667
+token1[0] = epSendOutdoorAirTemp
+token1[1] = 6.991667
+varNames[j] = epSendOutdoorAirTemp
+doubles[j] = 6.991667
+j = 2
+token = epSendZoneHumidity@39.122128
+token1[0] = epSendZoneHumidity
+token1[1] = 39.122128
+varNames[j] = epSendZoneHumidity
+doubles[j] = 39.122128
+i = 0
+i = 1
+i = 2
+Logical Time is = 8.0
+Hour is = 0
+Keep the same Occupancy information as previous timestamp.
+determine setpoints loop
+outTemps[i] = 6.991667
+zoneTemps[i] = 20.96582
+heatTemps[i] = 18.9
+coolTemps[i] = 22.9
+send interactions loop
+dataStrings[simID] = epGetStartCooling@22.9,epGetStartHeating@18.9,
+Send sendControls interaction: 22.9 to socket #0
