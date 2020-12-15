@@ -233,13 +233,7 @@ public class Controller extends ControllerBase {
           // will eventually change this part for transactive energy
           System.out.println("determine setpoints loop");
           
-          double clo=1.0; // was here from old code... idk what for
-          for(int i=0;i<numSockets;i++){
-            dataStrings[i] = "";
-            coolTemps[i] = 23; 
-            heatTemps[i] = 21;
-          }
-
+          double clo=1.0; 
 
           int Fuzzycool=0,Fuzzyheat=0;
           for(int i=0;i<numSockets;i++){
@@ -376,13 +370,8 @@ public class Controller extends ControllerBase {
         ///////////////////////////////////////////////////////////////
         // TODO implement how to handle reception of the interaction //
         ///////////////////////////////////////////////////////////////
-        for(int i=0;i<numSockets;i++){
-          holder[i]= "";
-          outTemps[i]= 23;
-          zoneTemps[i]= 23;
-          zoneRHs[i] = 0;
-          numVars[i] = 0;
-        }
+        
+        
         // Kaleb // 
         // Could make global var that holds simIDs but it would just be 0,1,2,...
         int simID = interaction.get_simID();
