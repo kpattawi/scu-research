@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<fmiModelDescription 
+	fmiVersion="1.0" 
+	modelName="Joe_ep_fmu" 
+	modelIdentifier="Joe_ep_fmu" 
+	guid="{818642F1-D7D4-4DC7-8549-554862454199}" 
+	variableNamingConvention="structured" 
+	numberOfContinuousStates="0" 
+	numberOfEventIndicators="0">
+	<!-- Have to be same as the name in C code-->
+	
+  <ModelVariables>
+    <ScalarVariable 
+		name="EMS_INDOOR_AIR_TEMPERATURE" 
+		valueReference="1" 
+		causality="input">
+		<!-- name has to match E+ "FMU Variable Name" -->
+		<!-- valueReference must be unique -->
+		<!-- input/output to/from the slave -->
+      <Real />
+    </ScalarVariable>
+    <ScalarVariable 
+		name="ENVIRONMENT_SITE_OUTDOOR_AIR_DRYBULB_TEMPERATURE" 
+		valueReference="2" 
+		causality="input">
+      <Real />
+    </ScalarVariable>
+
+	<ScalarVariable 
+		name="EMS_COOLING_VOLUME" 
+		valueReference="3" 
+		causality="input">
+      <Real />
+    </ScalarVariable>
+
+	<ScalarVariable 
+		name="EMS_HEATING_VOLUME" 
+		valueReference="4" 
+		causality="input">
+      <Real />
+    </ScalarVariable>
+
+	<ScalarVariable 
+		name="EMS_COOLING_CONTROLLED_LOAD" 
+		valueReference="5" 
+		causality="input">
+      <Real />
+    </ScalarVariable>
+
+	<ScalarVariable 
+		name="EMS_COOLING_SCHEDULE_TEMPERATURE" 
+		valueReference="6" 
+		causality="input">
+      <Real />
+    </ScalarVariable>
+
+	<ScalarVariable 
+		name="EMS_COOLING_SETPOINT_TEMPERATURE" 
+		valueReference="7" 
+		causality="input">
+      <Real />
+    </ScalarVariable>
+
+	<ScalarVariable 
+		name="EMS_COOLING_CURRENT_TEMPERATURE" 
+		valueReference="8" 
+		causality="input">
+      <Real />
+    </ScalarVariable>
+
+	<ScalarVariable 
+		name="EMS_COOLING_POWER_STATE" 
+		valueReference="9" 
+		causality="input">
+      <Real />
+    </ScalarVariable>
+
+	<ScalarVariable 
+		name="EMS_HEATING_CONTROLLED_LOAD" 
+		valueReference="10" 
+		causality="input">
+      <Real />
+    </ScalarVariable>
+
+	<ScalarVariable 
+		name="EMS_HEATING_SCHEDULE_TEMPERATURE" 
+		valueReference="11" 
+		causality="input">
+      <Real />
+    </ScalarVariable>
+
+	<ScalarVariable 
+		name="EMS_HEATING_SETPOINT_TEMPERATURE" 
+		valueReference="12" 
+		causality="input">
+      <Real />
+    </ScalarVariable>
+
+	<ScalarVariable 
+		name="EMS_HEATING_CURRENT_TEMPERATURE" 
+		valueReference="13" 
+		causality="input">
+      <Real />
+    </ScalarVariable>
+
+	<ScalarVariable 
+		name="EMS_HEATING_POWER_STATE" 
+		valueReference="14" 
+		causality="input">
+      <Real />
+    </ScalarVariable>
+	
+	<ScalarVariable 
+		name="FACILITY_FACILITY_THERMAL_COMFORT_ASHRAE_55_SIMPLE_MODEL_SUMMER_OR_WINTER_CLOTHES_NOT_COMFORTABLE_TIME" 
+		valueReference="15" 
+		causality="input">
+      <Real />
+    </ScalarVariable>
+	
+	<ScalarVariable 
+		name="EMS_OCCUPANT_COUNT" 
+		valueReference="16" 
+		causality="input">
+      <Real />
+    </ScalarVariable>
+
+    <ScalarVariable 
+		name="fmuCOOL_SETP_DELTA" 
+		valueReference="17" 
+		causality="output">
+      <Real />
+    </ScalarVariable>
+	<ScalarVariable 
+		name="fmuHEAT_SETP_DELTA" 
+		valueReference="18" 
+		causality="output">
+      <Real />
+    </ScalarVariable>
+  </ModelVariables>
+  
+  <Implementation>
+    <CoSimulation_StandAlone>
+      <Capabilities canBeInstantiatedOnlyOncePerProcess="true" canNotUseMemoryManagementFunctions="true" />
+    </CoSimulation_StandAlone>
+  </Implementation>
+</fmiModelDescription>
