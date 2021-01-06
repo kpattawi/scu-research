@@ -1,54 +1,0 @@
-[INFO] Scanning for projects...
-[INFO]                                                                         
-[INFO] ------------------------------------------------------------------------
-[INFO] Building EPMultipleSims_v2_exec 0.1.0-SNAPSHOT
-[INFO] ------------------------------------------------------------------------
-Downloading: http://cpswtng_archiva:8080/repository/snapshots/org/webgme/guest/market/Market/0.1.0-SNAPSHOT/maven-metadata.xml
-Downloading: http://cpswtng_archiva:8080/repository/internal/org/webgme/guest/market/Market/0.1.0-SNAPSHOT/maven-metadata.xml
-Downloading: http://cpswtng_archiva:8080/repository/internal/org/webgme/guest/reader/Reader/0.1.0-SNAPSHOT/maven-metadata.xml
-Downloading: http://cpswtng_archiva:8080/repository/snapshots/org/webgme/guest/reader/Reader/0.1.0-SNAPSHOT/maven-metadata.xml
-Downloading: http://cpswtng_archiva:8080/repository/internal/org/webgme/guest/socket/Socket/0.1.0-SNAPSHOT/maven-metadata.xml
-Downloading: http://cpswtng_archiva:8080/repository/snapshots/org/webgme/guest/socket/Socket/0.1.0-SNAPSHOT/maven-metadata.xml
-Downloading: http://cpswtng_archiva:8080/repository/internal/org/cpswt/fedmanager-host/0.6.0-SNAPSHOT/maven-metadata.xml
-Downloading: http://cpswtng_archiva:8080/repository/snapshots/org/cpswt/fedmanager-host/0.6.0-SNAPSHOT/maven-metadata.xml
-361/361 B               Downloaded: http://cpswtng_archiva:8080/repository/snapshots/org/cpswt/fedmanager-host/0.6.0-SNAPSHOT/maven-metadata.xml (361 B at 14.1 KB/sec)
-            [INFO] 
-[INFO] --- exec-maven-plugin:1.5.0:java (default-cli) @ EPMultipleSims_v2_exec ---
-22:30:47.820 [org.cpswt.host.FederationManagerHostApp.main()] INFO  org.cpswt.hla.FederationManager - No COA definitions were provided!
-22:30:47.822 [org.cpswt.host.FederationManagerHostApp.main()] INFO  org.cpswt.hla.FederationManager - No COA selections were provided!
-22:30:47.822 [org.cpswt.host.FederationManagerHostApp.main()] INFO  org.cpswt.hla.FederationManager - No specific COA-selection was specified for execution!
-22:30:47.822 [org.cpswt.host.FederationManagerHostApp.main()] INFO  org.cpswt.hla.FederationManager - No COAs are used in this experiment.
-
--------------------------------------------------------------------
-GMS: address=vagrant-14660, cluster=EPMultipleSims_v2, physical address=192.168.1.111:58245
--------------------------------------------------------------------
-22:30:57.073 [org.cpswt.host.FederationManagerHostApp.main()] INFO  org.cpswt.host.FederationManagerHostApp - Server online at 0.0.0.0:8083 ...
-22:35:40.202 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 0.0 and step = 1.0 and requested_time = 1.0
-22:35:41.207 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 1.0 and step = 1.0 and requested_time = 2.0
-22:35:42.209 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 2.0 and step = 1.0 and requested_time = 3.0
-22:35:43.211 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 3.0 and step = 1.0 and requested_time = 4.0
-22:35:44.215 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 4.0 and step = 1.0 and requested_time = 5.0
-22:35:45.216 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 5.0 and step = 1.0 and requested_time = 6.0
-22:35:46.218 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 6.0 and step = 1.0 and requested_time = 7.0
-22:35:47.220 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 7.0 and step = 1.0 and requested_time = 8.0
-22:35:48.221 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 8.0 and step = 1.0 and requested_time = 9.0
-22:35:49.228 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 9.0 and step = 1.0 and requested_time = 10.0
-22:35:49.230 [Thread-3] INFO  org.cpswt.hla.FederationManager - Federation manager current time = 10.0
-22:35:50.230 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 10.0 and step = 1.0 and requested_time = 11.0
-22:35:51.233 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 11.0 and step = 1.0 and requested_time = 12.0
-22:35:52.238 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 12.0 and step = 1.0 and requested_time = 13.0
-22:35:53.242 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 13.0 and step = 1.0 and requested_time = 14.0
-22:35:54.246 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 14.0 and step = 1.0 and requested_time = 15.0
-22:35:55.248 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 15.0 and step = 1.0 and requested_time = 16.0
-22:35:56.251 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 16.0 and step = 1.0 and requested_time = 17.0
-22:35:57.253 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 17.0 and step = 1.0 and requested_time = 18.0
-22:35:58.253 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 18.0 and step = 1.0 and requested_time = 19.0
-22:35:59.258 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 19.0 and step = 1.0 and requested_time = 20.0
-22:35:59.259 [Thread-3] INFO  org.cpswt.hla.FederationManager - Federation manager current time = 20.0
-22:36:00.259 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 20.0 and step = 1.0 and requested_time = 21.0
-22:36:01.262 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 21.0 and step = 1.0 and requested_time = 22.0
-22:36:02.264 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 22.0 and step = 1.0 and requested_time = 23.0
-22:36:03.265 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 23.0 and step = 1.0 and requested_time = 24.0
-WARN  [VERIFY_SUSPECT.TimerThread,EPMultipleSims_v2,vagrant-14660] portico.lrc.jgroups: Detected that federate [Socket-4df127be-6d72-4251-9847-951117a7d6a9] may have crashed, investigating...
-WARN  [Regular] portico.lrc.jgroups: Federate [Socket-4df127be-6d72-4251-9847-951117a7d6a9] has crashed. Sending fake resignation because it was too rude to.
-22:36:13.753 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 24.0 and step = 1.0 and requested_time = 25.0
