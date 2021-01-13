@@ -25,8 +25,8 @@ public class Socket extends SocketBase {
     // Kaleb // Define variables
     // START WITH simID as ZERO because java is zero indexed
     int simID = 0;   // Change simID based on socket number
-    String[] varNames=new String[]{"",""};  // will have to add more empty strings based on how many strings we send/receive
-    String[] doubles= new String[]{"",""};  // will have to add more empty strings based on how many strings we send/receive
+    String[] varNames=new String[15];  // will have to add more empty strings based on how many strings we send/receive
+    String[] doubles= new String[15];  // will have to add more empty strings based on how many strings we send/receive
     String varNameSeparater = "@";
     String doubleSeparater = ",";
 
@@ -169,7 +169,78 @@ public class Socket extends SocketBase {
               	  	size = size +1;
               	  
                 }
+
+                if(varName.equals("epSendHeatingEnergy")){
+              	  
+              	  	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater;  
+              	  	size = size +1;
+              	  
+                }
+
+                if(varName.equals("epSendCoolingEnergy")){
+              	  
+              	  	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater;  
+              	  	size = size +1;
+              	  
+                }
+
+                if(varName.equals("epSendNetEnergy")){
+              	  
+              	  	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater;  
+              	  	size = size +1;
+              	  
+                }
+
+                if(varName.equals("epSendEnergyPurchased")){
+              	  
+              	  	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater;  
+              	  	size = size +1;
+              	  
+                }
+
+                if(varName.equals("epSendEnergySurplus")){
+              	  
+              	  	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater;  
+              	  	size = size +1;
+              	  
+                }
+
+                if(varName.equals("epSendDayOfWeek")){
+              	  
+              	  	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater;  
+              	  	size = size +1;
+              	  
+                }
+
+                if(varName.equals("epSendSolarRadiation")){
+              	  
+              	  	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater;  
+              	  	size = size +1;
+              	  
+                }
+
+                if(varName.equals("epSendHeatingSetpoint")){
+              	  
+              	  	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater;  
+              	  	size = size +1;
+              	  
+                }
                 
+                if(varName.equals("epSendCoolingSetpoint")){
+              	  
+              	  	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater;  
+              	  	size = size +1;
+              	  
+                }
             }
             // // Hopefully dont need this:
             // System.out.println("dataString before removing last char: "+dataString);

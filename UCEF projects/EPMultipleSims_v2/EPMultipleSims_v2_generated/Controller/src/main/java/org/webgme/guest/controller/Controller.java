@@ -32,8 +32,8 @@ public class Controller extends ControllerBase {
     
     // Kaleb // defining variables
     int numSockets = 1;  // Change this
-    String[] varNames = new String[]{"","",""};   // Right now zoneTemp, outTemp, zoneRH... add more empty vals if sending more vars
-    String[] doubles = new String[]{"","",""};
+    String[] varNames = new String[15];   // add more empty vals if sending more vars
+    String[] doubles = new String[15];
     String[] dataStrings = new String[numSockets];
     String[] holder=new String[numSockets];
     double[] outTemps=new double[numSockets];
@@ -41,12 +41,19 @@ public class Controller extends ControllerBase {
     double[] heatTemps= new double[numSockets];
     double[] zoneTemps= new double[numSockets];
     double[] zoneRHs= new double[numSockets];
+    double[] heatingEnergy= new double[numSockets];
+    double[] coolingEnergy= new double[numSockets];
+    double[] netEnergy= new double[numSockets];
+    double[] energyPurchased= new double[numSockets];
+    double[] energySurplus= new double[numSockets];
+    double[] solarRadiation= new double[numSockets];
+    double[] receivedHeatTemp= new double[numSockets];
+    double[] receivedCoolTemp= new double[numSockets];
+    double[] dayOfWeek= new double[numSockets];
+
     int[] numVars = new int[numSockets];
     String varNameSeparater = "@";
     String doubleSeparater = ",";
-
-    
-
 
     int hour=0, nexthour=0, quarter=0, fivemin=0, onemin=0, simulatetime=0;
     double r1 =0.0;
@@ -411,6 +418,33 @@ public class Controller extends ControllerBase {
           }
           else if(varNames[i].equals("epSendZoneHumidity")){
             zoneRHs[simID] = Double.valueOf(doubles[i]);
+          }
+          else if(varNames[i].equals("epSendHeatingEnergy")){
+            heatingEnergy[simID] = Double.valueOf(doubles[i]);
+          }
+          else if(varNames[i].equals("epSendCoolingEnergy")){
+            coolingEnergy[simID] = Double.valueOf(doubles[i]);
+          }
+          else if(varNames[i].equals("epSendNetEnergy")){
+            netEnergy[simID] = Double.valueOf(doubles[i]);
+          }
+          else if(varNames[i].equals("epSendEnergyPurchased")){
+            energyPurchased[simID] = Double.valueOf(doubles[i]);
+          }
+          else if(varNames[i].equals("epSendEnergySurplus")){
+            energySurplus[simID] = Double.valueOf(doubles[i]);
+          }
+          else if(varNames[i].equals("epSendDayOfWeek")){
+            dayOfWeek[simID] = Double.valueOf(doubles[i]);
+          }
+          else if(varNames[i].equals("epSendSolarRadiation")){
+            solarRadiation[simID] = Double.valueOf(doubles[i]);
+          }
+          else if(varNames[i].equals("epSendHeatingSetpoint")){
+            receivedHeatTemp[simID] = Double.valueOf(doubles[i]);
+          }
+          else if(varNames[i].equals("epSendCoolingSetpoint")){
+            receivedCoolTemp[simID] = Double.valueOf(doubles[i]);
           }
         }
 
