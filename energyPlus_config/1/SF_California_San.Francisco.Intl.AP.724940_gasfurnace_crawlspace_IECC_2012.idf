@@ -47,7 +47,7 @@ SurfaceConvectionAlgorithm:Inside,
 !-   ===========  ALL OBJECTS IN CLASS: TIMESTEP ===========
 
 Timestep,
-12;
+    12;                      !- Number of Timesteps per Hour
 
 
 !-   ===========  ALL OBJECTS IN CLASS: SITE:LOCATION ===========
@@ -126,19 +126,19 @@ SizingPeriod:DesignDay,
 !-   ===========  ALL OBJECTS IN CLASS: RUNPERIOD ===========
 
 RunPeriod,
-Annual,
-1,
-1,
-,
-12,
-31,
-,
-UseWeatherFile,
-Yes,
-Yes,
-No,
-Yes,
-Yes;
+    Annual,                  !- Name
+    1,                       !- Begin Month
+    1,                       !- Begin Day of Month
+    ,                        !- Begin Year
+    12,                      !- End Month
+    31,                      !- End Day of Month
+    ,                        !- End Year
+    UseWeatherFile,          !- Day of Week for Start Day
+    Yes,                     !- Use Weather File Holidays and Special Days
+    Yes,                     !- Use Weather File Daylight Saving Period
+    No,                      !- Apply Weekend Holiday Rule
+    Yes,                     !- Use Weather File Rain Indicators
+    Yes;                     !- Use Weather File Snow Indicators
 
 
 !-   ===========  ALL OBJECTS IN CLASS: SITE:WATERMAINSTEMPERATURE ===========
@@ -3801,6 +3801,62 @@ ExternalInterface:FunctionalMockupUnitImport:From:Variable,
     Joe_ep_fmu,              !- FMU Instance Name
     epSendZoneHumidity;      !- FMU Variable Name
 
+ExternalInterface:FunctionalMockupUnitImport:From:Variable,
+    living_unit1,            !- Output:Variable Index Key Name
+    ,                        !- Output:Variable Name
+    Joe_ep_fmu.fmu,          !- FMU File Name
+    Joe_ep_fmu,              !- FMU Instance Name
+    epSendHeatingEnergy;     !- FMU Variable Name
+
+ExternalInterface:FunctionalMockupUnitImport:From:Variable,
+    living_unit1,            !- Output:Variable Index Key Name
+    ,                        !- Output:Variable Name
+    Joe_ep_fmu.fmu,          !- FMU File Name
+    Joe_ep_fmu,              !- FMU Instance Name
+    epSendCoolingEnergy;     !- FMU Variable Name
+
+ExternalInterface:FunctionalMockupUnitImport:From:Variable,
+    living_unit1,            !- Output:Variable Index Key Name
+    ,                        !- Output:Variable Name
+    Joe_ep_fmu.fmu,          !- FMU File Name
+    Joe_ep_fmu,              !- FMU Instance Name
+    epSendTotalElectricity;  !- FMU Variable Name
+
+ExternalInterface:FunctionalMockupUnitImport:From:Variable,
+    living_unit1,            !- Output:Variable Index Key Name
+    ,                        !- Output:Variable Name
+    Joe_ep_fmu.fmu,          !- FMU File Name
+    Joe_ep_fmu,              !- FMU Instance Name
+    epSendPVProduced;        !- FMU Variable Name
+
+ExternalInterface:FunctionalMockupUnitImport:From:Variable,
+    living_unit1,            !- Output:Variable Index Key Name
+    ,                        !- Output:Variable Name
+    Joe_ep_fmu.fmu,          !- FMU File Name
+    Joe_ep_fmu,              !- FMU Instance Name
+    epSendEnergyPurchased;   !- FMU Variable Name
+
+ExternalInterface:FunctionalMockupUnitImport:From:Variable,
+    living_unit1,            !- Output:Variable Index Key Name
+    ,                        !- Output:Variable Name
+    Joe_ep_fmu.fmu,          !- FMU File Name
+    Joe_ep_fmu,              !- FMU Instance Name
+    epSendEnergySurplus;     !- FMU Variable Name
+
+ExternalInterface:FunctionalMockupUnitImport:From:Variable,
+    living_unit1,            !- Output:Variable Index Key Name
+    Site Direct Solar Radiation per Area,  !- Output:Variable Name
+    Joe_ep_fmu.fmu,          !- FMU File Name
+    Joe_ep_fmu,              !- FMU Instance Name
+    epSendSolarRadiation;    !- FMU Variable Name
+
+ExternalInterface:FunctionalMockupUnitImport:From:Variable,
+    living_unit1,            !- Output:Variable Index Key Name
+    ,                        !- Output:Variable Name
+    Joe_ep_fmu.fmu,          !- FMU File Name
+    Joe_ep_fmu,              !- FMU Instance Name
+    epSendDayOfWeek;         !- FMU Variable Name
+
 
 !-   ===========  ALL OBJECTS IN CLASS: EXTERNALINTERFACE:FUNCTIONALMOCKUPUNITIMPORT:TO:SCHEDULE ===========
 
@@ -4215,4 +4271,20 @@ Output:Variable,
     *,                       !- Key Value
     Zone Air Relative Humidity,  !- Variable Name
     Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Site Direct Solar Radiation per Area,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:METER ===========
+
+Output:Meter,
+    Electricity:Facility,    !- Key Name
+    Hourly;                  !- Reporting Frequency
+
+Output:Meter,
+    Electricity:Building,    !- Key Name
+    Hourly;                  !- Reporting Frequency
 
