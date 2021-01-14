@@ -20,6 +20,31 @@ public class Reader extends ReaderBase {
         super(params);
     }
 
+    // Change these variables based on what you need for market and what is sent from controller
+    int numSockets = 1;  // probably better if you send this from controller so that you dont have to change it here too
+    String[] varNames = new String[15];   // add more empty vals if sending more vars
+    String[] doubles = new String[15];
+    String[] dataStrings = new String[numSockets];
+    String[] holder=new String[numSockets];
+    double[] outTemps=new double[numSockets];
+    double[] coolTemps= new double[numSockets]; 
+    double[] heatTemps= new double[numSockets];
+    double[] zoneTemps= new double[numSockets];
+    double[] zoneRHs= new double[numSockets];
+    double[] heatingEnergy= new double[numSockets];
+    double[] coolingEnergy= new double[numSockets];
+    double[] netEnergy= new double[numSockets];
+    double[] energyPurchased= new double[numSockets];
+    double[] energySurplus= new double[numSockets];
+    double[] solarRadiation= new double[numSockets];
+    double[] receivedHeatTemp= new double[numSockets];
+    double[] receivedCoolTemp= new double[numSockets];
+    double[] dayOfWeek= new double[numSockets];
+
+    int[] numVars = new int[numSockets];
+    String varNameSeparater = "@";
+    String doubleSeparater = ",";
+
     private void execute() throws Exception {
         if(super.isLateJoiner()) {
             log.info("turning off time regulation (late joiner)");
@@ -62,6 +87,32 @@ public class Reader extends ReaderBase {
             // time step below                                        //
             ////////////////////////////////////////////////////////////
 
+            // write code here
+
+
+
+            // send stuff to controller.java
+            System.out.println("send from market to controller loop");
+            int size = 0;
+            for(int i=0;i<numSockets;i++){
+                // This is an example of how to send stuff:
+                // // simID = i;  I am leaving this here to remind myself that i is simID for each socket
+                // size = 0;
+                // dataStrings[i] = "epGetStartCooling"+varNameSeparater;
+                // dataStrings[i] = dataStrings[i] + String.valueOf(coolTemps[i]) + doubleSeparater;
+                // size = size +1;
+                // dataStrings[i] = dataStrings[i] + "epGetStartHeating"+varNameSeparater;
+                // dataStrings[i] = dataStrings[i] + String.valueOf(heatTemps[i]) + doubleSeparater;
+                // size = size +1;
+                // System.out.println("dataStrings[simID] = "+ dataStrings[i] );
+
+                Reader_Controller sendReaderInfo = create_Reader_Controller();
+                sendReaderInfo.set_dataString(dataStrings[i]);
+                sendReaderInfo.set_simID(i);
+                sendReaderInfo.set_size(size);
+                System.out.println("Send sendReaderInfo interaction: " + dataStrings[i] + " to socket #" + i);
+                sendReaderInfo.sendInteraction(getLRC(), currentTime + getLookAhead());
+            }
             // Set the interaction's parameters.
             //
             //    Reader_Controller vReader_Controller = create_Reader_Controller();

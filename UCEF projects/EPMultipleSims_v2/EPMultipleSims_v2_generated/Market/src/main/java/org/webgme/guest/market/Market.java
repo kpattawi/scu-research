@@ -21,6 +21,32 @@ public class Market extends MarketBase {
         super(params);
     }
 
+    // Change these variables based on what you need for market and what is sent from controller
+    int numSockets = 1;  // probably better if you send this from controller so that you dont have to change it here too
+    String[] varNames = new String[15];   // add more empty vals if sending more vars
+    String[] doubles = new String[15];
+    String[] dataStrings = new String[numSockets];
+    String[] holder=new String[numSockets];
+    double[] outTemps=new double[numSockets];
+    double[] coolTemps= new double[numSockets]; 
+    double[] heatTemps= new double[numSockets];
+    double[] zoneTemps= new double[numSockets];
+    double[] zoneRHs= new double[numSockets];
+    double[] heatingEnergy= new double[numSockets];
+    double[] coolingEnergy= new double[numSockets];
+    double[] netEnergy= new double[numSockets];
+    double[] energyPurchased= new double[numSockets];
+    double[] energySurplus= new double[numSockets];
+    double[] solarRadiation= new double[numSockets];
+    double[] receivedHeatTemp= new double[numSockets];
+    double[] receivedCoolTemp= new double[numSockets];
+    double[] dayOfWeek= new double[numSockets];
+
+    int[] numVars = new int[numSockets];
+    String varNameSeparater = "@";
+    String doubleSeparater = ",";
+
+
     private void checkReceivedSubscriptions() {
         InteractionRoot interaction = null;
         while ((interaction = getNextInteractionNoWait()) != null) {
@@ -93,6 +119,33 @@ public class Market extends MarketBase {
             // TODO break here if ready to resign and break out of while loop //
             ////////////////////////////////////////////////////////////////////
 
+            // write code here
+
+
+
+            // send stuff to controller.java
+            System.out.println("send from market to controller loop");
+            int size = 0;
+            for(int i=0;i<numSockets;i++){
+                // This is an example of how to send stuff:
+                // // simID = i;  I am leaving this here to remind myself that i is simID for each socket
+                // size = 0;
+                // dataStrings[i] = "epGetStartCooling"+varNameSeparater;
+                // dataStrings[i] = dataStrings[i] + String.valueOf(coolTemps[i]) + doubleSeparater;
+                // size = size +1;
+                // dataStrings[i] = dataStrings[i] + "epGetStartHeating"+varNameSeparater;
+                // dataStrings[i] = dataStrings[i] + String.valueOf(heatTemps[i]) + doubleSeparater;
+                // size = size +1;
+                // System.out.println("dataStrings[simID] = "+ dataStrings[i] );
+
+                Market_Controller sendMarketInfo = create_Market_Controller();
+                sendMarketInfo.set_dataString(dataStrings[i]);
+                sendMarketInfo.set_simID(i);
+                sendMarketInfo.set_size(size);
+                System.out.println("Send sendMarketInfo interaction: " + dataStrings[i] + " to socket #" + i);
+                sendMarketInfo.sendInteraction(getLRC(), currentTime + getLookAhead());
+            }
+
             if (!exitCondition) {
                 currentTime += super.getStepSize();
                 AdvanceTimeRequest newATR =
@@ -115,6 +168,49 @@ public class Market extends MarketBase {
         ///////////////////////////////////////////////////////////////
         // TODO implement how to handle reception of the interaction //
         ///////////////////////////////////////////////////////////////
+
+        // Kaleb // 
+        // Could make global var that holds simIDs but it would just be 0,1,2,...
+        int simID = interaction.get_simID();
+    		numVars[simID] = interaction.get_size();  // not used for anything
+        System.out.println("numVars[simID] = " + numVars[simID]);
+    		holder[simID] = interaction.get_dataString();
+        System.out.println("holder[simID] = "+ holder[simID] );
+
+        System.out.println("handle interaction loop");
+
+        // "varName{varNameSplitter}double{doubleSplitter}"!!!
+        String vars[] = holder[simID].split(doubleSeparater);
+        System.out.println("vars[0] = "+vars[0]);
+        System.out.println("length of vars = " + vars.length);
+        int j;
+        j=0;
+        for( String token : vars){
+              System.out.println("j = "+j);
+                System.out.println("token = " +token);
+                String token1[] = token.split(varNameSeparater);
+                System.out.println("token1[0] = "+token1[0]);
+                System.out.println("token1[1] = "+token1[1]);
+                varNames[j] = token1[0];
+                doubles[j] = token1[1];
+                System.out.println("varNames[j] = "+ varNames[j] );
+                System.out.println("doubles[j] = "+ doubles[j] );
+                j = j+1;
+            }
+
+        for(int i=0; i<varNames.length;i++){
+          System.out.println("i = "+i);
+        // Example how to handle variables (depends on how they were sent from controller)
+        //   if(varNames[i].equals("epSendZoneMeanAirTemp")){
+        //     zoneTemps[simID] = Double.valueOf(doubles[i]);
+        //   }
+        //   else if(varNames[i].equals("epSendOutdoorAirTemp")){
+        //     outTemps[simID] = Double.valueOf(doubles[i]);
+        //   }
+          
+        }
+
+        // Kaleb //
     }
 
     public static void main(String[] args) {
