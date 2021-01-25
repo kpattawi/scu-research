@@ -41,6 +41,8 @@ public class Market extends MarketBase {
     double[] receivedHeatTemp= new double[numSockets];
     double[] receivedCoolTemp= new double[numSockets];
     double[] dayOfWeek= new double[numSockets];
+    double[] predictedEnergy= new double[numSockets];
+    double price = 10; // Choose default price
 
     int[] numVars = new int[numSockets];
     String varNameSeparater = "@";
@@ -126,25 +128,18 @@ public class Market extends MarketBase {
             // send stuff to controller.java
             System.out.println("send from market to controller loop");
             int size = 0;
-            for(int i=0;i<numSockets;i++){
-                // This is an example of how to send stuff:
-                // // simID = i;  I am leaving this here to remind myself that i is simID for each socket
-                // size = 0;
-                // dataStrings[i] = "epGetStartCooling"+varNameSeparater;
-                // dataStrings[i] = dataStrings[i] + String.valueOf(coolTemps[i]) + doubleSeparater;
-                // size = size +1;
-                // dataStrings[i] = dataStrings[i] + "epGetStartHeating"+varNameSeparater;
-                // dataStrings[i] = dataStrings[i] + String.valueOf(heatTemps[i]) + doubleSeparater;
-                // size = size +1;
-                // System.out.println("dataStrings[simID] = "+ dataStrings[i] );
 
-                Market_Controller sendMarketInfo = create_Market_Controller();
-                sendMarketInfo.set_dataString(dataStrings[i]);
-                sendMarketInfo.set_simID(i);
-                sendMarketInfo.set_size(size);
-                System.out.println("Send sendMarketInfo interaction: " + dataStrings[i] + " to socket #" + i);
-                sendMarketInfo.sendInteraction(getLRC(), currentTime + getLookAhead());
-            }
+            dataStrings[0] = "price"+varNameSeparater + String.valueOf(price) + doubleSeparater;
+            size = size +1;
+            System.out.println("dataStrings[simID] = "+ dataStrings[0] );
+
+            Market_Controller sendMarketInfo = create_Market_Controller();
+            sendMarketInfo.set_dataString(dataStrings[i]);
+            // sendMarketInfo.set_simID(i);
+            sendMarketInfo.set_size(size);
+            System.out.println("Send sendMarketInfo interaction: " + dataStrings[0]);
+            sendMarketInfo.sendInteraction(getLRC(), currentTime + getLookAhead());
+            
 
             if (!exitCondition) {
                 currentTime += super.getStepSize();
@@ -201,9 +196,9 @@ public class Market extends MarketBase {
         for(int i=0; i<varNames.length;i++){
           System.out.println("i = "+i);
         // Example how to handle variables (depends on how they were sent from controller)
-        //   if(varNames[i].equals("epSendZoneMeanAirTemp")){
-        //     zoneTemps[simID] = Double.valueOf(doubles[i]);
-        //   }
+          if(varNames[i].equals("TODO predictedEnergy")){
+            predictedEnergy[simID] = Double.valueOf(doubles[i]);
+          }
         //   else if(varNames[i].equals("epSendOutdoorAirTemp")){
         //     outTemps[simID] = Double.valueOf(doubles[i]);
         //   }
