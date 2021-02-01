@@ -50,6 +50,7 @@ public class Controller extends ControllerBase {
     double[] receivedHeatTemp= new double[numSockets];
     double[] receivedCoolTemp= new double[numSockets];
     double[] dayOfWeek= new double[numSockets];
+    double price = 10; // Set a default price here
 
     int[] numVars = new int[numSockets];
     String varNameSeparater = "@";
@@ -324,8 +325,30 @@ public class Controller extends ControllerBase {
           // Kaleb //
           // varName first!!!
 
-          System.out.println("send interactions loop");
+          System.out.println("send to market loop")
           int size = 0;
+          for(int i=0;i<numSockets;i++){
+            // TODO might need to differentiate houses energy somehow
+            // simID = i;  I am leaving this here to remind myself that i is simID for each socket
+            dataStrings[i] = "predictedEnergy"+varNameSeparater;
+            dataStrings[i] = dataStrings[i] + String.valueOf(TODO predicted energy here) + doubleSeparater;
+            size = size +1;
+            System.out.println("dataStrings[simID] = "+ dataStrings[i] );
+          }
+
+          // Outside of loop because only send once to market
+          Controller_Market sendMarket = create_Controller_Market();
+          sendMarket.set_dataString(dataStrings[i]);
+          sendMarket.set_simID(i);
+          sendMarket.set_size(size);
+          System.out.println("Send sendMarket interaction: " + coolTemps[i] + " to socket #" + i);
+          sendMarket.sendInteraction(getLRC(), currentTime + getLookAhead());
+          
+          
+
+
+          System.out.println("send to sockets interactions loop");
+          size = 0;
           for(int i=0;i<numSockets;i++){
             // simID = i;  I am leaving this here to remind myself that i is simID for each socket
             size = 0;
@@ -445,6 +468,9 @@ public class Controller extends ControllerBase {
           }
           else if(varNames[i].equals("epSendCoolingSetpoint")){
             receivedCoolTemp[simID] = Double.valueOf(doubles[i]);
+          }
+          else if(varNames[i].equals("price")){
+            price = Double.valueOf(doubles[i]);
           }
         }
 
