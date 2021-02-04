@@ -1,0 +1,91 @@
+
+========================= fmiInstantiateSlave =========================
+FMU LOCATION: tmp-fmus\Joe_ep_fmu.fmu_Joe_ep_fmu
+XML LOCATION: tmp-fmus/Joe_ep_fmu.fmu_Joe_ep_fmu/modelDescription.xml
+myNumStates: ----------- 0
+myNumEventIndicators: -- 0
+myNumVars: ------------- 14
+NOTE:
+	- EnergyPlus cannot be one day duration (for warmup distinction).
+	- Should look into finding total "input" and "output" causalities.
+		-- Information will change allocation for my_values array.
+	- Inaccuracies exist when turning recieving string value to float.
+	- Initial conditions (first iteration) hardcoded here. 
+		-- Will be replaced by socket before E+ reads it.
+
+========================= fmiInitializeSlave =========================
+------ STARTING SOCKET CONNECTION ------
+Initializing Winsock...
+...Initialized.
+...Socket created.
+Ipaddress from config file
+buff = IP Address:  ,192.168.1.41, //Input the IP address here
+
+IP address = 192.168.1.41
+Port Number = 6789
+...Connected
+
+========================= fmiSetReal =========================
+MASTER (E+) SENDING VARS TO SLAVE (fmu)
+RECIEVED var from E+
+	Name: ------------- epSendZoneMeanAirTemp
+	Value: ------------ 9.80
+	Value Reference: -- '1'
+RECIEVED var from E+
+	Name: ------------- epSendOutdoorAirTemp
+	Value: ------------ 6.79
+	Value Reference: -- '2'
+RECIEVED var from E+
+	Name: ------------- epSendZoneHumidity
+	Value: ------------ 46.15
+	Value Reference: -- '3'
+
+========================= fmiDoStep (0 sec) =========================
+1: 9.803810 ---------- epSendZoneMeanAirTemp
+2: 6.791667 ---------- epSendOutdoorAirTemp
+<---------- Sending Data ---------->
+	Preparing to send epSendZoneMeanAirTemp as 9.803810
+	Preparing to send epSendOutdoorAirTemp as 6.791667
+	Preparing to send epSendZoneHumidity as 46.153519
+	Data Sent!
+----------> Recieving Data <----------
+	Data Recieved! 
+	Recieved Header as NOUPDATE
+No expected headers found
+
+========================= fmiGetReal =========================
+MASTER (E+) GETTING VARS FROM SLAVE (fmu)
+SENT var to E+
+	Name: ------------- epGetStartHeating 
+	Value: ------------ 0.00 
+	Value Reference --- '4' 
+SENT var to E+
+	Name: ------------- epGetStartCooling 
+	Value: ------------ 0.00 
+	Value Reference --- '5' 
+
+========================= fmiSetReal =========================
+MASTER (E+) SENDING VARS TO SLAVE (fmu)
+RECIEVED var from E+
+	Name: ------------- epSendZoneMeanAirTemp
+	Value: ------------ 9.67
+	Value Reference: -- '1'
+RECIEVED var from E+
+	Name: ------------- epSendOutdoorAirTemp
+	Value: ------------ 6.74
+	Value Reference: -- '2'
+RECIEVED var from E+
+	Name: ------------- epSendZoneHumidity
+	Value: ------------ 46.38
+	Value Reference: -- '3'
+
+========================= fmiDoStep (300 sec) =========================
+1: 9.668057 ---------- epSendZoneMeanAirTemp
+2: 6.741667 ---------- epSendOutdoorAirTemp
+<---------- Sending Data ---------->
+	Preparing to send epSendZoneMeanAirTemp as 9.668057
+	Preparing to send epSendOutdoorAirTemp as 6.741667
+	Preparing to send epSendZoneHumidity as 46.382504
+	Data Sent!
+----------> Recieving Data <----------
+	Data Recieved! 
