@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <copy todir="/home/vagrant/Desktop/old/KalebsFed/KalebsFed_generated/Adder/target/conf" overwrite="true">
+    <fileset dir="/home/vagrant/Desktop/old/KalebsFed/KalebsFed_generated/Adder/conf"/>
+  </copy>
+  <copy todir="/home/vagrant/Desktop/old/KalebsFed/KalebsFed_generated/Adder/target" overwrite="true">
+    <fileset file="/home/vagrant/Desktop/old/KalebsFed/KalebsFed_generated/Adder/RTI.rid"/>
+  </copy>
+</target>
+</project>

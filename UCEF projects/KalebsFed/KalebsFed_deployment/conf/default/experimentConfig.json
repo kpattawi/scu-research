@@ -1,0 +1,26 @@
+{
+  "federateTypesAllowed": [
+    "Adder",
+    "DisplayNumber"
+  ],
+  "expectedFederates": [
+    {
+      "federateType": "Adder",
+      "count": 1
+    },
+    {
+      "federateType": "DisplayNumber",
+      "count": 1
+    }
+  ],
+  "lateJoinerFederates": [
+    {
+      "federateType": "Adder",
+      "count": 0
+    },
+    {
+      "federateType": "DisplayNumber",
+      "count": 0
+    }
+  ]
+}

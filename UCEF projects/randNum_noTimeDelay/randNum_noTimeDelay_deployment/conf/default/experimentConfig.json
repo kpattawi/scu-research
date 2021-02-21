@@ -1,0 +1,26 @@
+{
+  "federateTypesAllowed": [
+    "NumGen",
+    "Receiver"
+  ],
+  "expectedFederates": [
+    {
+      "federateType": "NumGen",
+      "count": 1
+    },
+    {
+      "federateType": "Receiver",
+      "count": 1
+    }
+  ],
+  "lateJoinerFederates": [
+    {
+      "federateType": "NumGen",
+      "count": 0
+    },
+    {
+      "federateType": "Receiver",
+      "count": 0
+    }
+  ]
+}
