@@ -103,7 +103,7 @@ public class Receiver extends ReceiverBase {
 
             Receiver_NumGen vReceiver_NumGen = create_Receiver_NumGen();
             vReceiver_NumGen.set_sum(sum);
-            vReceiver_NumGen.sendInteraction(getLRC(), currentTime +getLookAhead());
+            vReceiver_NumGen.sendInteraction(getLRC());
 
             // Set the interaction's parameters.
             //

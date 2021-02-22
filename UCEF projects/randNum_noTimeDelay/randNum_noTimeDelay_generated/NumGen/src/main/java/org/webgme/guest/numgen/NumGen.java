@@ -110,21 +110,21 @@ public class NumGen extends NumGenBase {
             NumGen_Receiver timeInteraction1 = create_NumGen_Receiver();
             timeInteraction1.set_randNum(random_double1);
             timeInteraction1.set_timestep(timestep);
-            timeInteraction1.sendInteraction(getLRC(), currentTime + getLookAhead());
+            timeInteraction1.sendInteraction(getLRC());
 
             NumGen_Receiver timeInteraction2 = create_NumGen_Receiver();
             timeInteraction2.set_randNum(random_double2);
             timeInteraction2.set_timestep(timestep);
-            timeInteraction2.sendInteraction(getLRC(), currentTime + getLookAhead());
+            timeInteraction2.sendInteraction(getLRC());
 
             NumGen_Receiver timeInteraction3 = create_NumGen_Receiver();
             timeInteraction3.set_randNum(random_double3);
             timeInteraction3.set_timestep(timestep);
-            timeInteraction3.sendInteraction(getLRC(), currentTime + getLookAhead());
+            timeInteraction3.sendInteraction(getLRC());
 
             Simtime vSimtime = create_Simtime();
             vSimtime.set_timestep(timestep);
-            vSimtime.sendInteraction(getLRC(), currentTime + getLookAhead());
+            vSimtime.sendInteraction(getLRC());
 
             // Set the interaction's parameters.
             //
