@@ -62,18 +62,7 @@ public class Receiver extends ReceiverBase {
             log.info("...synchronized on readyToPopulate");
         }
 
-        // removing time delay...
-        while (!receivedSimTime){
-            log.info("waiting to receive SimTime...");
-            synchronized(lrc){
-                lrc.tick();
-            }
-            checkReceivedSubscriptions();
-            if(!receivedSimTime){
-                CpswtUtils.sleep(1000);
-            }
-        }
-        //
+        
 
         ///////////////////////////////////////////////////////////////////////
         // TODO perform initialization that depends on other federates below //
@@ -91,6 +80,20 @@ public class Receiver extends ReceiverBase {
         while (!exitCondition) {
             atr.requestSyncStart();
             enteredTimeGrantedState();
+
+            // removing time delay...
+            receivedSimTime = false;
+            while (!receivedSimTime){
+                log.info("waiting to receive SimTime...");
+                synchronized(lrc){
+                    lrc.tick();
+                }
+                checkReceivedSubscriptions();
+                if(!receivedSimTime){
+                    CpswtUtils.sleep(1000);
+                }
+            }
+            //
 
             ////////////////////////////////////////////////////////////
             // TODO send interactions that must be sent every logical //
@@ -152,7 +155,7 @@ public class Receiver extends ReceiverBase {
         else if(rand2 ==-1){
             rand2 = interaction.get_randNum();
         }
-        else{
+        else if(rand3 ==-1){
             rand3 = interaction.get_randNum();
         }
     }

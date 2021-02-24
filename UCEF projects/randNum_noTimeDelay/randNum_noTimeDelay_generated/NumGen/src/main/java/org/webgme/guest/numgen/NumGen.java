@@ -23,6 +23,7 @@ public class NumGen extends NumGenBase {
     }
 
     boolean receivedSimTime = false;
+    boolean firstInteraction= true;
     double sum = 0;
 
     private void checkReceivedSubscriptions() {
@@ -56,18 +57,7 @@ public class NumGen extends NumGenBase {
             readyToPopulate();
             log.info("...synchronized on readyToPopulate");
         }
-        // removing time delay...
-        while (!receivedSimTime){
-            log.info("waiting to receive SimTime...");
-            synchronized(lrc){
-                lrc.tick();
-            }
-            checkReceivedSubscriptions();
-            if(!receivedSimTime){
-                CpswtUtils.sleep(1000);
-            }
-        }
-        //
+        
 
         ///////////////////////////////////////////////////////////////////////
         // TODO perform initialization that depends on other federates below //
@@ -85,6 +75,24 @@ public class NumGen extends NumGenBase {
         while (!exitCondition) {
             atr.requestSyncStart();
             enteredTimeGrantedState();
+
+            // removing time delay...
+            receivedSimTime = false;
+            if(firstInteraction){
+                receivedSimTime = true;
+                firstInteraction = false;
+            }
+            while (!receivedSimTime){
+                log.info("waiting to receive SimTime...");
+                synchronized(lrc){
+                    lrc.tick();
+                }
+                checkReceivedSubscriptions();
+                if(!receivedSimTime){
+                    CpswtUtils.sleep(1000);
+                }
+            }
+            //
 
             ////////////////////////////////////////////////////////////
             // TODO send interactions that must be sent every logical //
@@ -147,7 +155,7 @@ public class NumGen extends NumGenBase {
 
             checkReceivedSubscriptions();
 
-            ////////////////////////////////////////////////////////////////////
+            /////////////////////////////////+///////////////////////////////////
             // TODO break here if ready to resign and break out of while loop //
             ////////////////////////////////////////////////////////////////////
 
