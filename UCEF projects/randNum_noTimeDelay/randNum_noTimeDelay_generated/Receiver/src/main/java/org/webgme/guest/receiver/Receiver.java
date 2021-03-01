@@ -26,6 +26,9 @@ public class Receiver extends ReceiverBase {
     double rand1 = -1;
     double rand2 = -1;
     double rand3 = -1;
+    int time1 = -1;
+    int time2 = -1;
+    int time3 = -1;
     
     private void checkReceivedSubscriptions() {
         InteractionRoot interaction = null;
@@ -103,9 +106,19 @@ public class Receiver extends ReceiverBase {
             double sum = rand1 + rand2 + rand3;
             log.info("sum: ",sum);
             System.out.println("sum: "+sum);
+            int timestep = (int)currentTime;
+            log.info("timestep: ",timestep);
+            System.out.println("timestep: "+timestep);
+            log.info("time1: ",time1);
+            System.out.println("time1: "+time1);
+            log.info("time2: ",time2);
+            System.out.println("time2: "+time2);
+            log.info("time3: ",time3);
+            System.out.println("time3: "+time3);
 
             Receiver_NumGen vReceiver_NumGen = create_Receiver_NumGen();
             vReceiver_NumGen.set_sum(sum);
+            vReceiver_NumGen.set_timestep(timestep);
             vReceiver_NumGen.sendInteraction(getLRC());
 
             // Set the interaction's parameters.
@@ -151,12 +164,15 @@ public class Receiver extends ReceiverBase {
 
         if(rand1 == -1){
             rand1= interaction.get_randNum();
+            time1 = interaction.get_timestep();
         }
         else if(rand2 ==-1){
             rand2 = interaction.get_randNum();
+            time2 = interaction.get_timestep();
         }
         else if(rand3 ==-1){
             rand3 = interaction.get_randNum();
+            time3 = interaction.get_timestep();
         }
     }
 

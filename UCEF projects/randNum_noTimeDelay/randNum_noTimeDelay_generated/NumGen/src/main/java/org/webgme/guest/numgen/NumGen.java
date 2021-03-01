@@ -25,6 +25,7 @@ public class NumGen extends NumGenBase {
     boolean receivedSimTime = false;
     boolean firstInteraction= true;
     double sum = 0;
+    int timeRec = 0;
 
     private void checkReceivedSubscriptions() {
         InteractionRoot interaction = null;
@@ -182,6 +183,7 @@ public class NumGen extends NumGenBase {
         // TODO implement how to handle reception of the interaction //
         ///////////////////////////////////////////////////////////////
         sum = interaction.get_sum();
+        timeRec = interaction.get_timestep();
         receivedSimTime = true;
     }
 
