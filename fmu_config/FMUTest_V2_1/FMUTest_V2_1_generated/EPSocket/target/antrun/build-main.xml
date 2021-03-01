@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <copy todir="/home/vagrant/Project/FMUTest_V2_1/FMUTest_V2_1_generated/EPSocket/target/conf" overwrite="true">
+    <fileset dir="/home/vagrant/Project/FMUTest_V2_1/FMUTest_V2_1_generated/EPSocket/conf"/>
+  </copy>
+  <copy todir="/home/vagrant/Project/FMUTest_V2_1/FMUTest_V2_1_generated/EPSocket/target" overwrite="true">
+    <fileset file="/home/vagrant/Project/FMUTest_V2_1/FMUTest_V2_1_generated/EPSocket/RTI.rid"/>
+  </copy>
+</target>
+</project>

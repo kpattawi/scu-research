@@ -1,0 +1,26 @@
+{
+  "federateTypesAllowed": [
+    "EPSocket",
+    "Thermostat"
+  ],
+  "expectedFederates": [
+    {
+      "federateType": "EPSocket",
+      "count": 1
+    },
+    {
+      "federateType": "Thermostat",
+      "count": 1
+    }
+  ],
+  "lateJoinerFederates": [
+    {
+      "federateType": "EPSocket",
+      "count": 0
+    },
+    {
+      "federateType": "Thermostat",
+      "count": 0
+    }
+  ]
+}

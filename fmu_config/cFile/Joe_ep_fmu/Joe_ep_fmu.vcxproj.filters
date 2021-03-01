@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Parser Files">
+      <UniqueIdentifier>{12e8dd0a-6f08-4d3a-85fd-994575fa5003}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FMU Header Files">
+      <UniqueIdentifier>{8dd094b4-2917-4e66-a8ae-14c8cf405966}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Parser_Files\stack.c">
+      <Filter>Parser Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser_Files\xml_parser.c">
+      <Filter>Parser Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser_Files\xmlVersionParser.c">
+      <Filter>Parser Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Joe_ep_fmu.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FMU_Header_Files\fmiFunctions.h">
+      <Filter>FMU Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FMU_Header_Files\fmiPlatformTypes.h">
+      <Filter>FMU Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser_Files\expat.h">
+      <Filter>Parser Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser_Files\expat_external.h">
+      <Filter>Parser Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser_Files\stack.h">
+      <Filter>Parser Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser_Files\xml_parser.h">
+      <Filter>Parser Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser_Files\xmlVersionParser.h">
+      <Filter>Parser Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FMU_Header_Files\Joe_ep_fmu.h">
+      <Filter>FMU Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
