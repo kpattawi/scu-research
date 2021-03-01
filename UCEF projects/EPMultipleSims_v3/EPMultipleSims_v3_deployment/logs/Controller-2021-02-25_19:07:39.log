@@ -1,0 +1,46 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building EPMultipleSims_v3_exec 0.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- exec-maven-plugin:1.5.0:java (default-cli) @ EPMultipleSims_v3_exec ---
+
+-------------------------------------------------------------------
+GMS: address=vagrant-17232, cluster=EPMultipleSims_v3, physical address=192.168.1.41:43801
+-------------------------------------------------------------------
+19:08:02.239 [org.webgme.guest.controller.Controller.main()] INFO  org.webgme.guest.controller.Controller - waiting on readyToPopulate...
+19:08:53.369 [org.webgme.guest.controller.Controller.main()] INFO  org.webgme.guest.controller.Controller - ...synchronized on readyToPopulate
+19:08:53.370 [org.webgme.guest.controller.Controller.main()] INFO  org.webgme.guest.controller.Controller - waiting on readyToRun...
+19:08:53.623 [org.webgme.guest.controller.Controller.main()] INFO  org.webgme.guest.controller.Controller - ...synchronized on readyToRun
+19:08:53.628 [org.webgme.guest.controller.Controller.main()] INFO  org.webgme.guest.controller.Controller - started logical time progression
+19:08:53.629 [org.webgme.guest.controller.Controller.main()] INFO  org.webgme.guest.controller.Controller - waiting to receive SimTime...
+19:08:54.636 [org.webgme.guest.controller.Controller.main()] INFO  org.webgme.guest.controller.Controller - waiting to receive SimTime...
+numVars[simID] = 0
+holder[simID] = epSendZoneMeanAirTemp@23.000000,epSendOutdoorAirTemp@6.791667,epSendZoneHumidity@34.716831,
+handle interaction loop
+vars[0] = epSendZoneMeanAirTemp@23.000000
+length of vars = 3
+j = 0
+token = epSendZoneMeanAirTemp@23.000000
+token1[0] = epSendZoneMeanAirTemp
+token1[1] = 23.000000
+varNames[j] = epSendZoneMeanAirTemp
+doubles[j] = 23.000000
+j = 1
+token = epSendOutdoorAirTemp@6.791667
+token1[0] = epSendOutdoorAirTemp
+token1[1] = 6.791667
+varNames[j] = epSendOutdoorAirTemp
+doubles[j] = 6.791667
+j = 2
+token = epSendZoneHumidity@34.716831
+token1[0] = epSendZoneHumidity
+token1[1] = 34.716831
+varNames[j] = epSendZoneHumidity
+doubles[j] = 34.716831
+i = 0
+i = 1
+i = 2
+i = 3
+19:08:54.647 [org.webgme.guest.controller.Controller.main()] ERROR org.webgme.guest.controller.Controller - java.lang.NullPointerException

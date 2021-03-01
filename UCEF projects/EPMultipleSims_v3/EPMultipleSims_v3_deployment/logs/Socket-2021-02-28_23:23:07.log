@@ -1,0 +1,1597 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building EPMultipleSims_v3_exec 0.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- exec-maven-plugin:1.5.0:java (default-cli) @ EPMultipleSims_v3_exec ---
+
+-------------------------------------------------------------------
+GMS: address=vagrant-58238, cluster=EPMultipleSims_v3, physical address=192.168.1.41:34347
+-------------------------------------------------------------------
+connection successful
+23:27:16.546 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - connection successful
+23:27:16.554 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting on readyToPopulate...
+23:27:16.809 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - ...synchronized on readyToPopulate
+23:27:16.809 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting on readyToRun...
+23:27:17.069 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - ...synchronized on readyToRun
+23:27:17.071 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - started logical time progression
+in loop header=UPDATE t=0
+Received: epSendZoneMeanAirTemp as 23.000002
+Received: epSendOutdoorAirTemp as 7.800000
+Received: epSendZoneHumidity as 35.553680
+Received: epGetStartHeating as 23.000000
+Received: epGetStartCooling as 25.000000
+23:27:17.073 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@23.000002,epSendOutdoorAirTemp@7.800000,epSendZoneHumidity@35.553680,
+23:27:17.075 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:18.082 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:19.093 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@21.699999999999996,epGetStartHeating@18.9,
+vars[0] = epGetStartCooling@21.699999999999996
+token = epGetStartCooling@21.699999999999996
+token1[0] = epGetStartCooling
+token1[1] = 21.699999999999996
+varNames[j] = epGetStartCooling
+doubles[j] = 21.699999999999996
+token = epGetStartHeating@18.9
+token1[0] = epGetStartHeating
+token1[1] = 18.9
+varNames[j] = epGetStartHeating
+doubles[j] = 18.9
+ReceivedData interaction epGetStartCooling as 21.699999999999996
+Received Cooling setpoint asepGetStartCooling21.699999999999996
+23:27:19.103 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 21.699999999999996
+SET
+0
+epGetStartCooling
+21.699999999999996
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=3600
+Received: epSendZoneMeanAirTemp as 23.000023
+Received: epSendOutdoorAirTemp as 7.200000
+Received: epSendZoneHumidity as 35.800381
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 21.700001
+23:27:19.183 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@23.000023,epSendOutdoorAirTemp@7.200000,epSendZoneHumidity@35.800381,
+23:27:19.184 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:20.196 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:21.203 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@21.699999999999996,epGetStartHeating@18.9,
+vars[0] = epGetStartCooling@21.699999999999996
+token = epGetStartCooling@21.699999999999996
+token1[0] = epGetStartCooling
+token1[1] = 21.699999999999996
+varNames[j] = epGetStartCooling
+doubles[j] = 21.699999999999996
+token = epGetStartHeating@18.9
+token1[0] = epGetStartHeating
+token1[1] = 18.9
+varNames[j] = epGetStartHeating
+doubles[j] = 18.9
+ReceivedData interaction epGetStartCooling as 21.699999999999996
+Received Cooling setpoint asepGetStartCooling21.699999999999996
+23:27:21.217 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 21.699999999999996
+SET
+3600
+epGetStartCooling
+21.699999999999996
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=7200
+Received: epSendZoneMeanAirTemp as 20.749512
+Received: epSendOutdoorAirTemp as 7.200000
+Received: epSendZoneHumidity as 41.516056
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 21.700001
+23:27:21.285 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@20.749512,epSendOutdoorAirTemp@7.200000,epSendZoneHumidity@41.516056,
+23:27:21.286 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:22.290 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:23.304 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@18.9,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@18.9
+token1[0] = epGetStartHeating
+token1[1] = 18.9
+varNames[j] = epGetStartHeating
+doubles[j] = 18.9
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:27:23.310 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+7200
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=10800
+Received: epSendZoneMeanAirTemp as 19.982122
+Received: epSendOutdoorAirTemp as 6.700000
+Received: epSendZoneHumidity as 43.399567
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:27:23.382 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@19.982122,epSendOutdoorAirTemp@6.700000,epSendZoneHumidity@43.399567,
+23:27:23.385 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:24.386 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:25.392 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@19.5,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@19.5
+token1[0] = epGetStartHeating
+token1[1] = 19.5
+varNames[j] = epGetStartHeating
+doubles[j] = 19.5
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:27:25.399 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+10800
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=14400
+Received: epSendZoneMeanAirTemp as 19.158993
+Received: epSendOutdoorAirTemp as 6.100000
+Received: epSendZoneHumidity as 45.573044
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:27:25.479 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@19.158993,epSendOutdoorAirTemp@6.100000,epSendZoneHumidity@45.573044,
+23:27:25.479 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:26.480 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:27.486 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@19.5,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@19.5
+token1[0] = epGetStartHeating
+token1[1] = 19.5
+varNames[j] = epGetStartHeating
+doubles[j] = 19.5
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:27:27.497 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+14400
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=18000
+Received: epSendZoneMeanAirTemp as 18.202431
+Received: epSendOutdoorAirTemp as 4.400000
+Received: epSendZoneHumidity as 47.427799
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:27:27.578 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@18.202431,epSendOutdoorAirTemp@4.400000,epSendZoneHumidity@47.427799,
+23:27:27.579 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:28.579 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:29.586 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@20.1,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@20.1
+token1[0] = epGetStartHeating
+token1[1] = 20.1
+varNames[j] = epGetStartHeating
+doubles[j] = 20.1
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:27:29.593 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+18000
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=21600
+Received: epSendZoneMeanAirTemp as 17.611454
+Received: epSendOutdoorAirTemp as 4.400000
+Received: epSendZoneHumidity as 48.637718
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:27:29.667 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@17.611454,epSendOutdoorAirTemp@4.400000,epSendZoneHumidity@48.637718,
+23:27:29.668 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:30.672 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:31.681 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@20.1,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@20.1
+token1[0] = epGetStartHeating
+token1[1] = 20.1
+varNames[j] = epGetStartHeating
+doubles[j] = 20.1
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:27:31.690 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+21600
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=25200
+Received: epSendZoneMeanAirTemp as 17.264883
+Received: epSendOutdoorAirTemp as 6.100000
+Received: epSendZoneHumidity as 49.007500
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:27:31.759 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@17.264883,epSendOutdoorAirTemp@6.100000,epSendZoneHumidity@49.007500,
+23:27:31.765 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:32.767 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:33.779 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@20.1,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@20.1
+token1[0] = epGetStartHeating
+token1[1] = 20.1
+varNames[j] = epGetStartHeating
+doubles[j] = 20.1
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:27:33.790 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+25200
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=28800
+Received: epSendZoneMeanAirTemp as 16.806530
+Received: epSendOutdoorAirTemp as 5.000000
+Received: epSendZoneHumidity as 49.579430
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:27:33.855 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@16.806530,epSendOutdoorAirTemp@5.000000,epSendZoneHumidity@49.579430,
+23:27:33.856 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:34.857 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:35.863 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@20.1,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@20.1
+token1[0] = epGetStartHeating
+token1[1] = 20.1
+varNames[j] = epGetStartHeating
+doubles[j] = 20.1
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:27:35.870 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+28800
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=32400
+Received: epSendZoneMeanAirTemp as 17.228474
+Received: epSendOutdoorAirTemp as 7.800000
+Received: epSendZoneHumidity as 48.495724
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:27:35.937 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@17.228474,epSendOutdoorAirTemp@7.800000,epSendZoneHumidity@48.495724,
+23:27:35.938 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:36.938 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:37.949 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@20.1,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@20.1
+token1[0] = epGetStartHeating
+token1[1] = 20.1
+varNames[j] = epGetStartHeating
+doubles[j] = 20.1
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:27:37.956 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+32400
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=36000
+Received: epSendZoneMeanAirTemp as 17.789078
+Received: epSendOutdoorAirTemp as 8.900000
+Received: epSendZoneHumidity as 47.818905
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:27:38.037 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@17.789078,epSendOutdoorAirTemp@8.900000,epSendZoneHumidity@47.818905,
+23:27:38.037 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:39.037 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:40.045 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@20.1,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@20.1
+token1[0] = epGetStartHeating
+token1[1] = 20.1
+varNames[j] = epGetStartHeating
+doubles[j] = 20.1
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:27:40.052 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+36000
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=39600
+Received: epSendZoneMeanAirTemp as 18.360071
+Received: epSendOutdoorAirTemp as 9.400000
+Received: epSendZoneHumidity as 47.959103
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:27:40.113 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@18.360071,epSendOutdoorAirTemp@9.400000,epSendZoneHumidity@47.959103,
+23:27:40.119 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:41.122 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:42.130 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@20.1,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@20.1
+token1[0] = epGetStartHeating
+token1[1] = 20.1
+varNames[j] = epGetStartHeating
+doubles[j] = 20.1
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:27:42.136 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+39600
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=43200
+Received: epSendZoneMeanAirTemp as 18.819708
+Received: epSendOutdoorAirTemp as 10.000000
+Received: epSendZoneHumidity as 47.348598
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:27:42.206 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@18.819708,epSendOutdoorAirTemp@10.000000,epSendZoneHumidity@47.348598,
+23:27:42.206 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:43.207 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:44.222 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@20.1,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@20.1
+token1[0] = epGetStartHeating
+token1[1] = 20.1
+varNames[j] = epGetStartHeating
+doubles[j] = 20.1
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:27:44.229 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+43200
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=46800
+Received: epSendZoneMeanAirTemp as 19.395908
+Received: epSendOutdoorAirTemp as 10.600000
+Received: epSendZoneHumidity as 46.655140
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:27:44.308 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@19.395908,epSendOutdoorAirTemp@10.600000,epSendZoneHumidity@46.655140,
+23:27:44.308 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:45.311 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:46.321 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@23.086000000000002,epGetStartHeating@19.686000000000003,
+vars[0] = epGetStartCooling@23.086000000000002
+token = epGetStartCooling@23.086000000000002
+token1[0] = epGetStartCooling
+token1[1] = 23.086000000000002
+varNames[j] = epGetStartCooling
+doubles[j] = 23.086000000000002
+token = epGetStartHeating@19.686000000000003
+token1[0] = epGetStartHeating
+token1[1] = 19.686000000000003
+varNames[j] = epGetStartHeating
+doubles[j] = 19.686000000000003
+ReceivedData interaction epGetStartCooling as 23.086000000000002
+Received Cooling setpoint asepGetStartCooling23.086000000000002
+23:27:46.329 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 23.086000000000002
+SET
+46800
+epGetStartCooling
+23.086000000000002
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=50400
+Received: epSendZoneMeanAirTemp as 20.192425
+Received: epSendOutdoorAirTemp as 11.100000
+Received: epSendZoneHumidity as 45.377399
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 23.086000
+23:27:46.410 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@20.192425,epSendOutdoorAirTemp@11.100000,epSendZoneHumidity@45.377399,
+23:27:46.411 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:47.421 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@23.241,epGetStartHeating@19.841,
+vars[0] = epGetStartCooling@23.241
+token = epGetStartCooling@23.241
+token1[0] = epGetStartCooling
+token1[1] = 23.241
+varNames[j] = epGetStartCooling
+doubles[j] = 23.241
+token = epGetStartHeating@19.841
+token1[0] = epGetStartHeating
+token1[1] = 19.841
+varNames[j] = epGetStartHeating
+doubles[j] = 19.841
+ReceivedData interaction epGetStartCooling as 23.241
+Received Cooling setpoint asepGetStartCooling23.241
+23:27:47.456 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 23.241
+SET
+50400
+epGetStartCooling
+23.241
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=54000
+Received: epSendZoneMeanAirTemp as 21.387861
+Received: epSendOutdoorAirTemp as 13.900000
+Received: epSendZoneHumidity as 41.230350
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 23.240999
+23:27:47.529 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@21.387861,epSendOutdoorAirTemp@13.900000,epSendZoneHumidity@41.230350,
+23:27:47.534 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:48.535 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:49.543 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@24.109,epGetStartHeating@20.109,
+vars[0] = epGetStartCooling@24.109
+token = epGetStartCooling@24.109
+token1[0] = epGetStartCooling
+token1[1] = 24.109
+varNames[j] = epGetStartCooling
+doubles[j] = 24.109
+token = epGetStartHeating@20.109
+token1[0] = epGetStartHeating
+token1[1] = 20.109
+varNames[j] = epGetStartHeating
+doubles[j] = 20.109
+ReceivedData interaction epGetStartCooling as 24.109
+Received Cooling setpoint asepGetStartCooling24.109
+23:27:49.553 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 24.109
+SET
+54000
+epGetStartCooling
+24.109
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=57600
+Received: epSendZoneMeanAirTemp as 21.989531
+Received: epSendOutdoorAirTemp as 13.900000
+Received: epSendZoneHumidity as 38.258739
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 24.108999
+23:27:49.630 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@21.989531,epSendOutdoorAirTemp@13.900000,epSendZoneHumidity@38.258739,
+23:27:49.631 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:50.632 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:51.638 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@24.109,epGetStartHeating@20.109,
+vars[0] = epGetStartCooling@24.109
+token = epGetStartCooling@24.109
+token1[0] = epGetStartCooling
+token1[1] = 24.109
+varNames[j] = epGetStartCooling
+doubles[j] = 24.109
+token = epGetStartHeating@20.109
+token1[0] = epGetStartHeating
+token1[1] = 20.109
+varNames[j] = epGetStartHeating
+doubles[j] = 20.109
+ReceivedData interaction epGetStartCooling as 24.109
+Received Cooling setpoint asepGetStartCooling24.109
+23:27:51.650 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 24.109
+SET
+57600
+epGetStartCooling
+24.109
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=61200
+Received: epSendZoneMeanAirTemp as 21.684965
+Received: epSendOutdoorAirTemp as 11.100000
+Received: epSendZoneHumidity as 39.612610
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 24.108999
+23:27:51.732 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@21.684965,epSendOutdoorAirTemp@11.100000,epSendZoneHumidity@39.612610,
+23:27:51.733 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:52.748 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@23.241,epGetStartHeating@19.241,
+vars[0] = epGetStartCooling@23.241
+token = epGetStartCooling@23.241
+token1[0] = epGetStartCooling
+token1[1] = 23.241
+varNames[j] = epGetStartCooling
+doubles[j] = 23.241
+token = epGetStartHeating@19.241
+token1[0] = epGetStartHeating
+token1[1] = 19.241
+varNames[j] = epGetStartHeating
+doubles[j] = 19.241
+ReceivedData interaction epGetStartCooling as 23.241
+Received Cooling setpoint asepGetStartCooling23.241
+23:27:52.755 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 23.241
+SET
+61200
+epGetStartCooling
+23.241
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=64800
+Received: epSendZoneMeanAirTemp as 21.927902
+Received: epSendOutdoorAirTemp as 11.100000
+Received: epSendZoneHumidity as 39.418358
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 23.240999
+23:27:52.826 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@21.927902,epSendOutdoorAirTemp@11.100000,epSendZoneHumidity@39.418358,
+23:27:52.827 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:53.827 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:54.833 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@23.241,epGetStartHeating@19.241,
+vars[0] = epGetStartCooling@23.241
+token = epGetStartCooling@23.241
+token1[0] = epGetStartCooling
+token1[1] = 23.241
+varNames[j] = epGetStartCooling
+doubles[j] = 23.241
+token = epGetStartHeating@19.241
+token1[0] = epGetStartHeating
+token1[1] = 19.241
+varNames[j] = epGetStartHeating
+doubles[j] = 19.241
+ReceivedData interaction epGetStartCooling as 23.241
+Received Cooling setpoint asepGetStartCooling23.241
+23:27:54.840 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 23.241
+SET
+64800
+epGetStartCooling
+23.241
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=68400
+Received: epSendZoneMeanAirTemp as 22.007210
+Received: epSendOutdoorAirTemp as 10.600000
+Received: epSendZoneHumidity as 38.617603
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 23.240999
+23:27:54.908 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@22.007210,epSendOutdoorAirTemp@10.600000,epSendZoneHumidity@38.617603,
+23:27:54.911 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:55.913 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:56.930 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.486,epGetStartHeating@19.086000000000002,
+vars[0] = epGetStartCooling@22.486
+token = epGetStartCooling@22.486
+token1[0] = epGetStartCooling
+token1[1] = 22.486
+varNames[j] = epGetStartCooling
+doubles[j] = 22.486
+token = epGetStartHeating@19.086000000000002
+token1[0] = epGetStartHeating
+token1[1] = 19.086000000000002
+varNames[j] = epGetStartHeating
+doubles[j] = 19.086000000000002
+ReceivedData interaction epGetStartCooling as 22.486
+Received Cooling setpoint asepGetStartCooling22.486
+23:27:56.937 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.486
+SET
+68400
+epGetStartCooling
+22.486
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=72000
+Received: epSendZoneMeanAirTemp as 21.920311
+Received: epSendOutdoorAirTemp as 10.600000
+Received: epSendZoneHumidity as 38.578255
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.486000
+23:27:57.019 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@21.920311,epSendOutdoorAirTemp@10.600000,epSendZoneHumidity@38.578255,
+23:27:57.024 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:58.033 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@23.086000000000002,epGetStartHeating@19.086000000000002,
+vars[0] = epGetStartCooling@23.086000000000002
+token = epGetStartCooling@23.086000000000002
+token1[0] = epGetStartCooling
+token1[1] = 23.086000000000002
+varNames[j] = epGetStartCooling
+doubles[j] = 23.086000000000002
+token = epGetStartHeating@19.086000000000002
+token1[0] = epGetStartHeating
+token1[1] = 19.086000000000002
+varNames[j] = epGetStartHeating
+doubles[j] = 19.086000000000002
+ReceivedData interaction epGetStartCooling as 23.086000000000002
+Received Cooling setpoint asepGetStartCooling23.086000000000002
+23:27:58.040 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 23.086000000000002
+SET
+72000
+epGetStartCooling
+23.086000000000002
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=75600
+Received: epSendZoneMeanAirTemp as 21.523235
+Received: epSendOutdoorAirTemp as 8.900000
+Received: epSendZoneHumidity as 38.975746
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 23.086000
+23:27:58.126 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@21.523235,epSendOutdoorAirTemp@8.900000,epSendZoneHumidity@38.975746,
+23:27:58.126 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:27:59.133 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:00.140 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@18.9,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@18.9
+token1[0] = epGetStartHeating
+token1[1] = 18.9
+varNames[j] = epGetStartHeating
+doubles[j] = 18.9
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:28:00.146 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+75600
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=79200
+Received: epSendZoneMeanAirTemp as 21.241159
+Received: epSendOutdoorAirTemp as 9.400000
+Received: epSendZoneHumidity as 39.022705
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:28:00.207 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@21.241159,epSendOutdoorAirTemp@9.400000,epSendZoneHumidity@39.022705,
+23:28:00.207 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:01.215 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:02.225 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@18.9,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@18.9
+token1[0] = epGetStartHeating
+token1[1] = 18.9
+varNames[j] = epGetStartHeating
+doubles[j] = 18.9
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:28:02.235 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+79200
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=82800
+Received: epSendZoneMeanAirTemp as 20.591383
+Received: epSendOutdoorAirTemp as 7.800000
+Received: epSendZoneHumidity as 40.629578
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:28:02.300 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@20.591383,epSendOutdoorAirTemp@7.800000,epSendZoneHumidity@40.629578,
+23:28:02.300 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:03.305 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:04.313 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@18.9,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@18.9
+token1[0] = epGetStartHeating
+token1[1] = 18.9
+varNames[j] = epGetStartHeating
+doubles[j] = 18.9
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:28:04.320 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+82800
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=86400
+Received: epSendZoneMeanAirTemp as 19.831818
+Received: epSendOutdoorAirTemp as 6.700000
+Received: epSendZoneHumidity as 42.265121
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:28:04.461 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@19.831818,epSendOutdoorAirTemp@6.700000,epSendZoneHumidity@42.265121,
+23:28:04.464 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:05.473 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@19.5,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@19.5
+token1[0] = epGetStartHeating
+token1[1] = 19.5
+varNames[j] = epGetStartHeating
+doubles[j] = 19.5
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:28:05.479 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+86400
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=90000
+Received: epSendZoneMeanAirTemp as 19.453327
+Received: epSendOutdoorAirTemp as 8.900000
+Received: epSendZoneHumidity as 44.145069
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:28:05.559 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@19.453327,epSendOutdoorAirTemp@8.900000,epSendZoneHumidity@44.145069,
+23:28:05.560 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:06.560 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:07.568 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@19.5,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@19.5
+token1[0] = epGetStartHeating
+token1[1] = 19.5
+varNames[j] = epGetStartHeating
+doubles[j] = 19.5
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:28:07.574 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+90000
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=93600
+Received: epSendZoneMeanAirTemp as 18.599989
+Received: epSendOutdoorAirTemp as 6.100000
+Received: epSendZoneHumidity as 45.359180
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:28:07.641 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@18.599989,epSendOutdoorAirTemp@6.100000,epSendZoneHumidity@45.359180,
+23:28:07.642 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:08.642 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:09.648 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@20.1,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@20.1
+token1[0] = epGetStartHeating
+token1[1] = 20.1
+varNames[j] = epGetStartHeating
+doubles[j] = 20.1
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:28:09.657 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+93600
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=97200
+Received: epSendZoneMeanAirTemp as 17.955200
+Received: epSendOutdoorAirTemp as 5.600000
+Received: epSendZoneHumidity as 46.560646
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:28:09.723 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@17.955200,epSendOutdoorAirTemp@5.600000,epSendZoneHumidity@46.560646,
+23:28:09.724 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:10.725 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:11.733 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@20.1,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@20.1
+token1[0] = epGetStartHeating
+token1[1] = 20.1
+varNames[j] = epGetStartHeating
+doubles[j] = 20.1
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:28:11.739 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+97200
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=100800
+Received: epSendZoneMeanAirTemp as 17.119003
+Received: epSendOutdoorAirTemp as 3.900000
+Received: epSendZoneHumidity as 46.899818
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:28:11.809 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@17.119003,epSendOutdoorAirTemp@3.900000,epSendZoneHumidity@46.899818,
+23:28:11.810 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:12.811 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:13.818 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@20.1,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@20.1
+token1[0] = epGetStartHeating
+token1[1] = 20.1
+varNames[j] = epGetStartHeating
+doubles[j] = 20.1
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:28:13.826 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+100800
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=104400
+Received: epSendZoneMeanAirTemp as 16.740625
+Received: epSendOutdoorAirTemp as 5.600000
+Received: epSendZoneHumidity as 47.907558
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:28:13.894 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@16.740625,epSendOutdoorAirTemp@5.600000,epSendZoneHumidity@47.907558,
+23:28:13.896 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:14.898 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:15.905 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@20.1,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@20.1
+token1[0] = epGetStartHeating
+token1[1] = 20.1
+varNames[j] = epGetStartHeating
+doubles[j] = 20.1
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:28:15.911 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+104400
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=108000
+Received: epSendZoneMeanAirTemp as 16.397259
+Received: epSendOutdoorAirTemp as 7.200000
+Received: epSendZoneHumidity as 48.935062
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:28:15.974 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@16.397259,epSendOutdoorAirTemp@7.200000,epSendZoneHumidity@48.935062,
+23:28:15.975 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:16.977 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:17.985 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@20.1,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@20.1
+token1[0] = epGetStartHeating
+token1[1] = 20.1
+varNames[j] = epGetStartHeating
+doubles[j] = 20.1
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:28:17.991 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+108000
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=111600
+Received: epSendZoneMeanAirTemp as 16.116341
+Received: epSendOutdoorAirTemp as 7.800000
+Received: epSendZoneHumidity as 49.110847
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:28:18.073 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@16.116341,epSendOutdoorAirTemp@7.800000,epSendZoneHumidity@49.110847,
+23:28:18.074 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:19.085 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@20.1,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@20.1
+token1[0] = epGetStartHeating
+token1[1] = 20.1
+varNames[j] = epGetStartHeating
+doubles[j] = 20.1
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:28:19.096 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+111600
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=115200
+Received: epSendZoneMeanAirTemp as 15.710415
+Received: epSendOutdoorAirTemp as 7.200000
+Received: epSendZoneHumidity as 50.496685
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:28:19.158 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@15.710415,epSendOutdoorAirTemp@7.200000,epSendZoneHumidity@50.496685,
+23:28:19.158 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:20.161 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@20.1,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@20.1
+token1[0] = epGetStartHeating
+token1[1] = 20.1
+varNames[j] = epGetStartHeating
+doubles[j] = 20.1
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:28:20.170 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+115200
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=118800
+Received: epSendZoneMeanAirTemp as 16.196383
+Received: epSendOutdoorAirTemp as 10.600000
+Received: epSendZoneHumidity as 47.773861
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:28:20.245 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@16.196383,epSendOutdoorAirTemp@10.600000,epSendZoneHumidity@47.773861,
+23:28:20.245 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:21.248 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:22.255 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@23.086000000000002,epGetStartHeating@20.286000000000005,
+vars[0] = epGetStartCooling@23.086000000000002
+token = epGetStartCooling@23.086000000000002
+token1[0] = epGetStartCooling
+token1[1] = 23.086000000000002
+varNames[j] = epGetStartCooling
+doubles[j] = 23.086000000000002
+token = epGetStartHeating@20.286000000000005
+token1[0] = epGetStartHeating
+token1[1] = 20.286000000000005
+varNames[j] = epGetStartHeating
+doubles[j] = 20.286000000000005
+ReceivedData interaction epGetStartCooling as 23.086000000000002
+Received Cooling setpoint asepGetStartCooling23.086000000000002
+23:28:22.261 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 23.086000000000002
+SET
+118800
+epGetStartCooling
+23.086000000000002
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=122400
+Received: epSendZoneMeanAirTemp as 16.851355
+Received: epSendOutdoorAirTemp as 11.700000
+Received: epSendZoneHumidity as 45.365414
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 23.086000
+23:28:22.342 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@16.851355,epSendOutdoorAirTemp@11.700000,epSendZoneHumidity@45.365414,
+23:28:22.343 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:23.345 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:24.352 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@23.427,epGetStartHeating@20.627000000000002,
+vars[0] = epGetStartCooling@23.427
+token = epGetStartCooling@23.427
+token1[0] = epGetStartCooling
+token1[1] = 23.427
+varNames[j] = epGetStartCooling
+doubles[j] = 23.427
+token = epGetStartHeating@20.627000000000002
+token1[0] = epGetStartHeating
+token1[1] = 20.627000000000002
+varNames[j] = epGetStartHeating
+doubles[j] = 20.627000000000002
+ReceivedData interaction epGetStartCooling as 23.427
+Received Cooling setpoint asepGetStartCooling23.427
+23:28:24.361 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 23.427
+SET
+122400
+epGetStartCooling
+23.427
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=126000
+Received: epSendZoneMeanAirTemp as 17.652233
+Received: epSendOutdoorAirTemp as 13.900000
+Received: epSendZoneHumidity as 42.280685
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 23.427000
+23:28:24.441 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@17.652233,epSendOutdoorAirTemp@13.900000,epSendZoneHumidity@42.280685,
+23:28:24.442 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:25.448 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:26.455 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@24.109,epGetStartHeating@21.309000000000005,
+vars[0] = epGetStartCooling@24.109
+token = epGetStartCooling@24.109
+token1[0] = epGetStartCooling
+token1[1] = 24.109
+varNames[j] = epGetStartCooling
+doubles[j] = 24.109
+token = epGetStartHeating@21.309000000000005
+token1[0] = epGetStartHeating
+token1[1] = 21.309000000000005
+varNames[j] = epGetStartHeating
+doubles[j] = 21.309000000000005
+ReceivedData interaction epGetStartCooling as 24.109
+Received Cooling setpoint asepGetStartCooling24.109
+23:28:26.461 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 24.109
+SET
+126000
+epGetStartCooling
+24.109
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=129600
+Received: epSendZoneMeanAirTemp as 18.392426
+Received: epSendOutdoorAirTemp as 13.900000
+Received: epSendZoneHumidity as 40.078251
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 24.108999
+23:28:26.541 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@18.392426,epSendOutdoorAirTemp@13.900000,epSendZoneHumidity@40.078251,
+23:28:26.541 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:27.542 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:28.551 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@24.109,epGetStartHeating@21.309000000000005,
+vars[0] = epGetStartCooling@24.109
+token = epGetStartCooling@24.109
+token1[0] = epGetStartCooling
+token1[1] = 24.109
+varNames[j] = epGetStartCooling
+doubles[j] = 24.109
+token = epGetStartHeating@21.309000000000005
+token1[0] = epGetStartHeating
+token1[1] = 21.309000000000005
+varNames[j] = epGetStartHeating
+doubles[j] = 21.309000000000005
+ReceivedData interaction epGetStartCooling as 24.109
+Received Cooling setpoint asepGetStartCooling24.109
+23:28:28.558 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 24.109
+SET
+129600
+epGetStartCooling
+24.109
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=133200
+Received: epSendZoneMeanAirTemp as 19.317190
+Received: epSendOutdoorAirTemp as 13.900000
+Received: epSendZoneHumidity as 38.258404
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 24.108999
+23:28:28.637 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@19.317190,epSendOutdoorAirTemp@13.900000,epSendZoneHumidity@38.258404,
+23:28:28.638 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:29.640 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:30.650 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@24.109,epGetStartHeating@21.309000000000005,
+vars[0] = epGetStartCooling@24.109
+token = epGetStartCooling@24.109
+token1[0] = epGetStartCooling
+token1[1] = 24.109
+varNames[j] = epGetStartCooling
+doubles[j] = 24.109
+token = epGetStartHeating@21.309000000000005
+token1[0] = epGetStartHeating
+token1[1] = 21.309000000000005
+varNames[j] = epGetStartHeating
+doubles[j] = 21.309000000000005
+ReceivedData interaction epGetStartCooling as 24.109
+Received Cooling setpoint asepGetStartCooling24.109
+23:28:30.656 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 24.109
+SET
+133200
+epGetStartCooling
+24.109
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=136800
+Received: epSendZoneMeanAirTemp as 19.955231
+Received: epSendOutdoorAirTemp as 13.900000
+Received: epSendZoneHumidity as 37.267445
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 24.108999
+23:28:30.722 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@19.955231,epSendOutdoorAirTemp@13.900000,epSendZoneHumidity@37.267445,
+23:28:30.723 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:31.724 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:32.733 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@24.109,epGetStartHeating@21.309000000000005,
+vars[0] = epGetStartCooling@24.109
+token = epGetStartCooling@24.109
+token1[0] = epGetStartCooling
+token1[1] = 24.109
+varNames[j] = epGetStartCooling
+doubles[j] = 24.109
+token = epGetStartHeating@21.309000000000005
+token1[0] = epGetStartHeating
+token1[1] = 21.309000000000005
+varNames[j] = epGetStartHeating
+doubles[j] = 21.309000000000005
+ReceivedData interaction epGetStartCooling as 24.109
+Received Cooling setpoint asepGetStartCooling24.109
+23:28:32.739 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 24.109
+SET
+136800
+epGetStartCooling
+24.109
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=140400
+Received: epSendZoneMeanAirTemp as 20.707962
+Received: epSendOutdoorAirTemp as 12.200000
+Received: epSendZoneHumidity as 38.017147
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 24.108999
+23:28:32.894 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@20.707962,epSendOutdoorAirTemp@12.200000,epSendZoneHumidity@38.017147,
+23:28:32.895 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:33.902 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@23.582,epGetStartHeating@19.582,
+vars[0] = epGetStartCooling@23.582
+token = epGetStartCooling@23.582
+token1[0] = epGetStartCooling
+token1[1] = 23.582
+varNames[j] = epGetStartCooling
+doubles[j] = 23.582
+token = epGetStartHeating@19.582
+token1[0] = epGetStartHeating
+token1[1] = 19.582
+varNames[j] = epGetStartHeating
+doubles[j] = 19.582
+ReceivedData interaction epGetStartCooling as 23.582
+Received Cooling setpoint asepGetStartCooling23.582
+23:28:33.908 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 23.582
+SET
+140400
+epGetStartCooling
+23.582
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=144000
+Received: epSendZoneMeanAirTemp as 21.342682
+Received: epSendOutdoorAirTemp as 12.800000
+Received: epSendZoneHumidity as 37.067482
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 23.582001
+23:28:33.983 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@21.342682,epSendOutdoorAirTemp@12.800000,epSendZoneHumidity@37.067482,
+23:28:33.984 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:34.985 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:35.994 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@23.768,epGetStartHeating@19.768,
+vars[0] = epGetStartCooling@23.768
+token = epGetStartCooling@23.768
+token1[0] = epGetStartCooling
+token1[1] = 23.768
+varNames[j] = epGetStartCooling
+doubles[j] = 23.768
+token = epGetStartHeating@19.768
+token1[0] = epGetStartHeating
+token1[1] = 19.768
+varNames[j] = epGetStartHeating
+doubles[j] = 19.768
+ReceivedData interaction epGetStartCooling as 23.768
+Received Cooling setpoint asepGetStartCooling23.768
+23:28:36.002 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 23.768
+SET
+144000
+epGetStartCooling
+23.768
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=147600
+Received: epSendZoneMeanAirTemp as 21.056431
+Received: epSendOutdoorAirTemp as 11.100000
+Received: epSendZoneHumidity as 39.199924
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 23.768000
+23:28:36.082 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@21.056431,epSendOutdoorAirTemp@11.100000,epSendZoneHumidity@39.199924,
+23:28:36.082 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:37.084 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:38.093 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@23.241,epGetStartHeating@19.241,
+vars[0] = epGetStartCooling@23.241
+token = epGetStartCooling@23.241
+token1[0] = epGetStartCooling
+token1[1] = 23.241
+varNames[j] = epGetStartCooling
+doubles[j] = 23.241
+token = epGetStartHeating@19.241
+token1[0] = epGetStartHeating
+token1[1] = 19.241
+varNames[j] = epGetStartHeating
+doubles[j] = 19.241
+ReceivedData interaction epGetStartCooling as 23.241
+Received Cooling setpoint asepGetStartCooling23.241
+23:28:38.105 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 23.241
+SET
+147600
+epGetStartCooling
+23.241
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=151200
+Received: epSendZoneMeanAirTemp as 21.346031
+Received: epSendOutdoorAirTemp as 10.600000
+Received: epSendZoneHumidity as 39.773308
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 23.240999
+23:28:38.179 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@21.346031,epSendOutdoorAirTemp@10.600000,epSendZoneHumidity@39.773308,
+23:28:38.180 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:39.181 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:40.186 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@23.086000000000002,epGetStartHeating@19.086000000000002,
+vars[0] = epGetStartCooling@23.086000000000002
+token = epGetStartCooling@23.086000000000002
+token1[0] = epGetStartCooling
+token1[1] = 23.086000000000002
+varNames[j] = epGetStartCooling
+doubles[j] = 23.086000000000002
+token = epGetStartHeating@19.086000000000002
+token1[0] = epGetStartHeating
+token1[1] = 19.086000000000002
+varNames[j] = epGetStartHeating
+doubles[j] = 19.086000000000002
+ReceivedData interaction epGetStartCooling as 23.086000000000002
+Received Cooling setpoint asepGetStartCooling23.086000000000002
+23:28:40.192 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 23.086000000000002
+SET
+151200
+epGetStartCooling
+23.086000000000002
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=154800
+Received: epSendZoneMeanAirTemp as 21.615541
+Received: epSendOutdoorAirTemp as 11.700000
+Received: epSendZoneHumidity as 39.405758
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 23.086000
+23:28:40.264 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@21.615541,epSendOutdoorAirTemp@11.700000,epSendZoneHumidity@39.405758,
+23:28:40.271 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:41.272 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:42.279 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@23.427,epGetStartHeating@19.427,
+vars[0] = epGetStartCooling@23.427
+token = epGetStartCooling@23.427
+token1[0] = epGetStartCooling
+token1[1] = 23.427
+varNames[j] = epGetStartCooling
+doubles[j] = 23.427
+token = epGetStartHeating@19.427
+token1[0] = epGetStartHeating
+token1[1] = 19.427
+varNames[j] = epGetStartHeating
+doubles[j] = 19.427
+ReceivedData interaction epGetStartCooling as 23.427
+Received Cooling setpoint asepGetStartCooling23.427
+23:28:42.286 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 23.427
+SET
+154800
+epGetStartCooling
+23.427
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=158400
+Received: epSendZoneMeanAirTemp as 21.596758
+Received: epSendOutdoorAirTemp as 11.700000
+Received: epSendZoneHumidity as 38.926876
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 23.427000
+23:28:42.355 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@21.596758,epSendOutdoorAirTemp@11.700000,epSendZoneHumidity@38.926876,
+23:28:42.355 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:43.356 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:44.362 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@23.427,epGetStartHeating@19.427,
+vars[0] = epGetStartCooling@23.427
+token = epGetStartCooling@23.427
+token1[0] = epGetStartCooling
+token1[1] = 23.427
+varNames[j] = epGetStartCooling
+doubles[j] = 23.427
+token = epGetStartHeating@19.427
+token1[0] = epGetStartHeating
+token1[1] = 19.427
+varNames[j] = epGetStartHeating
+doubles[j] = 19.427
+ReceivedData interaction epGetStartCooling as 23.427
+Received Cooling setpoint asepGetStartCooling23.427
+23:28:44.370 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 23.427
+SET
+158400
+epGetStartCooling
+23.427
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=162000
+Received: epSendZoneMeanAirTemp as 21.285179
+Received: epSendOutdoorAirTemp as 10.000000
+Received: epSendZoneHumidity as 40.454010
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 23.427000
+23:28:44.435 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@21.285179,epSendOutdoorAirTemp@10.000000,epSendZoneHumidity@40.454010,
+23:28:44.435 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:45.436 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:46.444 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@18.9,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@18.9
+token1[0] = epGetStartHeating
+token1[1] = 18.9
+varNames[j] = epGetStartHeating
+doubles[j] = 18.9
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:28:46.450 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+162000
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=165600
+Received: epSendZoneMeanAirTemp as 20.919735
+Received: epSendOutdoorAirTemp as 8.900000
+Received: epSendZoneHumidity as 42.503567
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:28:46.518 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@20.919735,epSendOutdoorAirTemp@8.900000,epSendZoneHumidity@42.503567,
+23:28:46.518 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:47.519 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:48.532 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@18.9,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@18.9
+token1[0] = epGetStartHeating
+token1[1] = 18.9
+varNames[j] = epGetStartHeating
+doubles[j] = 18.9
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:28:48.538 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+165600
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=UPDATE t=169200
+Received: epSendZoneMeanAirTemp as 20.513796
+Received: epSendOutdoorAirTemp as 9.400000
+Received: epSendZoneHumidity as 44.080830
+Received: epGetStartHeating as 0.000000
+Received: epGetStartCooling as 22.900000
+23:28:48.613 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@20.513796,epSendOutdoorAirTemp@9.400000,epSendZoneHumidity@44.080830,
+23:28:48.613 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:49.614 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+23:28:50.621 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting to receive SimTime...
+holder = epGetStartCooling@22.9,epGetStartHeating@18.9,
+vars[0] = epGetStartCooling@22.9
+token = epGetStartCooling@22.9
+token1[0] = epGetStartCooling
+token1[1] = 22.9
+varNames[j] = epGetStartCooling
+doubles[j] = 22.9
+token = epGetStartHeating@18.9
+token1[0] = epGetStartHeating
+token1[1] = 18.9
+varNames[j] = epGetStartHeating
+doubles[j] = 18.9
+ReceivedData interaction epGetStartCooling as 22.9
+Received Cooling setpoint asepGetStartCooling22.9
+23:28:50.627 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Received Cooling setpoint as epGetStartCooling = 22.9
+SET
+169200
+epGetStartCooling
+22.9
+epGetStartHeating
+null
+
+
+in loop header=TERMINATE t=
+23:28:50.696 [org.webgme.guest.socket.Socket.main()] ERROR org.webgme.guest.socket.Socket - java.lang.NullPointerException

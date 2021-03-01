@@ -1,0 +1,19 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building EPMultipleSims_v3_exec 0.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- exec-maven-plugin:1.5.0:java (default-cli) @ EPMultipleSims_v3_exec ---
+19:03:07.155 [org.cpswt.host.FederationManagerHostApp.main()] INFO  org.cpswt.hla.FederationManager - No COA definitions were provided!
+19:03:07.158 [org.cpswt.host.FederationManagerHostApp.main()] INFO  org.cpswt.hla.FederationManager - No COA selections were provided!
+19:03:07.159 [org.cpswt.host.FederationManagerHostApp.main()] INFO  org.cpswt.hla.FederationManager - No specific COA-selection was specified for execution!
+19:03:07.159 [org.cpswt.host.FederationManagerHostApp.main()] INFO  org.cpswt.hla.FederationManager - No COAs are used in this experiment.
+
+-------------------------------------------------------------------
+GMS: address=vagrant-37971, cluster=EPMultipleSims_v3, physical address=192.168.1.41:44896
+-------------------------------------------------------------------
+19:03:16.841 [org.cpswt.host.FederationManagerHostApp.main()] INFO  org.cpswt.host.FederationManagerHostApp - Server online at 0.0.0.0:8083 ...
+19:04:22.686 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 0.0 and step = 1.0 and requested_time = 1.0
+WARN  [VERIFY_SUSPECT.TimerThread,EPMultipleSims_v3,vagrant-37971] portico.lrc.jgroups: Detected that federate [Controller-963b2c22-4c65-4671-9c8f-fe50d8f01c14] may have crashed, investigating...
+WARN  [Regular] portico.lrc.jgroups: Federate [Controller-963b2c22-4c65-4671-9c8f-fe50d8f01c14] has crashed. Sending fake resignation because it was too rude to.

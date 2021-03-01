@@ -1,0 +1,19 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building EPMultipleSims_v3_exec 0.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- exec-maven-plugin:1.5.0:java (default-cli) @ EPMultipleSims_v3_exec ---
+
+-------------------------------------------------------------------
+GMS: address=vagrant-26992, cluster=EPMultipleSims_v3, physical address=192.168.1.41:45921
+-------------------------------------------------------------------
+18:58:08.501 [org.webgme.guest.market.Market.main()] INFO  org.webgme.guest.market.Market - waiting on readyToPopulate...
+18:59:26.334 [org.webgme.guest.market.Market.main()] INFO  org.webgme.guest.market.Market - ...synchronized on readyToPopulate
+18:59:26.334 [org.webgme.guest.market.Market.main()] INFO  org.webgme.guest.market.Market - waiting on readyToRun...
+18:59:26.585 [org.webgme.guest.market.Market.main()] INFO  org.webgme.guest.market.Market - ...synchronized on readyToRun
+18:59:26.589 [org.webgme.guest.market.Market.main()] INFO  org.webgme.guest.market.Market - started logical time progression
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,

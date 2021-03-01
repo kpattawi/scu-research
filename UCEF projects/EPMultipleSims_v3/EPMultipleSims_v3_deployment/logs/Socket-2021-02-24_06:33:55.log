@@ -1,0 +1,25 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building EPMultipleSims_v3_exec 0.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- exec-maven-plugin:1.5.0:java (default-cli) @ EPMultipleSims_v3_exec ---
+
+-------------------------------------------------------------------
+GMS: address=vagrant-28614, cluster=EPMultipleSims_v3, physical address=192.168.1.41:54817
+-------------------------------------------------------------------
+connection successful
+06:36:53.384 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - connection successful
+06:36:53.392 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting on readyToPopulate...
+06:36:53.644 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - ...synchronized on readyToPopulate
+06:36:53.645 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - waiting on readyToRun...
+06:36:53.896 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - ...synchronized on readyToRun
+06:36:53.898 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - started logical time progression
+in loop header=UPDATE t=0
+Received: epSendZoneMeanAirTemp as 23.000000
+Received: epSendOutdoorAirTemp as 6.791667
+Received: epSendZoneHumidity as 34.716831
+Received: epGetStartHeating as 23.000000
+Received: epGetStartCooling as 25.000000
+06:36:53.908 [org.webgme.guest.socket.Socket.main()] INFO  org.webgme.guest.socket.Socket - Sent sendEPData interaction from socket0 with epSendZoneMeanAirTemp@23.000000,epSendOutdoorAirTemp@6.791667,epSendZoneHumidity@34.716831,

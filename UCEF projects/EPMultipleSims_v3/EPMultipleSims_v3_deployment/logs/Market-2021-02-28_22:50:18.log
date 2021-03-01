@@ -1,0 +1,1747 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building EPMultipleSims_v3_exec 0.1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- exec-maven-plugin:1.5.0:java (default-cli) @ EPMultipleSims_v3_exec ---
+
+-------------------------------------------------------------------
+GMS: address=vagrant-29649, cluster=EPMultipleSims_v3, physical address=192.168.1.41:40387
+-------------------------------------------------------------------
+22:50:50.865 [org.webgme.guest.market.Market.main()] INFO  org.webgme.guest.market.Market - waiting on readyToPopulate...
+22:51:41.918 [org.webgme.guest.market.Market.main()] INFO  org.webgme.guest.market.Market - ...synchronized on readyToPopulate
+22:51:41.919 [org.webgme.guest.market.Market.main()] INFO  org.webgme.guest.market.Market - waiting on readyToRun...
+22:51:42.170 [org.webgme.guest.market.Market.main()] INFO  org.webgme.guest.market.Market - ...synchronized on readyToRun
+22:51:42.173 [org.webgme.guest.market.Market.main()] INFO  org.webgme.guest.market.Market - started logical time progression
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
+send from market to controller loop
+dataStrings[simID] = price@10.0,
+Send sendMarketInfo interaction: price@10.0,
