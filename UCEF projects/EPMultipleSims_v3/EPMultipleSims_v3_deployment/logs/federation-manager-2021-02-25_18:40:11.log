@@ -1,28 +1,0 @@
-[INFO] Scanning for projects...
-[INFO]                                                                         
-[INFO] ------------------------------------------------------------------------
-[INFO] Building EPMultipleSims_v3_exec 0.1.0-SNAPSHOT
-[INFO] ------------------------------------------------------------------------
-Downloading: http://cpswtng_archiva:8080/repository/internal/org/webgme/guest/controller/Controller/0.1.0-SNAPSHOT/maven-metadata.xml
-Downloading: http://cpswtng_archiva:8080/repository/snapshots/org/webgme/guest/controller/Controller/0.1.0-SNAPSHOT/maven-metadata.xml
-Downloading: http://cpswtng_archiva:8080/repository/internal/org/webgme/guest/market/Market/0.1.0-SNAPSHOT/maven-metadata.xml
-Downloading: http://cpswtng_archiva:8080/repository/snapshots/org/webgme/guest/market/Market/0.1.0-SNAPSHOT/maven-metadata.xml
-Downloading: http://cpswtng_archiva:8080/repository/internal/org/webgme/guest/reader/Reader/0.1.0-SNAPSHOT/maven-metadata.xml
-Downloading: http://cpswtng_archiva:8080/repository/snapshots/org/webgme/guest/reader/Reader/0.1.0-SNAPSHOT/maven-metadata.xml
-Downloading: http://cpswtng_archiva:8080/repository/internal/org/webgme/guest/socket/Socket/0.1.0-SNAPSHOT/maven-metadata.xml
-Downloading: http://cpswtng_archiva:8080/repository/snapshots/org/webgme/guest/socket/Socket/0.1.0-SNAPSHOT/maven-metadata.xml
-[INFO] 
-[INFO] --- exec-maven-plugin:1.5.0:java (default-cli) @ EPMultipleSims_v3_exec ---
-18:40:17.761 [org.cpswt.host.FederationManagerHostApp.main()] INFO  org.cpswt.hla.FederationManager - No COA definitions were provided!
-18:40:17.764 [org.cpswt.host.FederationManagerHostApp.main()] INFO  org.cpswt.hla.FederationManager - No COA selections were provided!
-18:40:17.765 [org.cpswt.host.FederationManagerHostApp.main()] INFO  org.cpswt.hla.FederationManager - No specific COA-selection was specified for execution!
-18:40:17.765 [org.cpswt.host.FederationManagerHostApp.main()] INFO  org.cpswt.hla.FederationManager - No COAs are used in this experiment.
-
--------------------------------------------------------------------
-GMS: address=vagrant-39155, cluster=EPMultipleSims_v3, physical address=192.168.1.41:41249
--------------------------------------------------------------------
-18:40:27.443 [org.cpswt.host.FederationManagerHostApp.main()] INFO  org.cpswt.host.FederationManagerHostApp - Server online at 0.0.0.0:8083 ...
-18:45:02.326 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 0.0 and step = 1.0 and requested_time = 1.0
-WARN  [VERIFY_SUSPECT.TimerThread,EPMultipleSims_v3,vagrant-39155] portico.lrc.jgroups: Detected that federate [Controller-6081d910-2758-4f62-9fa3-ecb42b7f2b1d] may have crashed, investigating...
-WARN  [Regular] portico.lrc.jgroups: Federate [Controller-6081d910-2758-4f62-9fa3-ecb42b7f2b1d] has crashed. Sending fake resignation because it was too rude to.
-18:51:10.031 [Thread-3] INFO  org.cpswt.hla.FederationManager - Current_time = 1.0 and step = 1.0 and requested_time = 2.0
