@@ -16,3 +16,6 @@ This directory contains a python file that will automatically change the timeste
 
 ## energyPrediction:
 This branch contains files that were used to predict energy consumption using data generated with Energy Plus written in MATLAB. This code uses a linear algebra approach of predicting energy consumption.  In the most recent update, past energy consumption, past outdoor temperature, past indoor temperature, past solar radiation, and past temperature setpoint are used to predict future energy consumption 3 timesteps ahead.  I have also been working on shifting to python and inside the "notebooks" directory you will find some jupyter notebooks.  Some are tutorials that I did to learn more about numpy and pandas.  Eventually, there will also be some notebooks using machine learning algorithms in sci-kit learn/tensorflow to predict energy consumption.
+
+## fmu_config
+This directory contains the files needed to make an fmu (Windows).
