@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <copy todir="/home/vagrant/Desktop/old/KalebsFed/KalebsFed_generated/DisplayNumber/target/conf" overwrite="true">
+    <fileset dir="/home/vagrant/Desktop/old/KalebsFed/KalebsFed_generated/DisplayNumber/conf"/>
+  </copy>
+  <copy todir="/home/vagrant/Desktop/old/KalebsFed/KalebsFed_generated/DisplayNumber/target" overwrite="true">
+    <fileset file="/home/vagrant/Desktop/old/KalebsFed/KalebsFed_generated/DisplayNumber/RTI.rid"/>
+  </copy>
+</target>
+</project>

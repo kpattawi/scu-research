@@ -1,0 +1,89 @@
+{
+  "federateTypesAllowed": [
+    "Controller",
+    "Market",
+    "Reader",
+    "Socket0",
+    "Socket1",
+    "Socket2",
+    "Socket3",
+    "Socket4",
+    "Socket5"
+  ],
+  "expectedFederates": [
+    {
+      "federateType": "Controller",
+      "count": 1
+    },
+    {
+      "federateType": "Market",
+      "count": 1
+    },
+    {
+      "federateType": "Reader",
+      "count": 1
+    },
+    {
+      "federateType": "Socket0",
+      "count": 1
+    },
+    {
+      "federateType": "Socket1",
+      "count": 1
+    },
+    {
+      "federateType": "Socket2",
+      "count": 1
+    },
+    {
+      "federateType": "Socket3",
+      "count": 1
+    },
+    {
+      "federateType": "Socket4",
+      "count": 1
+    },
+    {
+      "federateType": "Socket5",
+      "count": 1
+    }
+  ],
+  "lateJoinerFederates": [
+    {
+      "federateType": "Controller",
+      "count": 0
+    },
+    {
+      "federateType": "Market",
+      "count": 0
+    },
+    {
+      "federateType": "Reader",
+      "count": 0
+    },
+    {
+      "federateType": "Socket0",
+      "count": 0
+    },
+    {
+      "federateType": "Socket1",
+      "count": 0
+    },
+    {
+      "federateType": "Socket2",
+      "count": 0
+    },
+    {
+      "federateType": "Socket3",
+      "count": 0
+    },
+    {
+      "federateType": "Socket4",
+      "count": 0
+    },
+    {
+      "federateType": "Socket5",
+      "count": 0
+    }
+  ]
+}
