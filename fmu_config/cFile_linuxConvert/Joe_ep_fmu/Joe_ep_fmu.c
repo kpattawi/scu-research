@@ -4,8 +4,8 @@
 #include <string.h>
 #include <math.h>
 // Project linker files
-#include "FMU_Header_Files\Joe_ep_fmu.h" // Need to be in same folder as fmi header files to link properly
-#include "Parser_Files\xml_parser.h"  // Put in folder for organization
+#include "FMU_Header_Files/Joe_ep_fmu.h" // Need to be in same folder as fmi header files to link properly
+#include "Parser_Files/xml_parser.h"  // Put in folder for organization
 
 ModelDescription* md; //creates md from xml file. Requires Parse Files
 
