@@ -57,7 +57,7 @@ int myLineReader(int s, char server_reply[2048], char buffer[2048])
 {
 	int currentBufferLocation = 0;
 	int recievedReplyLength;
-	while ((recievedReplyLength = read(s, server_reply, 2048, 0)) > 0)
+	while ((recievedReplyLength = read(s, server_reply, 2048)) > 0)
 	{
 		server_reply[recievedReplyLength] = '\0';
 		if (currentBufferLocation == 0)
@@ -232,22 +232,22 @@ fmiComponent fmiInstantiateSlave(fmiString  instanceName, fmiString  fmuGUID,
 	fprintf(myOutputLog, "myNumEventIndicators: -- %d\n", myNumEventIndicators);
 	fprintf(myOutputLog, "myNumVars: ------------- %d\n", myNumVars);
 	fflush(myOutputLog);
-	/* CODE TO PRINT CONTENTS OF XML FOR SANITY PURPOSE
-	FILE * xmlFile = fopen(xmlFilePath, "r");
-	if (xmlFile == NULL)
-	{
-	fprintf(myOutputLog, "ERROR: No XML file found in FMU\n");
-	// logs error if no xml file in fmu
-	}
+	///* CODE TO PRINT CONTENTS OF XML FOR SANITY PURPOSE
+	//FILE * xmlFile = fopen(xmlFilePath, "r");
+	//if (xmlFile == NULL)
+	//{
+	//fprintf(myOutputLog, "ERROR: No XML file found in FMU\n");
+	//// logs error if no xml file in fmu
+	//}
 
-	char nextCharacter;
-	fprintf(myOutputLog, "\n========== XML Content ==========\n");
-	while ((nextCharacter = getc(xmlFile)) != EOF) {
-	fprintf(myOutputLog, "%c", nextCharacter);
-	}
-	fprintf(myOutputLog, "\n");
-	fclose(xmlFile);
-	/*END CODE TO PRINT CONTENTS OF XML*/
+	//char nextCharacter;
+	//fprintf(myOutputLog, "\n========== XML Content ==========\n");
+	//while ((nextCharacter = getc(xmlFile)) != EOF) {
+	//fprintf(myOutputLog, "%c", nextCharacter);
+	//}
+	//fprintf(myOutputLog, "\n");
+	//fclose(xmlFile);
+	///*END CODE TO PRINT CONTENTS OF XML*/
 
 	// removes vars from memory
 	free(xmlFilePath);
@@ -323,23 +323,24 @@ fmiStatus fmiInitializeSlave(fmiComponent c, fmiReal tStart, fmiBoolean StopTime
 		// THIS IS SOCKET STUFF
 
 		//struct sockaddr_in server;
-		int sockfd, portno, n;
+		int sockfd;
 		struct sockaddr_in serv_addr;
-		char buffer[256];
 
 		fprintf(myOutputLog, "Initializing socket...\n");
 		sockfd = socket(AF_INET, SOCK_STREAM, 0);
-		if (sockfd < 0)
-			error("ERROR opening socket");
+		if (sockfd < 0) {
+			fprintf(myOutputLog, "ERROR opening socket");
+		}
 		
 		bzero((char*)&serv_addr, sizeof(serv_addr));
 		serv_addr.sin_family = AF_INET;
 		bcopy(IPaddress_from_config,
 			(char*)&serv_addr.sin_addr.s_addr,
-			strlen(IPaddress_from_config);
+			strlen(IPaddress_from_config));
 		serv_addr.sin_port = htons(portNumber);
-		if (connect(sockfd, (struct sockaddr*)&serv_addr, sizeof(serv_addr)) < 0)
-			error("ERROR connecting");
+		if (connect(sockfd, (struct sockaddr*)&serv_addr, sizeof(serv_addr)) < 0) {
+			fprintf(myOutputLog, "ERROR connecting");
+		}
 		
 		//close(sockfd);
 
@@ -463,7 +464,7 @@ fmiStatus fmiDoStep(fmiComponent c, fmiReal currentCommunicationPoint,
 	{
 		// SOCKET CONNECTION VARS
 		char mySendMsg[2048], server_reply[2048];
-		int recv_size;
+		//int recv_size;
 		char buffer[2048];
 
 		// ========== Sending Data ==========
@@ -555,7 +556,7 @@ fmiStatus fmiDoStep(fmiComponent c, fmiReal currentCommunicationPoint,
 				//have condition if no matching vr
 			}
 		}
-		else if (thisHeading == "NOUPDATE\0")
+		else if (strcmp(thisHeading,"NOUPDATE\0") == 0)
 		{
 			fprintf(myOutputLog, "NOUPDATE\n");
 			printf("NOUPDATE\n");;
