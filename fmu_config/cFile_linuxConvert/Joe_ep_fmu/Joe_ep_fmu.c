@@ -259,8 +259,8 @@ fmiComponent fmiInstantiateSlave(fmiString  instanceName, fmiString  fmuGUID,
 
 
 	// TODO: HARD CODED -- WANT SOME WAY AROUND THIS
-	my_values[17] = (float)0; //starting cooling Start
-	my_values[18] = (float)0; //starting heating Start
+	my_values[5] = (float)0; //starting cooling Start
+	my_values[4] = (float)0; //starting heating Start
 	fprintf(myOutputLog, "NOTE:\n");
 	fprintf(myOutputLog, "	- EnergyPlus cannot be one day duration (for warmup distinction).\n");
 	fprintf(myOutputLog, "	- Should look into finding total \"input\" and \"output\" causalities.\n");
@@ -473,7 +473,7 @@ fmiStatus fmiDoStep(fmiComponent c, fmiReal currentCommunicationPoint,
 
 		// Loops through all output vars into string to send
 		sprintf(mySendMsg, "UPDATE\r\n%.0f\r\n", currentCommunicationPoint); //sets steart of outgoing message with timestamp
-		for (i = 1; i < 17; ++i) // TODO loop through all "input" causalities
+		for (i = 1; i < 4; ++i) // TODO loop through all "input" causalities
 		{
 			ScalarVariable* myInst = getVariable(md, i, elm_Real); // pulls specific var from md
 			const char* thisVarName = getName(myInst); // gets name of var from md
