@@ -1,0 +1,78 @@
+﻿  Joe_ep_fmu.c
+Joe_ep_fmu.c(26): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\stdio.h(1772): note: see declaration of 'sprintf'
+Joe_ep_fmu.c(159): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+Joe_ep_fmu.c(184): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\stdio.h(1772): note: see declaration of 'sprintf'
+Joe_ep_fmu.c(241): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\um\winsock2.h(1830): note: see declaration of 'inet_addr'
+Joe_ep_fmu.c(345): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\stdio.h(1772): note: see declaration of 'sprintf'
+Joe_ep_fmu.c(341): warning C4101: 'recv_size': unreferenced local variable
+  stack.c
+  xmlVersionParser.c
+Parser_Files\xmlVersionParser.c(43): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\string.h(538): note: see declaration of 'strdup'
+  xml_parser.c
+Parser_Files\xml_parser.c(85): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\stdio.h(2260): note: see declaration of 'sscanf'
+Parser_Files\xml_parser.c(95): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\stdio.h(2260): note: see declaration of 'sscanf'
+Parser_Files\xml_parser.c(103): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\stdio.h(2260): note: see declaration of 'sscanf'
+Parser_Files\xml_parser.c(304): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\stdio.h(2260): note: see declaration of 'sscanf'
+Parser_Files\xml_parser.c(432): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\string.h(538): note: see declaration of 'strdup'
+Parser_Files\xml_parser.c(710): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\string.h(538): note: see declaration of 'strdup'
+Parser_Files\xml_parser.c(713): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\string.h(343): note: see declaration of 'strncpy'
+Parser_Files\xml_parser.c(721): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\string.h(271): note: see declaration of 'strncat'
+Parser_Files\xml_parser.c(889): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+     Creating library C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\Joe_ep_fmu.lib and object C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\Joe_ep_fmu.exp
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Generating code
+  All 2883 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+libxml2.lib(xmlreader.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(xmlreader.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(parser.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(parser.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(buf.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(buf.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(tree.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(tree.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(xmlstring.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(xmlstring.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(dict.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(dict.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(xinclude.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(xinclude.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(relaxng.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(relaxng.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(pattern.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(pattern.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(xmlIO.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(xmlIO.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(parserInternals.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(parserInternals.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(encoding.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(encoding.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(xmlschemas.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(xmlschemas.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(valid.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(valid.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(error.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(error.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(globals.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(globals.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(uri.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(uri.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(hash.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(hash.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(SAX2.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(SAX2.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(xmlsave.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(xmlsave.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(threads.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(threads.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(xmlmemory.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(xmlmemory.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(chvalid.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(chvalid.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(catalog.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(catalog.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(entities.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(entities.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(xpath.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(xpath.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(xmlschemastypes.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(xmlschemastypes.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(HTMLparser.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(HTMLparser.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(debugXML.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(debugXML.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(xpointer.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(xpointer.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(xmlregexp.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(xmlregexp.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(nanohttp.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(nanohttp.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(nanoftp.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(nanoftp.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(list.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(list.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(SAX.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(SAX.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(HTMLtree.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(HTMLtree.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+libxml2.lib(xmlunicode.obj) : warning LNK4099: PDB 'libxml2.pdb' was not found with 'libxml2.lib(xmlunicode.obj)' or at 'C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\libxml2.pdb'; linking object as if no debug info
+  Joe_ep_fmu.vcxproj -> C:\Users\jcs5\Desktop\MyTestFiles\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Joe_ep_fmu\Win32\Release\Joe_ep_fmu.dll
