@@ -12,6 +12,11 @@ import org.apache.logging.log4j.Logger;
 
 // Import other packages needed
 import org.cpswt.utils.CpswtUtils;  // need to remove time delay
+// for getting and sending to fmu
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.util.Random;    // random num generator
 
 // Define the Market type of federate for the federation.
 
