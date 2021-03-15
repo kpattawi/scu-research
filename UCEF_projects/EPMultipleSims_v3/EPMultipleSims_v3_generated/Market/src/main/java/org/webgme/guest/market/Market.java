@@ -188,7 +188,7 @@ public class Market extends MarketBase {
                 j = j+1;
             }
 
-        for(int i=0; i<vars.length-1;i++){
+        for(int i=0; i<j;i++){
           System.out.println("i = "+i);
         // Example how to handle variables (depends on how they were sent from controller)
           if(varNames[i].equals("TODO predictedEnergy")){

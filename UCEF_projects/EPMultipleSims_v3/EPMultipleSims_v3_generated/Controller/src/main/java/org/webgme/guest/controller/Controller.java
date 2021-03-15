@@ -177,7 +177,7 @@ public class Controller extends ControllerBase {
               }
               checkReceivedSubscriptions();
               if(!receivedSimTime){
-                  CpswtUtils.sleep(1000);
+                  CpswtUtils.sleep(100);
               }
           }
           receivedSimTime = false;
@@ -187,69 +187,69 @@ public class Controller extends ControllerBase {
           // checkReceivedSubscriptions();
 
           
-          // Kaleb //  Occupancy stuff
-          System.out.println("Logical Time is = " + currentTime);
-          // quarter = (int) (currentTime%96);
-          // fivemin = (int) (currentTime%288);
-          onemin = (int) (currentTime%1440);
-          hour = (int) (onemin/60);
-          System.out.println("Hour is = " + hour);
+          // // Kaleb //  Occupancy stuff
+          // System.out.println("Logical Time is = " + currentTime);
+          // // quarter = (int) (currentTime%96);
+          // // fivemin = (int) (currentTime%288);
+          // onemin = (int) (currentTime%1440);
+          // hour = (int) (onemin/60);
+          // System.out.println("Hour is = " + hour);
           
-          // Start Occupancy
-          if (hour==simulatetime){
-            System.out.println("Simulate at this time step!!!!!");
-            event_p=pro[hour];
-            System.out.println("Occupied Probability: "+ event_p);
-            //  Occupancy Duration Simulator Based on Monte Carlo Method
-            while (check ==0){
-            //  r2 = (int) (Math.random()*24+1);
-              r2=1;
-              System.out.println("Random Number(Duration): "+ r2 );
-              for(int i = 0; i < r2; i++){
-                p=hour+i;
-                if (p>23){
-                  p=p-24;
-                }
-                event_p = pro[p];
-                duration_p = duration_p * event_p ;
-                duration_q = duration_q *(1 - event_p) ;
-              }
-              System.out.println("The probability of OCCUPIED for "+ r2 +" hours is "+ duration_p );
-              System.out.println("The probability of NOT OCCUPIED for "+ r2 +" hours is "+ duration_q ); 
-              r1 = (double) (Math.random());
-              System.out.println("Random Number(Event): "+ r1 );
-              if (r1 < duration_p){
-                System.out.println("Continuously Occupied for "+r2+ " Hours Accepted!!!" );
-                check = 1;
-                simulatetime = simulatetime + r2;
-                occupancy =1;
-                if (simulatetime>23){
-                  simulatetime=simulatetime-24;
-                } 
-                System.out.println("Next simulating time at hour = "+ simulatetime );
-              } 
-              else if(r1 > (1-duration_q)){
-                System.out.println("Continuously Not Occupied for "+r2+ " Hours Accepted!!!" );
-                check = 1;
-                simulatetime = simulatetime + r2;
-                occupancy=0;
-                if (simulatetime>23){
-                  simulatetime=simulatetime-24;
-                } 
-                System.out.println("Next simulating time at hour = "+ simulatetime );
-              } 
-              else {
-                System.out.println("Event Rejected!!!" );
-              }
-              duration_p=1;
-              duration_q=1;
-            }
-            check =0;
-          }
-          else{
-            System.out.println("Keep the same Occupancy information as previous timestamp.");
-          }
-          // End determine Occupancy
+          // // Start Occupancy
+          // if (hour==simulatetime){
+          //   System.out.println("Simulate at this time step!!!!!");
+          //   event_p=pro[hour];
+          //   System.out.println("Occupied Probability: "+ event_p);
+          //   //  Occupancy Duration Simulator Based on Monte Carlo Method
+          //   while (check ==0){
+          //   //  r2 = (int) (Math.random()*24+1);
+          //     r2=1;
+          //     System.out.println("Random Number(Duration): "+ r2 );
+          //     for(int i = 0; i < r2; i++){
+          //       p=hour+i;
+          //       if (p>23){
+          //         p=p-24;
+          //       }
+          //       event_p = pro[p];
+          //       duration_p = duration_p * event_p ;
+          //       duration_q = duration_q *(1 - event_p) ;
+          //     }
+          //     System.out.println("The probability of OCCUPIED for "+ r2 +" hours is "+ duration_p );
+          //     System.out.println("The probability of NOT OCCUPIED for "+ r2 +" hours is "+ duration_q ); 
+          //     r1 = (double) (Math.random());
+          //     System.out.println("Random Number(Event): "+ r1 );
+          //     if (r1 < duration_p){
+          //       System.out.println("Continuously Occupied for "+r2+ " Hours Accepted!!!" );
+          //       check = 1;
+          //       simulatetime = simulatetime + r2;
+          //       occupancy =1;
+          //       if (simulatetime>23){
+          //         simulatetime=simulatetime-24;
+          //       } 
+          //       System.out.println("Next simulating time at hour = "+ simulatetime );
+          //     } 
+          //     else if(r1 > (1-duration_q)){
+          //       System.out.println("Continuously Not Occupied for "+r2+ " Hours Accepted!!!" );
+          //       check = 1;
+          //       simulatetime = simulatetime + r2;
+          //       occupancy=0;
+          //       if (simulatetime>23){
+          //         simulatetime=simulatetime-24;
+          //       } 
+          //       System.out.println("Next simulating time at hour = "+ simulatetime );
+          //     } 
+          //     else {
+          //       System.out.println("Event Rejected!!!" );
+          //     }
+          //     duration_p=1;
+          //     duration_q=1;
+          //   }
+          //   check =0;
+          // }
+          // else{
+          //   System.out.println("Keep the same Occupancy information as previous timestamp.");
+          // }
+          // // End determine Occupancy
 
 
 
@@ -380,6 +380,8 @@ public class Controller extends ControllerBase {
             sendControls.set_simID(i);
             System.out.println("Send sendControls interaction: " + coolTemps[i] + " to socket #" + i);
             sendControls.sendInteraction(getLRC());
+
+            dataStrings[i] = "";
           }
 
           // Kaleb //
@@ -417,7 +419,7 @@ public class Controller extends ControllerBase {
 
         // Could make global var that holds simIDs but it would just be 0,1,2,...
         int simID = interaction.get_simID();
-        System.out.println("numVars[simID] = " + numVars[simID]);
+        // System.out.println("numVars[simID] = " + numVars[simID]);
     		holder[simID] = interaction.get_dataString();
         System.out.println("holder[simID] = "+ holder[simID] );
 
@@ -429,19 +431,19 @@ public class Controller extends ControllerBase {
         System.out.println("length of vars = " + vars.length);
         int j=0;
         for( String token : vars){
-              System.out.println("j = "+j);
-                System.out.println("token = " +token);
-                String token1[] = token.split(varNameSeparater);
-                System.out.println("token1[0] = "+token1[0]);
-                System.out.println("token1[1] = "+token1[1]);
-                varNames[j] = token1[0];
-                doubles[j] = token1[1];
-                System.out.println("varNames[j] = "+ varNames[j] );
-                System.out.println("doubles[j] = "+ doubles[j] );
-                j = j+1;
-            }
+          System.out.println("j = "+j);
+          System.out.println("token = " +token);
+          String token1[] = token.split(varNameSeparater);
+          System.out.println("token1[0] = "+token1[0]);
+          System.out.println("token1[1] = "+token1[1]);
+          varNames[j] = token1[0];
+          doubles[j] = token1[1];
+          System.out.println("varNames[j] = "+ varNames[j] );
+          System.out.println("doubles[j] = "+ doubles[j] );
+          j = j+1;
+        }
 
-        for(int i=0; i<vars.length-1;i++){
+        for(int i=0; i<j;i++){
           System.out.println("i = "+i);
           if(varNames[i].equals("epSendZoneMeanAirTemp")){
             zoneTemps[simID] = Double.valueOf(doubles[i]);

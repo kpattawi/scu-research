@@ -253,7 +253,7 @@ public class Socket extends SocketBase {
                 }
                 checkReceivedSubscriptions();
                 if(!receivedSimTime){
-                    CpswtUtils.sleep(1000);
+                    CpswtUtils.sleep(100);
                 }
             }
             receivedSimTime = false;
@@ -332,7 +332,7 @@ public class Socket extends SocketBase {
             // String value = "20";  // Dont need this I think
         	empty = false;
 
-    		for(int i =0; i<vars.length-1; i++){
+    		for(int i =0; i<j; i++){
 
 	        	System.out.println("ReceivedData interaction " + varNames[i] + " as " + doubles[i]);
 	        	if(varNames[i].equals("epGetStartHeating")){
