@@ -9,6 +9,9 @@ import org.cpswt.hla.base.AdvanceTimeRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+// Import other packages needed
+import org.cpswt.utils.CpswtUtils;  // need to remove time delay
+
 // Define the Reader type of federate for the federation.
 
 public class Reader extends ReaderBase {
@@ -19,6 +22,8 @@ public class Reader extends ReaderBase {
     public Reader(FederateConfig params) throws Exception {
         super(params);
     }
+
+    boolean receivedController = false;
 
     private void execute() throws Exception {
         if(super.isLateJoiner()) {
@@ -62,6 +67,11 @@ public class Reader extends ReaderBase {
             // time step below                                        //
             ////////////////////////////////////////////////////////////
 
+            // send info to controller
+            Reader_Controller vReader_Controller = create_Reader_Controller();
+            vReader_Controller.set_dataString("stuff");
+            vReader_Controller.sendInteraction(getLRC());
+
             // Set the interaction's parameters.
             //
             //    Reader_Controller vReader_Controller = create_Reader_Controller();
@@ -94,6 +104,8 @@ public class Reader extends ReaderBase {
         // TODO Perform whatever cleanups are needed before exiting the app //
         //////////////////////////////////////////////////////////////////////
     }
+
+
 
     public static void main(String[] args) {
         try {

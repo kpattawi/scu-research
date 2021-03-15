@@ -10,12 +10,36 @@ import org.cpswt.hla.base.AdvanceTimeRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+// Kaleb // import extra packages
+import org.cpswt.utils.CpswtUtils;
+import java.io.*;
+import java.net.*;
+// Kaleb //
+
 // Define the Socket type of federate for the federation.
 
 public class Socket extends SocketBase {
     private final static Logger log = LogManager.getLogger();
 
     private double currentTime = 0;
+    
+    // Kaleb // Config stuff TODO
+    // START WITH simID as ZERO because java is zero indexed
+    int simID = 0;   // Change simID based on socket number
+
+    // Kaleb // Define variables
+    String[] varNames=new String[15];  // will have to add more empty strings based on how many strings we send/receive
+    String[] doubles= new String[15];  // will have to add more empty strings based on how many strings we send/receive
+    String varNameSeparater = "@";
+    String doubleSeparater = ",";
+
+    int numVars = 0;  
+    String eGSH=null, eGSC=null, ePeople=null;
+    boolean empty=true;
+
+    boolean receivedSimTime = false;
+    
+    // Kaleb //
 
     public Socket(FederateConfig params) throws Exception {
         super(params);
@@ -44,6 +68,20 @@ public class Socket extends SocketBase {
         // TODO perform basic initialization below //
         /////////////////////////////////////////////
 
+        // Kaleb // Add socket here: 
+        // TODO Config stuff
+        InetAddress addr = InetAddress.getByName("192.168.1.41");  // the address needs to be changed
+        ServerSocket welcomeSocket = new ServerSocket(6789, 50, addr);  // 6789 is port number. Can be changed
+        // 
+        java.net.Socket connectionSocket = welcomeSocket.accept(); // initial connection will be made at this point
+        System.out.println("connection successful");
+        log.info("connection successful");
+     
+        InputStreamReader inFromClient = new InputStreamReader(connectionSocket.getInputStream());
+        BufferedReader buffDummy = new BufferedReader(inFromClient);
+        DataOutputStream outToClient = new DataOutputStream(connectionSocket.getOutputStream());
+        // Kaleb // end socket
+        
         AdvanceTimeRequest atr = new AdvanceTimeRequest(currentTime);
         putAdvanceTimeRequest(atr);
 
@@ -65,7 +103,15 @@ public class Socket extends SocketBase {
 
         startAdvanceTimeThread();
         log.info("started logical time progression");
+        
+        // Kaleb // Define variables for getting EP data
+        
+        String header, time="0", varName="", value="";        
+        double varValue=0;
+        String dataString ="";
 
+        // Kaleb //
+        
         while (!exitCondition) {
             atr.requestSyncStart();
             enteredTimeGrantedState();
@@ -74,6 +120,77 @@ public class Socket extends SocketBase {
             // TODO send interactions that must be sent every logical //
             // time step below                                        //
             ////////////////////////////////////////////////////////////
+            
+            // Kaleb // Getting values from EnergyPlus fmu
+            if((header = buffDummy.readLine()).equals("TERMINATE")){
+            	exitCondition = true;
+            }
+
+            time = buffDummy.readLine();
+            System.out.println("in loop header=" + header + " t=" + time);
+            
+            while(!(varName = buffDummy.readLine()).isEmpty()) {
+                value = buffDummy.readLine();
+                System.out.println("Received: " + varName + " as " + value);
+                
+                // before @ is varName and before , is value
+                // varName first!!!
+                if(varName.equals("epSendOutdoorAirTemp")){
+                	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater; 
+                }
+                if(varName.equals("epSendZoneMeanAirTemp")){
+                	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater; 
+                }
+                if(varName.equals("epSendZoneHumidity")){
+              	  	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater;  
+                }
+                if(varName.equals("epSendHeatingEnergy")){
+              	  	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater;
+                }
+                if(varName.equals("epSendCoolingEnergy")){
+              	  	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater;
+                }
+                if(varName.equals("epSendNetEnergy")){
+              	  	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater;  
+                }
+                if(varName.equals("epSendEnergyPurchased")){
+              	  	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater; 
+                }
+                if(varName.equals("epSendEnergySurplus")){
+              	  	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater;  
+                }
+                if(varName.equals("epSendDayOfWeek")){
+              	  	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater; 
+                }
+                if(varName.equals("epSendSolarRadiation")){
+              	  	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater;
+                }
+                if(varName.equals("epSendHeatingSetpoint")){
+              	  	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater;
+                }
+                if(varName.equals("epSendCoolingSetpoint")){
+              	  	dataString = dataString +varName+varNameSeparater;
+              	  	dataString = dataString +value+doubleSeparater;  
+                }
+            }
+            
+            // Send Socket_Controller interaction containing eplus data
+            Socket_Controller sendEPData = create_Socket_Controller();
+            sendEPData.set_simID(simID);
+            sendEPData.set_dataString(dataString);
+            log.info("Sent sendEPData interaction from socket{} with {}", simID , dataString);
+            sendEPData.sendInteraction(getLRC());
 
             // Set the interaction's parameters.
             //
@@ -86,8 +203,37 @@ public class Socket extends SocketBase {
             //    vSocket_Controller.set_sourceFed( < YOUR VALUE HERE > );
             //    vSocket_Controller.sendInteraction(getLRC(), currentTime + getLookAhead());
 
-            checkReceivedSubscriptions();
 
+            // Wait to receive Controller_Socket information containing setpoints that will be sent to eplus
+            while (!receivedSimTime){
+                log.info("waiting to receive SimTime...");
+                synchronized(lrc){
+                    lrc.tick();
+                }
+                checkReceivedSubscriptions();
+                if(!receivedSimTime){
+                    CpswtUtils.sleep(100);
+                }
+            }
+            receivedSimTime = false;
+            //
+
+            // Empty Data String
+            dataString = "";
+            
+            // send eGSH and eGSC to eplus
+            if (empty==true) {
+                outToClient.writeBytes("NOUPDATE\r\n\r\n");
+                } 
+            else {
+                outToClient.writeBytes("SET\r\n" + time + "\r\n"+ "epGetStartCooling\r\n" + eGSC + "\r\n" + "epGetStartHeating\r\n" + eGSH + "\r\n" + "\r\n");
+                System.out.println("SET\r\n" + time +  "\r\n"+ "epGetStartCooling\r\n" + eGSC + "\r\n" + "epGetStartHeating\r\n" + eGSH + "\r\n" + "\r\n");
+                }
+            outToClient.flush();
+            
+            // Kaleb //
+                
+            
             ////////////////////////////////////////////////////////////////////
             // TODO break here if ready to resign and break out of while loop //
             ////////////////////////////////////////////////////////////////////
@@ -108,12 +254,69 @@ public class Socket extends SocketBase {
         //////////////////////////////////////////////////////////////////////
         // TODO Perform whatever cleanups are needed before exiting the app //
         //////////////////////////////////////////////////////////////////////
+        
     }
 
     private void handleInteractionClass(Controller_Socket interaction) {
         ///////////////////////////////////////////////////////////////
         // TODO implement how to handle reception of the interaction //
         ///////////////////////////////////////////////////////////////
+    	
+    	// Kaleb // 
+        // exit while loop above waiting for Controller_Socket
+        receivedSimTime = true;
+
+        // epvalues are not empty
+        empty = false;
+    	
+        // get info from Controller and separate into varNames and doubles
+    	int receivedID = interaction.get_simID();
+        String holder = null;
+    	if(receivedID == simID){
+    		holder = interaction.get_dataString();
+            System.out.println("holder = "+ holder );
+    		
+            String vars[] = holder.split(doubleSeparater);
+            System.out.println("vars[0] = "+vars[0]);
+            int j=0;
+            for( String token : vars){
+                System.out.println("token = " +token);
+                String token1[] = token.split(varNameSeparater);
+                System.out.println("token1[0] = "+token1[0]);
+                System.out.println("token1[1] = "+token1[1]);
+                varNames[j] = token1[0];
+                doubles[j] = token1[1];
+                System.out.println("varNames[j] = "+ varNames[j] );
+                System.out.println("doubles[j] = "+ doubles[j] );
+                j = j+1;
+            }
+            
+        	
+
+    		for(int i =0; i<j; i++){
+
+	        	System.out.println("ReceivedData interaction " + varNames[i] + " as " + doubles[i]);
+	        	if(varNames[i].equals("epGetStartHeating")){
+	        		eGSH = doubles[i];
+	        		System.out.println("Received Heating setpoint as" + varNames[i] + eGSH);
+	        		log.info("Received Heating setpoint as {} = {}" , varNames[i] , eGSH);
+	        	}
+	        	if(varNames[i].equals("epGetStartCooling")){
+	        		eGSC = doubles[i];
+	        		System.out.println("Received Cooling setpoint as" + varNames[i] + eGSC);
+	        		log.info("Received Cooling setpoint as {} = {}" , varNames[i] , eGSC);
+	        	}
+	        	if(varNames[i].equals("epGetPeople")){
+	        		ePeople = doubles[i];
+	        		System.out.println("Received People as" + varNames[i] + ePeople);
+	        		log.info("Received People as {} = {}" , varNames[i] , ePeople);
+	        	}
+    		}
+    	}
+    	
+    	
+    	// Kaleb //   	
+    	
     }
 
     public static void main(String[] args) {

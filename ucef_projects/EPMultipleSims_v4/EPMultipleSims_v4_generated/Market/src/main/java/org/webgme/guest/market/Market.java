@@ -10,6 +10,9 @@ import org.cpswt.hla.base.AdvanceTimeRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+// Import other packages needed
+import org.cpswt.utils.CpswtUtils;  // need to remove time delay
+
 // Define the Market type of federate for the federation.
 
 public class Market extends MarketBase {
@@ -75,6 +78,29 @@ public class Market extends MarketBase {
             // time step below                                        //
             ////////////////////////////////////////////////////////////
 
+            // waiting to receive Controller_Market
+            while (!receivedController){
+                log.info("waiting to receive Controller_Market interaction...");
+                synchronized(lrc){
+                    lrc.tick();
+                }
+                checkReceivedSubscriptions();
+                if(!receivedController){
+                    CpswtUtils.sleep(100);
+                }
+            }
+            receivedController = false;
+
+            // TODO determine price using info from controller vvvvvv
+
+            // TODO determine price using info from controller ^^^^^^
+
+            // Send price back to controller 
+            // aka send Market_Controller interaction
+            Market_Controller sendPrice = create_Market_Controller();
+            sendPrice.set_dataString("price");
+            sendPrice.sendInteraction(getLRC());
+            
             // Set the interaction's parameters.
             //
             //    Market_Controller vMarket_Controller = create_Market_Controller();
@@ -86,7 +112,6 @@ public class Market extends MarketBase {
             //    vMarket_Controller.set_sourceFed( < YOUR VALUE HERE > );
             //    vMarket_Controller.sendInteraction(getLRC(), currentTime + getLookAhead());
 
-            checkReceivedSubscriptions();
 
             ////////////////////////////////////////////////////////////////////
             // TODO break here if ready to resign and break out of while loop //
@@ -114,6 +139,8 @@ public class Market extends MarketBase {
         ///////////////////////////////////////////////////////////////
         // TODO implement how to handle reception of the interaction //
         ///////////////////////////////////////////////////////////////
+        // exit while loop waiting for this interaction
+        receivedController = true;
     }
 
     public static void main(String[] args) {
