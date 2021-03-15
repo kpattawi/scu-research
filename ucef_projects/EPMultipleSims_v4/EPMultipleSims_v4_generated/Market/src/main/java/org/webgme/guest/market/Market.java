@@ -24,6 +24,8 @@ public class Market extends MarketBase {
         super(params);
     }
 
+    boolean receivedController = false;
+
     private void checkReceivedSubscriptions() {
         InteractionRoot interaction = null;
         while ((interaction = getNextInteractionNoWait()) != null) {
