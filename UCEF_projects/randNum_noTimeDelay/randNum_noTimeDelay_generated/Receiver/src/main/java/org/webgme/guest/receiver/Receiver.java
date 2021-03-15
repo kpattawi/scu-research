@@ -80,6 +80,8 @@ public class Receiver extends ReceiverBase {
         startAdvanceTimeThread();
         log.info("started logical time progression");
 
+        
+
         while (!exitCondition) {
             atr.requestSyncStart();
             enteredTimeGrantedState();
@@ -103,12 +105,13 @@ public class Receiver extends ReceiverBase {
             // time step below                                        //
             ////////////////////////////////////////////////////////////
 
-            double sum = rand1 + rand2 + rand3;
-            log.info("sum: ",sum);
-            System.out.println("sum: "+sum);
+            double sum = 0;
+            sum = rand1 + rand2 + rand3;
+            log.info("rec sum: ",sum);
+            System.out.println("rec sum: "+sum);
             int timestep = (int)currentTime;
-            log.info("timestep: ",timestep);
-            System.out.println("timestep: "+timestep);
+            log.info("rec timestep: ",currentTime);
+            System.out.println("timestep: "+currentTime);
             log.info("time1: ",time1);
             System.out.println("time1: "+time1);
             log.info("time2: ",time2);
@@ -120,6 +123,10 @@ public class Receiver extends ReceiverBase {
             vReceiver_NumGen.set_sum(sum);
             vReceiver_NumGen.set_timestep(timestep);
             vReceiver_NumGen.sendInteraction(getLRC());
+
+            rand1 = -1;
+            rand2 = -1;
+            rand3 = -1;
 
             // Set the interaction's parameters.
             //

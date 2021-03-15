@@ -23,7 +23,7 @@ public class NumGen extends NumGenBase {
     }
 
     boolean receivedSimTime = false;
-    boolean firstInteraction= true;
+    // boolean firstInteraction= true;
     double sum = 0;
     int timeRec = 0;
 
@@ -78,22 +78,12 @@ public class NumGen extends NumGenBase {
             enteredTimeGrantedState();
 
             // removing time delay...
-            receivedSimTime = false;
-            if(firstInteraction){
-                receivedSimTime = true;
-                firstInteraction = false;
-            }
-            while (!receivedSimTime){
-                log.info("waiting to receive SimTime...");
-                synchronized(lrc){
-                    lrc.tick();
-                }
-                checkReceivedSubscriptions();
-                if(!receivedSimTime){
-                    CpswtUtils.sleep(1000);
-                }
-            }
-            //
+            // receivedSimTime = false;
+            // if(firstInteraction){
+            //     receivedSimTime = true;
+            //     firstInteraction = false;
+            // }
+            
 
             ////////////////////////////////////////////////////////////
             // TODO send interactions that must be sent every logical //
@@ -112,27 +102,26 @@ public class NumGen extends NumGenBase {
             log.info("random number3: ",random_double3);
             System.out.println("random number3: "+random_double3);
 
-            int timestep = (int)currentTime;
-            log.info("timestep: ",timestep);
-            System.out.println("timestep: "+timestep);
+            log.info("timestep: ",currentTime);
+            System.out.println("timestep: "+currentTime);
 
             NumGen_Receiver timeInteraction1 = create_NumGen_Receiver();
             timeInteraction1.set_randNum(random_double1);
-            timeInteraction1.set_timestep(timestep);
+            timeInteraction1.set_timestep((int)currentTime);
             timeInteraction1.sendInteraction(getLRC());
 
             NumGen_Receiver timeInteraction2 = create_NumGen_Receiver();
             timeInteraction2.set_randNum(random_double2);
-            timeInteraction2.set_timestep(timestep);
+            timeInteraction2.set_timestep((int)currentTime);
             timeInteraction2.sendInteraction(getLRC());
 
             NumGen_Receiver timeInteraction3 = create_NumGen_Receiver();
             timeInteraction3.set_randNum(random_double3);
-            timeInteraction3.set_timestep(timestep);
+            timeInteraction3.set_timestep((int)currentTime);
             timeInteraction3.sendInteraction(getLRC());
 
             Simtime vSimtime = create_Simtime();
-            vSimtime.set_timestep(timestep);
+            vSimtime.set_timestep((int)currentTime);
             vSimtime.sendInteraction(getLRC());
 
             // Set the interaction's parameters.
@@ -154,7 +143,21 @@ public class NumGen extends NumGenBase {
             //    vNumGen_Receiver.set_timestep( < YOUR VALUE HERE > );
             //    vNumGen_Receiver.sendInteraction(getLRC(), currentTime + getLookAhead());
 
-            checkReceivedSubscriptions();
+            while (!receivedSimTime){
+                log.info("waiting to receive SimTime...");
+                synchronized(lrc){
+                    lrc.tick();
+                }
+                checkReceivedSubscriptions();
+                if(!receivedSimTime){
+                    CpswtUtils.sleep(1000);
+                }
+            }
+            receivedSimTime=false;
+            //
+            System.out.println("currentTime: "+currentTime);
+            log.info("currentTime: ",currentTime);
+
 
             /////////////////////////////////+///////////////////////////////////
             // TODO break here if ready to resign and break out of while loop //
@@ -184,6 +187,8 @@ public class NumGen extends NumGenBase {
         ///////////////////////////////////////////////////////////////
         sum = interaction.get_sum();
         timeRec = interaction.get_timestep();
+        System.out.println("num sum= "+sum);
+        log.info("num sum: ",sum);
         receivedSimTime = true;
     }
 
