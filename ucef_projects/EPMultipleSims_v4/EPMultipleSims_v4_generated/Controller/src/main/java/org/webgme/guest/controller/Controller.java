@@ -77,6 +77,10 @@ public class Controller extends ControllerBase {
         while ((interaction = getNextInteractionNoWait()) != null) {
             if (interaction instanceof Socket_Controller) {
                 handleInteractionClass((Socket_Controller) interaction);
+            }else if (interaction instanceof Market_Controller) {
+              handleInteractionClass((Market_Controller) interaction);
+            }else if (interaction instanceof Reader_Controller) {
+              handleInteractionClass((Reader_Controller) interaction);
             }
             else {
                 log.debug("unhandled interaction: {}", interaction.getClassName());
@@ -169,20 +173,29 @@ public class Controller extends ControllerBase {
           //    vController_Socket.set_sourceFed( < YOUR VALUE HERE > );
           //    vController_Socket.sendInteraction(getLRC(), currentTime + getLookAhead());
 
-          // waiting to receive Socket_Controller
-          while (!receivedSocket){
-              log.info("waiting to receive Socket_Controller interaction...");
-              synchronized(lrc){
-                  lrc.tick();
-              }
-              checkReceivedSubscriptions();
-              if(!receivedSocket){
-                  CpswtUtils.sleep(100);
-              }
+          // waiting to receive Socket_Controller and Reader_Controller
+          while ((!(receivedSocket) || !(receivedReader))){
+            log.info("waiting to receive Socket_Controller interaction...");
+            synchronized(lrc){
+                lrc.tick();
+            }
+            checkReceivedSubscriptions();
+            if(!receivedSocket){
+                CpswtUtils.sleep(100);
+            }else if(!receivedReader){
+              log.info("waiting on Reader_Controller...");
+              CpswtUtils.sleep(100);
+            }
           }
           receivedSocket = false;
+          receivedReader = false;
           
           // TODO send Controller_Market here! vvvvvvvv
+
+          Controller_Market sendMarket = create_Controller_Market();
+          sendMarket.set_dataString("");
+          System.out.println("Send controller_market and Reader_Controller interaction:");
+          sendMarket.sendInteraction(getLRC());
 
           // TODO... write double check this
           // System.out.println("send to market loop");
@@ -203,10 +216,10 @@ public class Controller extends ControllerBase {
 
           // TODO send Controller_Market here! ^^^^^^^^
 
-          // Wait tp receive price from market and also info from reader
-          // aka wait for Market_Controller and Reader_Controller
-          while (!(receivedMarket && receivedReader)){
-              log.info("waiting to receive Market_Controller and Reader_Controller interaction...");
+          // Wait tp receive price from market  
+          // aka wait for Market_Controller  
+          while (!receivedMarket){
+              log.info("waiting to receive Market_Controller interaction...");
               synchronized(lrc){
                   lrc.tick();
               }
@@ -215,13 +228,8 @@ public class Controller extends ControllerBase {
                   log.info("waiting on Market_Controller...");
                   CpswtUtils.sleep(100);
               }
-              else if(!receivedReader){
-                  log.info("waiting on Reader_Controller...");
-                  CpswtUtils.sleep(100);
-              }
           }
           receivedMarket = false;
-          receivedReader = false;
 
           //-------------------------------------------------------------------------------------------------
            // Now figure out all stuff that needs to be sent to socket...
@@ -419,6 +427,7 @@ public class Controller extends ControllerBase {
         ///////////////////////////////////////////////////////////////
 
         // can now exit while loop waiting for this interaction
+        log.info("received Socket_Controller interaction");
         receivedSocket = true;
 
         // Could make global var that holds simIDs but it would just be 0,1,2,...
@@ -498,6 +507,7 @@ public class Controller extends ControllerBase {
         ///////////////////////////////////////////////////////////////
 
         // can now exit while loop waiting for this interaction
+        log.info("received Market_Controller interaction");
         receivedMarket = true;
       }
 
@@ -507,6 +517,7 @@ public class Controller extends ControllerBase {
         ///////////////////////////////////////////////////////////////
 
         // can now exit while loop waiting for this interaction
+        log.info("received Reader_Controller interaction");
         receivedReader = true;
       }
 

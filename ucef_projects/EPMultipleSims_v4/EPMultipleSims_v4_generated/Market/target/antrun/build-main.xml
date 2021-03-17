@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="maven-antrun-" default="main"  >
 <target name="main">
-  <copy todir="/home/vagrant/Desktop/GitHub2/scu_research/ucef_projects/EPMultipleSims_v4/EPMultipleSims_v4_generated/Market/target/conf" overwrite="true">
-    <fileset dir="/home/vagrant/Desktop/GitHub2/scu_research/ucef_projects/EPMultipleSims_v4/EPMultipleSims_v4_generated/Market/conf"/>
+  <copy todir="/home/vagrant/Desktop/EPMultipleSims_v42/EPMultipleSims_v4_generated/Market/target/conf" overwrite="true">
+    <fileset dir="/home/vagrant/Desktop/EPMultipleSims_v42/EPMultipleSims_v4_generated/Market/conf"/>
   </copy>
-  <copy todir="/home/vagrant/Desktop/GitHub2/scu_research/ucef_projects/EPMultipleSims_v4/EPMultipleSims_v4_generated/Market/target" overwrite="true">
-    <fileset file="/home/vagrant/Desktop/GitHub2/scu_research/ucef_projects/EPMultipleSims_v4/EPMultipleSims_v4_generated/Market/RTI.rid"/>
+  <copy todir="/home/vagrant/Desktop/EPMultipleSims_v42/EPMultipleSims_v4_generated/Market/target" overwrite="true">
+    <fileset file="/home/vagrant/Desktop/EPMultipleSims_v42/EPMultipleSims_v4_generated/Market/RTI.rid"/>
   </copy>
 </target>
 </project>

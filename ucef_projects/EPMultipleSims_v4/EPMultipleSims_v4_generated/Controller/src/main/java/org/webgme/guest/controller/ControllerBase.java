@@ -33,9 +33,9 @@ public class ControllerBase extends SynchronizedFederate {
         // interaction pubsub
         Controller_Socket.publish(getLRC());
         Controller_Market.publish(getLRC());
-        Socket_Controller.subscribe(getLRC());
+        Market_Controller.subscribe(getLRC());
         _subscribedInteractionFilter.setFedFilters( 
-           Socket_Controller.get_handle(),
+           Market_Controller.get_handle(),
            SubscribedInteractionFilter.OriginFedFilter.ORIGIN_FILTER_DISABLED,
            SubscribedInteractionFilter.SourceFedFilter.SOURCE_FILTER_DISABLED);
         Reader_Controller.subscribe(getLRC());
@@ -43,9 +43,9 @@ public class ControllerBase extends SynchronizedFederate {
            Reader_Controller.get_handle(),
            SubscribedInteractionFilter.OriginFedFilter.ORIGIN_FILTER_DISABLED,
            SubscribedInteractionFilter.SourceFedFilter.SOURCE_FILTER_DISABLED);
-        Market_Controller.subscribe(getLRC());
+        Socket_Controller.subscribe(getLRC());
         _subscribedInteractionFilter.setFedFilters( 
-           Market_Controller.get_handle(),
+           Socket_Controller.get_handle(),
            SubscribedInteractionFilter.OriginFedFilter.ORIGIN_FILTER_DISABLED,
            SubscribedInteractionFilter.SourceFedFilter.SOURCE_FILTER_DISABLED);
 

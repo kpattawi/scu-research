@@ -71,6 +71,8 @@ public class Reader extends ReaderBase {
             Reader_Controller vReader_Controller = create_Reader_Controller();
             vReader_Controller.set_dataString("stuff");
             vReader_Controller.sendInteraction(getLRC());
+            log.info("sent reader_controller interaction");
+
 
             // Set the interaction's parameters.
             //
