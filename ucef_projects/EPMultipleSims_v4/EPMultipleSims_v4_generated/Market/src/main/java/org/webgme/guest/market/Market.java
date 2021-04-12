@@ -105,7 +105,7 @@ public class Market extends MarketBase {
             // Send price back to controller 
             // aka send Market_Controller interaction
             Market_Controller sendPrice = create_Market_Controller();
-            sendPrice.set_dataString("price");
+            sendPrice.set_dataString(String.valueOf(currentTime));
             sendPrice.sendInteraction(getLRC());
             
             // Set the interaction's parameters.

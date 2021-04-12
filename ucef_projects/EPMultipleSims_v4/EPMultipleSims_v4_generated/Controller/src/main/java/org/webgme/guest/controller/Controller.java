@@ -51,6 +51,10 @@ public class Controller extends ControllerBase {
     double[] dayOfWeek= new double[numSockets];
     double price = 10; // Set a default price here
 
+  // REMOVE NEXT TWO LINES!!
+    double[] outTemperature = new double[]{7.2,6.7,6.1,4.4,4.4,6.1,5,7.8,8.9,9.4,10,10.6,11.1,13.9,13.9,11.1,11.1,10.6,10.6,8.9,9.4,7.8,6.7,8.9,6.1,5.6,3.9,5.6,7.2,7.8,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10};
+    int yeet = 0;
+
     int[] numVars = new int[numSockets];
     String varNameSeparater = "@";
     String doubleSeparater = ",";
@@ -70,6 +74,10 @@ public class Controller extends ControllerBase {
     boolean receivedMarket = false;
     boolean receivedReader = false;
     
+    String timestep_Socket = "";
+    String timestep_Reader = "";
+    String timestep_Market = "";
+    String timestep_Controller = "";
     // Kaleb //
     
     private void checkReceivedSubscriptions() {
@@ -162,6 +170,9 @@ public class Controller extends ControllerBase {
           // time step below                                        //
           ////////////////////////////////////////////////////////////
 
+          System.out.println("timestep before receiving Socket/Reader: "+ currentTime);
+
+
           // Set the interaction's parameters.
           //
           //    Controller_Socket vController_Socket = create_Controller_Socket();
@@ -189,6 +200,8 @@ public class Controller extends ControllerBase {
           }
           receivedSocket = false;
           receivedReader = false;
+
+          System.out.println("timestep after receiving Socket/Reader and before sending to Market: "+ currentTime);
           
           // TODO send Controller_Market here! vvvvvvvv
 
@@ -230,6 +243,7 @@ public class Controller extends ControllerBase {
               }
           }
           receivedMarket = false;
+          System.out.println("timestep after receiving Market: "+ currentTime);
 
           //-------------------------------------------------------------------------------------------------
            // Now figure out all stuff that needs to be sent to socket...
@@ -313,6 +327,10 @@ public class Controller extends ControllerBase {
 
             // Adaptive Control
             // Always-On
+
+            // REMOVE THIS NEXT LINE...  
+            outTemps[i] = outTemperature[yeet];
+            yeet = yeet +1;
             if (outTemps[i]<=10){
               heatTemps[i]=18.9;
               coolTemps[i]=22.9;
@@ -331,23 +349,23 @@ public class Controller extends ControllerBase {
             // }
             
             //0.5 degree fuzzy control 
-            double offset=0.6;
-            if (zoneTemps[i]>=coolTemps[i]+0.5-offset){
-            Fuzzyheat = -1;
-            Fuzzycool = -1;
-            }else if (zoneTemps[i]>=coolTemps[i]-0.5-offset){
-            Fuzzyheat = -1;
-            }else if (zoneTemps[i]>=heatTemps[i]+0.5+offset){
-              Fuzzyheat = -1;
-            Fuzzycool = 1;
-            }else if (zoneTemps[i]>=heatTemps[i]-0.5+offset){
-            Fuzzycool = 1;
-            }else{
-            Fuzzyheat = 1;
-            Fuzzycool = 1;
-            }
-            coolTemps[i] = coolTemps[i] -offset+ Fuzzycool*offset;
-            heatTemps[i] = heatTemps[i] +offset+ Fuzzyheat*offset;
+            // double offset=0.6;
+            // if (zoneTemps[i]>=coolTemps[i]+0.5-offset){
+            // Fuzzyheat = -1;
+            // Fuzzycool = -1;
+            // }else if (zoneTemps[i]>=coolTemps[i]-0.5-offset){
+            // Fuzzyheat = -1;
+            // }else if (zoneTemps[i]>=heatTemps[i]+0.5+offset){
+            //   Fuzzyheat = -1;
+            // Fuzzycool = 1;
+            // }else if (zoneTemps[i]>=heatTemps[i]-0.5+offset){
+            // Fuzzycool = 1;
+            // }else{
+            // Fuzzyheat = 1;
+            // Fuzzycool = 1;
+            // }
+            // coolTemps[i] = coolTemps[i] -offset+ Fuzzycool*offset;
+            // heatTemps[i] = heatTemps[i] +offset+ Fuzzyheat*offset;
 
             //  //================================
             //   // write to data to record occupancy information
@@ -398,6 +416,8 @@ public class Controller extends ControllerBase {
 
             dataStrings[i] = "";
           }
+
+          System.out.println("timestep after sending Socket... should advance after this: "+ currentTime);
 
           ////////////////////////////////////////////////////////////////////
           // TODO break here if ready to resign and break out of while loop //
@@ -498,6 +518,10 @@ public class Controller extends ControllerBase {
           else if(varNames[i].equals("price")){
             price = Double.valueOf(doubles[i]);
           }
+          // checking timesteps:
+          else if(varNames[i].equals("timestep")){
+            timestep_Socket = doubles[i];
+          }
         }
       }
       
@@ -509,6 +533,7 @@ public class Controller extends ControllerBase {
         // can now exit while loop waiting for this interaction
         log.info("received Market_Controller interaction");
         receivedMarket = true;
+        timestep_Market = interaction.get_dataString();
       }
 
       private void handleInteractionClass(Reader_Controller interaction) {
@@ -519,6 +544,7 @@ public class Controller extends ControllerBase {
         // can now exit while loop waiting for this interaction
         log.info("received Reader_Controller interaction");
         receivedReader = true;
+        timestep_Reader = interaction.get_dataString();
       }
 
 

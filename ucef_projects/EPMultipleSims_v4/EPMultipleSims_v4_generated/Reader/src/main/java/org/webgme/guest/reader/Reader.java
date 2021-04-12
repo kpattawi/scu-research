@@ -69,7 +69,7 @@ public class Reader extends ReaderBase {
 
             // send info to controller
             Reader_Controller vReader_Controller = create_Reader_Controller();
-            vReader_Controller.set_dataString("stuff");
+            vReader_Controller.set_dataString(String.valueOf(currentTime));
             vReader_Controller.sendInteraction(getLRC());
             log.info("sent reader_controller interaction");
 

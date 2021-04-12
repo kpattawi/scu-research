@@ -70,7 +70,28 @@ public class Socket extends SocketBase {
 
         // Kaleb // Add socket here: 
         // TODO Config stuff
-        InetAddress addr = InetAddress.getByName("192.168.1.41");  // the address needs to be changed
+        // Test config.txt
+        log.info("create bufferedReader");
+        File file= new File("/home/vagrant/Desktop/EPMultipleSims_v4/EPMultipleSims_v4_generated/config.txt");
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        log.info("bufferedreader successful");
+        String st = "";
+        String ipAdd = "";
+        int portNo = 0;
+        while ((st = br.readLine())!=null){
+            log.info(st);
+            if(st.equals("ip_adress:")){
+                ipAdd = br.readLine();
+            }
+            if(st.equals("port_number:")){
+                portNo = Integer.valueOf(br.readLine());
+            }
+        }
+        // end test config.txt
+        log.info(ipAdd);
+        log.info(portNo);
+        
+        InetAddress addr = InetAddress.getByName(ipAdd);  // the address needs to be changed
         ServerSocket welcomeSocket = new ServerSocket(6789, 50, addr);  // 6789 is port number. Can be changed
         // 
         java.net.Socket connectionSocket = welcomeSocket.accept(); // initial connection will be made at this point
@@ -184,7 +205,9 @@ public class Socket extends SocketBase {
               	  	dataString = dataString +value+doubleSeparater;  
                 }
             }
-            
+            // checking timestep
+            dataString = dataString+"timestep"+varNameSeparater+String.valueOf(currentTime)+doubleSeparater;
+
             // Send Socket_Controller interaction containing eplus data
             Socket_Controller sendEPData = create_Socket_Controller();
             sendEPData.set_simID(simID);
