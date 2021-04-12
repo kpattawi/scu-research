@@ -27,18 +27,15 @@ public class Socket extends SocketBase {
     // START WITH simID as ZERO because java is zero indexed
     int simID = 0;   // Change simID based on socket number
 
-    // Kaleb // Define variables
+    // Kaleb // Define global variables
     String[] varNames=new String[15];  // will have to add more empty strings based on how many strings we send/receive
     String[] doubles= new String[15];  // will have to add more empty strings based on how many strings we send/receive
     String varNameSeparater = "@";
     String doubleSeparater = ",";
-
     int numVars = 0;  
-    String eGSH=null, eGSC=null, ePeople=null;
+    String eGSH=null, eGSC=null, ePeople=null;  //values sent to EnergyPlus
     boolean empty=true;
-
-    boolean receivedSimTime = false;
-    
+    boolean receivedSimTime = false;    // this is for "received" interaction while loop
     // Kaleb //
 
     public Socket(FederateConfig params) throws Exception {
@@ -68,9 +65,8 @@ public class Socket extends SocketBase {
         // TODO perform basic initialization below //
         /////////////////////////////////////////////
 
-        // Kaleb // Add socket here: 
-        // TODO Config stuff
-        // Test config.txt
+        
+        // Read IP address and Port number from config.txt 
         log.info("create bufferedReader");
         File file= new File("/home/vagrant/Desktop/EPMultipleSims_v4/EPMultipleSims_v4_generated/config.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
@@ -87,13 +83,15 @@ public class Socket extends SocketBase {
                 portNo = Integer.valueOf(br.readLine());
             }
         }
-        // end test config.txt
         log.info(ipAdd);
         log.info(portNo);
         
-        InetAddress addr = InetAddress.getByName(ipAdd);  // the address needs to be changed
-        ServerSocket welcomeSocket = new ServerSocket(6789, 50, addr);  // 6789 is port number. Can be changed
-        // 
+        log.info("Waiting for EnergyPlus simulations to join...");
+        // end test config.txt
+
+        // Kaleb // Add socket here: 
+        InetAddress addr = InetAddress.getByName(ipAdd);  // the address needs to be changed in config.txt
+        ServerSocket welcomeSocket = new ServerSocket(portNo, 50, addr);  // Can also be changed in config.txt
         java.net.Socket connectionSocket = welcomeSocket.accept(); // initial connection will be made at this point
         System.out.println("connection successful");
         log.info("connection successful");
@@ -126,11 +124,9 @@ public class Socket extends SocketBase {
         log.info("started logical time progression");
         
         // Kaleb // Define variables for getting EP data
-        
         String header, time="0", varName="", value="";        
         double varValue=0;
         String dataString ="";
-
         // Kaleb //
         
         while (!exitCondition) {
@@ -142,18 +138,18 @@ public class Socket extends SocketBase {
             // time step below                                        //
             ////////////////////////////////////////////////////////////
             
-            // Kaleb // Getting values from EnergyPlus fmu
+            // Kaleb // Getting values from  fmu
             if((header = buffDummy.readLine()).equals("TERMINATE")){
             	exitCondition = true;
             }
-
             time = buffDummy.readLine();
             System.out.println("in loop header=" + header + " t=" + time);
             
             while(!(varName = buffDummy.readLine()).isEmpty()) {
                 value = buffDummy.readLine();
                 System.out.println("Received: " + varName + " as " + value);
-                
+                // Add any variable that you want to get from EnergyPlus here...
+                // Names have to match the modelDescription.xml file
                 // before @ is varName and before , is value
                 // varName first!!!
                 if(varName.equals("epSendOutdoorAirTemp")){
@@ -205,7 +201,7 @@ public class Socket extends SocketBase {
               	  	dataString = dataString +value+doubleSeparater;  
                 }
             }
-            // checking timestep
+            // for checking timestep
             dataString = dataString+"timestep"+varNameSeparater+String.valueOf(currentTime)+doubleSeparater;
 
             // Send Socket_Controller interaction containing eplus data
@@ -214,18 +210,6 @@ public class Socket extends SocketBase {
             sendEPData.set_dataString(dataString);
             log.info("Sent sendEPData interaction from socket{} with {}", simID , dataString);
             sendEPData.sendInteraction(getLRC());
-
-            // Set the interaction's parameters.
-            //
-            //    Socket_Controller vSocket_Controller = create_Socket_Controller();
-            //    vSocket_Controller.set_actualLogicalGenerationTime( < YOUR VALUE HERE > );
-            //    vSocket_Controller.set_dataString( < YOUR VALUE HERE > );
-            //    vSocket_Controller.set_federateFilter( < YOUR VALUE HERE > );
-            //    vSocket_Controller.set_originFed( < YOUR VALUE HERE > );
-            //    vSocket_Controller.set_simID( < YOUR VALUE HERE > );
-            //    vSocket_Controller.set_sourceFed( < YOUR VALUE HERE > );
-            //    vSocket_Controller.sendInteraction(getLRC(), currentTime + getLookAhead());
-
 
             // Wait to receive Controller_Socket information containing setpoints that will be sent to eplus
             while (!receivedSimTime){
@@ -239,12 +223,12 @@ public class Socket extends SocketBase {
                 }
             }
             receivedSimTime = false;
-            //
+            // 
 
-            // Empty Data String
+            // Empty Data String for next time step
             dataString = "";
             
-            // send eGSH and eGSC to eplus
+            // send eGSH and eGSC to eplus, if you want to send something else to EnergyPlus need to add here
             if (empty==true) {
                 outToClient.writeBytes("NOUPDATE\r\n\r\n");
                 } 
@@ -284,7 +268,6 @@ public class Socket extends SocketBase {
         ///////////////////////////////////////////////////////////////
         // TODO implement how to handle reception of the interaction //
         ///////////////////////////////////////////////////////////////
-    	
     	// Kaleb // 
         // exit while loop above waiting for Controller_Socket
         receivedSimTime = true;
@@ -292,7 +275,7 @@ public class Socket extends SocketBase {
         // epvalues are not empty
         empty = false;
     	
-        // get info from Controller and separate into varNames and doubles
+        // get dataString from Controller and separate into varNames and doubles
     	int receivedID = interaction.get_simID();
         String holder = null;
     	if(receivedID == simID){
@@ -313,12 +296,10 @@ public class Socket extends SocketBase {
                 System.out.println("doubles[j] = "+ doubles[j] );
                 j = j+1;
             }
-            
-        	
 
     		for(int i =0; i<j; i++){
-
 	        	System.out.println("ReceivedData interaction " + varNames[i] + " as " + doubles[i]);
+                // if you are receiving something else besides variables listed below, add another if()
 	        	if(varNames[i].equals("epGetStartHeating")){
 	        		eGSH = doubles[i];
 	        		System.out.println("Received Heating setpoint as" + varNames[i] + eGSH);
@@ -336,8 +317,6 @@ public class Socket extends SocketBase {
 	        	}
     		}
     	}
-    	
-    	
     	// Kaleb //   	
     	
     }
