@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<fmiModelDescription 
+	fmiVersion="1.0" 
+	modelName="Joe_ep_fmu" 
+	modelIdentifier="Joe_ep_fmu" 
+	guid="{818642F1-D7D4-4DC7-8549-554862454199}" 
+	variableNamingConvention="structured" 
+	numberOfContinuousStates="0" 
+	numberOfEventIndicators="0">
+	<!-- Have to be same as the name in C code-->
+	
+  <ModelVariables>
+    <ScalarVariable 
+		name="epSendZoneMeanAirTemp" 
+		valueReference="1" 
+		causality="input">
+		<!-- name has to match E+ "FMU Variable Name" -->
+		<!-- valueReference must be unique -->
+		<!-- input/output to/from the slave -->
+      <Real />
+    </ScalarVariable>
+    <ScalarVariable 
+		name="epSendOutdoorAirTemp" 
+		valueReference="2" 
+		causality="input">
+      <Real />
+    </ScalarVariable>
+    <ScalarVariable 
+		name="epSendZoneHumidity" 
+		valueReference="3" 
+		causality="input">
+		
+      <Real />
+    </ScalarVariable>
+    <ScalarVariable 
+		name="epGetStartHeating" 
+		valueReference="4" 
+		causality="output">
+      <Real />
+    </ScalarVariable>
+	<ScalarVariable 
+		name="epGetStartCooling" 
+		valueReference="5" 
+		causality="output">
+      <Real />
+    </ScalarVariable>
+  </ModelVariables>
+  
+  <Implementation>
+    <CoSimulation_StandAlone>
+      <Capabilities canBeInstantiatedOnlyOncePerProcess="true" canNotUseMemoryManagementFunctions="true" />
+    </CoSimulation_StandAlone>
+  </Implementation>
+</fmiModelDescription>
