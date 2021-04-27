@@ -1,0 +1,4 @@
+ip_adress:
+10.0.0.18
+port_number:
+6789

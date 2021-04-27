@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <copy todir="/home/vagrant/Desktop/GitHub/pjs_repos/TwoFedEPOpt/EnergyPlusOpt2Fed/EnergyPlusOpt2Fed_generated/Socket/target/conf" overwrite="true">
+    <fileset dir="/home/vagrant/Desktop/GitHub/pjs_repos/TwoFedEPOpt/EnergyPlusOpt2Fed/EnergyPlusOpt2Fed_generated/Socket/conf"/>
+  </copy>
+  <copy todir="/home/vagrant/Desktop/GitHub/pjs_repos/TwoFedEPOpt/EnergyPlusOpt2Fed/EnergyPlusOpt2Fed_generated/Socket/target" overwrite="true">
+    <fileset file="/home/vagrant/Desktop/GitHub/pjs_repos/TwoFedEPOpt/EnergyPlusOpt2Fed/EnergyPlusOpt2Fed_generated/Socket/RTI.rid"/>
+  </copy>
+</target>
+</project>
