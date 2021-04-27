@@ -1,13 +1,16 @@
 import sys
-
-def Config(file,old,new):
+#TODO add other config stuff like simID
+def Config(file,newIP,newPort):
     new_socket=""
     counter = 0
     with open(file) as openfile:
         for line in openfile:
-            if searchExp in line:
-                print (line)
-                line.replace(old,new,1)
+            if "public String IP_address" in line:
+                print(line)
+                line = "public String IP_address = " + newIP
+            if "public String Port_Number" in line:
+                print(line)
+                line = "public String Port_Number = " + newPort
 
             new_socket += line
 
@@ -17,20 +20,16 @@ def Config(file,old,new):
 
 #==============================================================================
 #============================= Input Everything here ==========================
-folderPath = "C:/Users\kpattawi\Desktop\Buildings\TestConfig"   # CANT HAVE \U for some reason so change \Users.. to /Users..
+# make the folderPath go to the {projectname}_generated folder
+folderPath = "C:/Users\kpattawi\Desktop\Buildings\TestConfig_generated"   # CANT HAVE \U for some reason so change \Users.. to /Users..
 numberOfSockets = 6
-for i in range(0,numberOfSockets):
-    filename = folderPath+"\Socket"+i+""+i
-    old_Value1 = "Socket"
-    old_Value2 = "SocketBase"
-    # old_Value3 = IP address and Port num... Might be easier to just replace whole line
-    new_Value1 = "Socket"+i
-    new_value2 = "SocketBase"+i
-    # new_Value3 =
+newIP = ""
+portNumbers= [6789,6790,6791,6792,6793,6794]
 
-    Config(filename,old_Value1,new_Value1)
-    Config(filename,old_Value2,new_Value2)
-    # Config(filename,old_Value3,new_Value3)
+# Use Socket naming convention: Socket0, Socket1, Socket2,...,SocketN-1
+for i in range(0,numberOfSockets):
+    filename = folderPath+"\Socket"+i+"\src\main\java\org\webgme\guest\socket"+i+"\InputSourceConfig.java"
+    Config(filename,newIP,portNumbers[i])
 
 #===============================================================================
 #===============================================================================
