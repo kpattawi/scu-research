@@ -1,0 +1,26 @@
+{
+  "federateTypesAllowed": [
+    "Controller",
+    "Socket"
+  ],
+  "expectedFederates": [
+    {
+      "federateType": "Controller",
+      "count": 1
+    },
+    {
+      "federateType": "Socket",
+      "count": 1
+    }
+  ],
+  "lateJoinerFederates": [
+    {
+      "federateType": "Controller",
+      "count": 0
+    },
+    {
+      "federateType": "Socket",
+      "count": 0
+    }
+  ]
+}
