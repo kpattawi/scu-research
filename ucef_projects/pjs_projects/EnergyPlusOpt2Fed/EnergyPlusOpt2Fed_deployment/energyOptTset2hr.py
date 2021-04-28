@@ -14,6 +14,8 @@ days = 7
 totaltimesteps = days*12*24+3*12 
 pricingmultfactor = 4.0
 pricingoffset = 0.10
+noOccupancyHeat = 12
+noOccupancyCool = 32
 
 # constant coefficients for indoor temperature equation --------------------------------------------
 c1 = 1.72*10**-5
@@ -29,7 +31,7 @@ block = int(sys.argv[2]) +1+(day-1)*24 # block goes 0:23
 temp_indoor_initial = float(sys.argv[3])
 
 
-# Get data from EnergyPlus from excel files --------------------------------------------
+# Get data from excel/csv files --------------------------------------------
 # Get outdoor temps
 df = pd.read_excel('OutdoorTemp.xlsx', sheet_name='Jan1', header=None)
 temp_outdoor_all=matrix(df.to_numpy())
@@ -39,6 +41,7 @@ convertOutTemptoCoolTemp = lambda x: x*0.31 + 19.8
 convertOutTemptoHeatTemp = lambda x: x*0.31 + 15.8
 adaptive_cooling_setpoints = df.apply(convertOutTemptoCoolTemp)
 adaptive_heating_setpoints = df.apply(convertOutTemptoHeatTemp)
+
 # When temps too low or too high set to min or max (See adaptive setpoints)
 adaptive_cooling_setpoints.loc[(adaptive_cooling_setpoints[0] < 22.9)] = 22.9
 adaptive_cooling_setpoints.loc[(adaptive_cooling_setpoints[0] > 30.2)] = 22.9
@@ -47,6 +50,10 @@ adaptive_heating_setpoints.loc[(adaptive_heating_setpoints[0] > 26.2)] = 26.2
 # change from pd dataframe to matrix
 adaptive_cooling_setpoints = matrix(adaptive_cooling_setpoints.to_numpy())
 adaptive_heating_setpoints = matrix(adaptive_heating_setpoints.to_numpy())
+
+# get occupancy data
+occupancy_df = pd.read_csv('occupancy_1hr.csv')
+occupancy = matrix(occupancy_df['Occupancy'].to_numpy())
 
 # get solar radiation
 df = pd.read_excel('Solar.xlsx', sheet_name='Jan1')
@@ -122,10 +129,17 @@ b = matrix(0.0, (n*2,1))
 
 adaptiveHeat = adaptive_heating_setpoints[(block-1)*12:(block-1)*12+n,0]
 adaptiveCool = adaptive_cooling_setpoints[(block-1)*12:(block-1)*12+n,0]
+
+occupancy_Checker = occupancy[(block-1)*12:(block-1)*12+n,0]
+
 k = 0
 while k<n:
-	b[2*k,0]=adaptiveCool[k,0]-S[k,0]
-	b[2*k+1,0]=-adaptiveHeat[k,0]+S[k,0]
+	if occupancy_Checker[k,0] ==1:
+		b[2*k,0]=adaptiveCool[k,0]-S[k,0]
+		b[2*k+1,0]=-adaptiveHeat[k,0]+S[k,0]
+	else:
+		b[2*k,0]=noOccupancyCool-S[k,0]
+		b[2*k+1,0]=-noOccupancyHeat+S[k,0]
 	k=k+1
 
 # time to solve for energy at each timestep
