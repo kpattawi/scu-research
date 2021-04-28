@@ -16,6 +16,11 @@ pricingmultfactor = 4.0
 pricingoffset = 0.10
 noOccupancyHeat = 12
 noOccupancyCool = 32
+# Max and min for heating and cooling in adaptive setpoint control
+heatTempMax = 26.7
+heatTempMin = 18.4
+coolTempMax = 30.2
+coolTempMin = 22.9
 
 # constant coefficients for indoor temperature equation --------------------------------------------
 c1 = 1.72*10**-5
@@ -43,10 +48,10 @@ adaptive_cooling_setpoints = df.apply(convertOutTemptoCoolTemp)
 adaptive_heating_setpoints = df.apply(convertOutTemptoHeatTemp)
 
 # When temps too low or too high set to min or max (See adaptive setpoints)
-adaptive_cooling_setpoints.loc[(adaptive_cooling_setpoints[0] < 22.9)] = 22.9
-adaptive_cooling_setpoints.loc[(adaptive_cooling_setpoints[0] > 30.2)] = 22.9
-adaptive_heating_setpoints.loc[(adaptive_heating_setpoints[0] < 18.9)] = 18.9
-adaptive_heating_setpoints.loc[(adaptive_heating_setpoints[0] > 26.2)] = 26.2
+adaptive_cooling_setpoints.loc[(adaptive_cooling_setpoints[0] < coolTempMin)] = coolTempMin
+adaptive_cooling_setpoints.loc[(adaptive_cooling_setpoints[0] > coolTempMax] = coolTempMax
+adaptive_heating_setpoints.loc[(adaptive_heating_setpoints[0] < heatTempMin)] = heatTempMin
+adaptive_heating_setpoints.loc[(adaptive_heating_setpoints[0] > heatTempMax)] = heatTempMax
 # change from pd dataframe to matrix
 adaptive_cooling_setpoints = matrix(adaptive_cooling_setpoints.to_numpy())
 adaptive_heating_setpoints = matrix(adaptive_heating_setpoints.to_numpy())
@@ -126,6 +131,7 @@ while i<n:
 
 # b matrix is constant term in constaint equations
 b = matrix(0.0, (n*2,1))
+
 
 adaptiveHeat = adaptive_heating_setpoints[(block-1)*12:(block-1)*12+n,0]
 adaptiveCool = adaptive_cooling_setpoints[(block-1)*12:(block-1)*12+n,0]
