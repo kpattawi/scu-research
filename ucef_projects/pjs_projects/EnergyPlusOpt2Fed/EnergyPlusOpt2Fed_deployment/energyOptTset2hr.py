@@ -14,6 +14,8 @@ days = 7
 totaltimesteps = days*12*24+3*12 
 pricingmultfactor = 4.0
 pricingoffset = 0.10
+
+occupancy_mode = False
 noOccupancyHeat = 12
 noOccupancyCool = 32
 # Max and min for heating and cooling in adaptive setpoint control
@@ -49,7 +51,7 @@ adaptive_heating_setpoints = df.apply(convertOutTemptoHeatTemp)
 
 # When temps too low or too high set to min or max (See adaptive setpoints)
 adaptive_cooling_setpoints.loc[(adaptive_cooling_setpoints[0] < coolTempMin)] = coolTempMin
-adaptive_cooling_setpoints.loc[(adaptive_cooling_setpoints[0] > coolTempMax] = coolTempMax
+adaptive_cooling_setpoints.loc[(adaptive_cooling_setpoints[0] > coolTempMax)] = coolTempMax
 adaptive_heating_setpoints.loc[(adaptive_heating_setpoints[0] < heatTempMin)] = heatTempMin
 adaptive_heating_setpoints.loc[(adaptive_heating_setpoints[0] > heatTempMax)] = heatTempMax
 # change from pd dataframe to matrix
@@ -68,7 +70,7 @@ q_solar_all=matrix(df.to_numpy())
 df = pd.read_excel('WholesalePrice.xlsx', sheet_name='Jan1thru7')
 wholesaleprice_all=matrix(df.to_numpy())
 
-# c matric is hourly cost per kWh of energy
+# c matrix is hourly cost per kWh of energy
 Output = matrix(0.00, (totaltimesteps,2))
 cost =0
 c = matrix(0.20, (totaltimesteps,1))
@@ -132,21 +134,23 @@ while i<n:
 # b matrix is constant term in constaint equations
 b = matrix(0.0, (n*2,1))
 
-
 adaptiveHeat = adaptive_heating_setpoints[(block-1)*12:(block-1)*12+n,0]
 adaptiveCool = adaptive_cooling_setpoints[(block-1)*12:(block-1)*12+n,0]
 
-occupancy_Checker = occupancy[(block-1)*12:(block-1)*12+n,0]
-
-k = 0
-while k<n:
-	if occupancy_Checker[k,0] ==1:
+if occupancy_mode == True:
+	occupancy_Checker = occupancy[(block-1)*12:(block-1)*12+n,0]
+	k = 0
+	while k<n:
+		if occupancy_Checker[k,0] ==1:
+			b[2*k,0]=adaptiveCool[k,0]-S[k,0]
+			b[2*k+1,0]=-adaptiveHeat[k,0]+S[k,0]
+		else:
+			b[2*k,0]=noOccupancyCool-S[k,0]
+			b[2*k+1,0]=-noOccupancyHeat+S[k,0]
+		k=k+1
+	else:
 		b[2*k,0]=adaptiveCool[k,0]-S[k,0]
 		b[2*k+1,0]=-adaptiveHeat[k,0]+S[k,0]
-	else:
-		b[2*k,0]=noOccupancyCool-S[k,0]
-		b[2*k+1,0]=-noOccupancyHeat+S[k,0]
-	k=k+1
 
 # time to solve for energy at each timestep
 #print(cc)
