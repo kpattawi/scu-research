@@ -49,7 +49,7 @@ convertOutTemptoCoolTemp = lambda x: x*0.31 + 19.8
 convertOutTemptoHeatTemp = lambda x: x*0.31 + 15.8
 adaptive_cooling_setpoints = df.apply(convertOutTemptoCoolTemp)
 adaptive_heating_setpoints = df.apply(convertOutTemptoHeatTemp)
-print(adaptive_heating_setpoints)
+# print(adaptive_heating_setpoints)
 # When temps too low or too high set to min or max (See adaptive setpoints)
 adaptive_cooling_setpoints.loc[(adaptive_cooling_setpoints['column1'] < coolTempMin)] = coolTempMin
 adaptive_cooling_setpoints.loc[(adaptive_cooling_setpoints['column1'] > coolTempMax)] = coolTempMax

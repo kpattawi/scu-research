@@ -291,7 +291,7 @@ public class Controller extends ControllerBase {
                 try{
                     // Create new file
                     
-                    String path="/home/vagrant/Desktop/GitHub/pjs_repos/TwoFedEPOpt/EnergyPlusOpt2Fed/EnergyPlusOpt2Fed_generated/DataSummary.txt";
+                    String path="/home/vagrant/Desktop/GitHub/scu_research/pjs_projects/EnergyPlusOpt2Fed/EnergyPlusOpt2Fed_generated/DataSummary.txt";
                     File file = new File(path);
     
                     // If file doesn't exists, then create it

@@ -66,7 +66,7 @@ public class Socket extends SocketBase {
 
         // Read IP address and Port number from config.txt 
         log.info("create bufferedReader");
-        File file= new File("/home/vagrant/Desktop/GitHub/pjs_repos/TwoFedEPOpt/EnergyPlusOpt2Fed/EnergyPlusOpt2Fed_generated/config.txt");
+        File file= new File("/home/vagrant/Desktop/GitHub/scu_research/ucef_projects/pjs_projects/EnergyPlusOpt2Fed/EnergyPlusOpt2Fed_generated/config.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
         log.info("bufferedreader successful");
         String st = "";
