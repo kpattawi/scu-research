@@ -286,12 +286,17 @@ public class Controller extends ControllerBase {
                 String varsP[] = dataStringOptP.split(separatorOpt);
                 String varsO[] = dataStringOptO.split(separatorOpt);
                 String varsS[] = dataStringOptS.split(separatorOpt);
+
+                // Take out of try catch
+                for (int in =1;in<13;in++) {
+                        futureIndoorTemp[in-1]=varsT[in];
+                    }
     
                 // Writing data to file
                 try{
                     // Create new file
                     
-                    String path="/home/vagrant/Desktop/GitHub/scu_research/pjs_projects/EnergyPlusOpt2Fed/EnergyPlusOpt2Fed_generated/DataSummary.txt";
+                    String path="/home/vagrant/Desktop/GitHub/scu_research/ucef_projects/pjs_projects/EnergyPlusOpt2Fed/EnergyPlusOpt2Fed_generated/DataSummary.txt";
                     File file = new File(path);
     
                     // If file doesn't exists, then create it
@@ -305,7 +310,7 @@ public class Controller extends ControllerBase {
                     // Write in file
                     for (int in =1;in<13;in++) {
                         bw.write(vars[in]+"\t"+varsT[in]+"\t"+varsP[in]+"\t"+varsO[in]+"\t"+varsS[in]+"\n");
-                        futureIndoorTemp[in-1]=varsT[in];
+                        // futureIndoorTemp[in-1]=varsT[in];  // put outside of try catch
                     }
     
                     // Close connection
@@ -458,7 +463,7 @@ public class Controller extends ControllerBase {
             try{
                 // Create new file
                 
-                String path="/home/vagrant/Desktop/GitHub/pjs_repos/TwoFedEPOpt/EnergyPlusOpt2Fed/EnergyPlusOpt2Fed_deployment/DataSummary.txt";
+                String path="/home/vagrant/Desktop/GitHub/scu_research/ucef_projects/pjs_projects/EnergyPlusOpt2Fed/EnergyPlusOpt2Fed_deployment/DataSummary.txt";
                 File file = new File(path);
 
                 // If file doesn't exists, then create it

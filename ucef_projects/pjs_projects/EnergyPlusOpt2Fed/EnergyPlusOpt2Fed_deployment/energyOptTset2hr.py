@@ -42,7 +42,7 @@ temp_indoor_initial = float(sys.argv[3])
 # Get outdoor temps
 df = pd.read_excel('OutdoorTemp.xlsx', sheet_name='Jan1',header=0)
 # print(df.head())
-# temp_outdoor_all=matrix(df.to_numpy())
+temp_outdoor_all=matrix(df.to_numpy())
 df.columns = ['column1']
 # use outdoor temps to get adaptive setpoints using lambda functions
 convertOutTemptoCoolTemp = lambda x: x*0.31 + 19.8
