@@ -41,8 +41,8 @@ temp_indoor_initial = float(sys.argv[3])
 # Get data from excel/csv files --------------------------------------------
 # Get outdoor temps
 df = pd.read_excel('OutdoorTemp.xlsx', sheet_name='Jan1',header=0)
-print(df.head())
-temp_outdoor_all=matrix(df.to_numpy())
+# print(df.head())
+# temp_outdoor_all=matrix(df.to_numpy())
 df.columns = ['column1']
 # use outdoor temps to get adaptive setpoints using lambda functions
 convertOutTemptoCoolTemp = lambda x: x*0.31 + 19.8
@@ -56,10 +56,10 @@ adaptive_cooling_setpoints.loc[(adaptive_cooling_setpoints['column1'] > coolTemp
 adaptive_heating_setpoints.loc[(adaptive_heating_setpoints['column1'] < heatTempMin)] = heatTempMin
 adaptive_heating_setpoints.loc[(adaptive_heating_setpoints['column1'] > heatTempMax)] = heatTempMax
 # change from pd dataframe to matrix
-print(adaptive_heating_setpoints)
+# print(adaptive_heating_setpoints)
 adaptive_cooling_setpoints = matrix(adaptive_cooling_setpoints.to_numpy())
 adaptive_heating_setpoints = matrix(adaptive_heating_setpoints.to_numpy())
-print(adaptive_heating_setpoints)
+# print(adaptive_heating_setpoints)
 
 # get occupancy data
 occupancy_df = pd.read_csv('occupancy_1hr.csv')
