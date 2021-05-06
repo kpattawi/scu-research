@@ -11,6 +11,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 // Import other packages needed
+import java.io.*;
+import java.net.*;
+import java.lang.*;
 import org.cpswt.utils.CpswtUtils;  // need to remove time delay
 // for getting and sending to fmu
 import java.io.BufferedWriter;
@@ -51,6 +54,7 @@ public class Controller extends ControllerBase {
     double[] dayOfWeek= new double[numSockets];
     double price = 10; // Set a default price here
     int[] numVars = new int[numSockets];
+    String[] futureIndoorTemp = new String[12];
 
     String varNameSeparater = "@";
     String doubleSeparater = ",";
