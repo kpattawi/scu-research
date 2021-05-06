@@ -55,6 +55,9 @@ public class Controller extends ControllerBase {
     String varNameSeparater = "@";
     String doubleSeparater = ",";
 
+    String optDataString = "";
+    int day = 0;
+
     int hour=0, nexthour=0, quarter=0, fivemin=0, onemin=0, simulatetime=0;
     double r1 =0.0;
     double Preset_cool=23.0, Preset_heat=21.0;
@@ -183,7 +186,7 @@ public class Controller extends ControllerBase {
           System.out.println("timestep after receiving Market: "+ currentTime);
 
           //-------------------------------------------------------------------------------------------------
-           // Now figure out all stuff that needs to be sent to socket...
+          // Now figure out all stuff that needs to be sent to socket...
         
           // determine heating and cooling setpoints for each simID
           // will eventually change this part for transactive energy
@@ -191,25 +194,172 @@ public class Controller extends ControllerBase {
 
           int Fuzzycool=0,Fuzzyheat=0;
 
+          // PJ's optimization
+          double hour = (double) ((currentTime%288) / 12);
+          log.info("hour is: ",hour);
+          System.out.println("hour is:"+hour);
+          String s = null;
+          String dataStringOpt = "";
+          String dataStringOptT = "";
+          String dataStringOptP = "";
+          String dataStringOptO = "";
+          String dataStringOptS = "";
+          String sblock = null;
+          String sday = null;
+          String separatorOpt = ",";
+          boolean	startSavingE = false;
+          boolean startSavingT = false;
+          boolean startSavingP = false;
+          boolean startSavingO = false;
+          boolean startSavingS = false;
+
           // use the following loop to solve for heating/cooling setpts for each EnergyPlus simulation
           // if you only have one EnergyPlus simulation still use the loop so that it is easy to add more
           // currently, adaptive setpoint control is implemented with 0.5 "fuzzy control"
           for(int i=0;i<numSockets;i++){
             System.out.println("outTemps[i] = "+ outTemps[i] );
-            zoneTemps[i] = zoneTemps[i];
             System.out.println("zoneTemps[i] = "+ zoneTemps[i] );
             // zoneRHs[i] can add this but need to check FMU file and also edit socket.java
 
+            // Optimization code---------------------------------------------------------
+            if (hour == 0){
+                day = day+1;
+            }
+            
+            if (hour%1 == 0){
+                try {
+                    sblock= String.valueOf((int)hour);
+                    sday = String.valueOf(day);
+                    dataStringOpt = sblock;
+                    dataStringOptT = sblock;
+                    dataStringOptP = sblock;
+                    dataStringOptO = sblock;
+                    dataStringOptS = sblock;
+                    System.out.println("sblock:" +sblock);
+                    System.out.println("sday:" +sday);
+                    System.out.println("zonetemp string" +String.valueOf(zoneTemps[i]));
+
+                    // Process p = Runtime.getRuntime().exec("python ./energyOpt.py " +sday +" "+sblock +" "+ String.valueOf(zoneTemps[i])); // 4 hr block method
+                    Process p = Runtime.getRuntime().exec("python ./energyOptTset2hr.py " +sday +" " +sblock +" "+ String.valueOf(zoneTemps[i])); // 1 timestep method
+    
+                    BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
+                    System.out.println("Here is the result");
+
+                    // T is indoor Temp, P is price, O is outdoor T, S is solar rad
+            
+                    while ((s = stdInput.readLine()) != null) {
+                        System.out.println(s);
+                        if (startSavingE == true) {
+                            dataStringOpt = dataStringOpt + separatorOpt + s;
+                        }		
+                        if (startSavingT == true) {
+                            dataStringOptT = dataStringOptT + separatorOpt + s;
+                        }
+                        if (startSavingP == true) {
+                            dataStringOptP = dataStringOptP + separatorOpt + s;
+                        }
+                        if (startSavingO == true) {
+                            dataStringOptO = dataStringOptO + separatorOpt + s;
+                        }
+                        if (startSavingS == true) {
+                            dataStringOptS = dataStringOptS + separatorOpt + s;
+                        }
+                        if (s .equals("energy consumption")){
+                            startSavingE = true;
+                        }
+                        if (s .equals("indoor temp prediction")){
+                            startSavingT = true;
+                        }
+                        if (s .equals("pricing per timestep")){
+                            startSavingP = true;
+                        }
+                        if (s .equals("outdoor temp")){
+                            startSavingO = true;
+                        }
+                        if (s .equals("solar radiation")){
+                            startSavingS = true;
+                        }
+                        // System.out.println(dataString);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                String vars[] = dataStringOpt.split(separatorOpt);
+                String varsT[] = dataStringOptT.split(separatorOpt);
+                String varsP[] = dataStringOptP.split(separatorOpt);
+                String varsO[] = dataStringOptO.split(separatorOpt);
+                String varsS[] = dataStringOptS.split(separatorOpt);
+
+                // Take out of try catch
+                for (int in =1;in<13;in++) {
+                        futureIndoorTemp[in-1]=varsT[in];
+                    }
+    
+                // Writing data to file
+                try{
+                    // Create new file
+                    // Need to change the path below to the GENERATED Folder
+                    String path="/home/vagrant/Desktop/GitHub/scu_research/ucef_projects/EPMultipleSims_v4/EPMultipleSims_v4_generated/DataSummary.txt";
+                    File file = new File(path);
+    
+                    // If file doesn't exists, then create it
+                    if (!file.exists()) {
+                        file.createNewFile();
+                    }
+    
+                    FileWriter fw = new FileWriter(file.getAbsoluteFile(),true);
+                    BufferedWriter bw = new BufferedWriter(fw);
+    
+                    // Write in file
+                    for (int in =1;in<13;in++) {
+                        bw.write(vars[in]+"\t"+varsT[in]+"\t"+varsP[in]+"\t"+varsO[in]+"\t"+varsS[in]+"\n");
+                        // futureIndoorTemp[in-1]=varsT[in];  // put outside of try catch
+                    }
+    
+                    // Close connection
+                    bw.close();
+                }
+                catch(Exception e){
+                    System.out.println(e);
+                }
+    
+                // resetting 
+                startSavingE = false;
+                startSavingT = false;
+                startSavingP = false;
+                startSavingO = false;
+                startSavingS = false;
+                dataStringOpt = "";
+            }
+
+            // Setting setpoint temp for next hour 
+            System.out.println("determine setpoints loop1");
+            if (hour%1 == 0){
+                p=0;
+                System.out.println("p"+String.valueOf(p));
+            }
+            heatTemps[i]=Double.parseDouble(futureIndoorTemp[p]);
+            System.out.println("heatTemp"+String.valueOf(heatTemps[i]));
+            coolTemps[i]=30.2;
+            System.out.println("coolTemp: "+String.valueOf(coolTemps[i]));
+            p=p+1;
+            System.out.println("p"+String.valueOf(p));
+
+            // ---------------------------------------------------- end optimization code
+
             // Adaptive Setpoint Control:
-            if (outTemps[i]<=10){
-              heatTemps[i]=18.9;
-              coolTemps[i]=22.9;
-            }else if (outTemps[i]>=33.5){
-              heatTemps[i]=26.2;
-              coolTemps[i]=30.2;
-            }else {
-              heatTemps[i] = 0.31*outTemps[i] + 17.8-2;
-              coolTemps[i] = 0.31*outTemps[i] + 17.8+2;
+            boolean adaptiveSetpoint_mode = false;
+            if (adaptiveSetpoint_mode){
+              if (outTemps[i]<=10){
+                heatTemps[i]=18.9;
+                coolTemps[i]=22.9;
+              }else if (outTemps[i]>=33.5){
+                heatTemps[i]=26.2;
+                coolTemps[i]=30.2;
+              }else {
+                heatTemps[i] = 0.31*outTemps[i] + 17.8-2;
+                coolTemps[i] = 0.31*outTemps[i] + 17.8+2;
+              }
             }
             // End Adaptive Setpoint Control
 
@@ -259,9 +409,40 @@ public class Controller extends ControllerBase {
             sendControls.sendInteraction(getLRC());
 
             dataStrings[i] = "";
+
+            // Pj =-------------------------
+            // Writing data to file
+            try{
+                // Create new file
+                // Change to deployment folder
+                String path="/home/vagrant/Desktop/GitHub/scu_research/ucef_projects/EPMultipleSims_v4/EPMultipleSims_v4_deployment/DataSummary.txt";
+                File file = new File(path);
+
+                // If file doesn't exists, then create it
+                if (!file.exists()) {
+                    file.createNewFile();
+                }
+
+                FileWriter fw = new FileWriter(file.getAbsoluteFile(),true);
+                BufferedWriter bw = new BufferedWriter(fw);
+
+                // Write in file
+                bw.write(currentTime+"\t"+hour+"\t"+ zoneTemps[i]+"\t"+ outTemps[i]+"\t"+ solarRadiation[i]+"\t"+ heatingEnergy[i]+"\t"+ coolingEnergy[i] + "\t"+ receivedHeatTemp[i]+"\t"+ receivedCoolTemp[i]+"\t"+heatTemps[i]+"\t"+coolTemps[i]+"\n");
+                
+                // Close connection
+                bw.close();
+            }
+            catch(Exception e){
+                System.out.println(e);
+            }
+            // Pj =------------------------- end
           }
 
           System.out.println("timestep after sending Socket... should advance after this: "+ currentTime);
+
+
+          
+
 
           ////////////////////////////////////////////////////////////////////
           // TODO break here if ready to resign and break out of while loop //
