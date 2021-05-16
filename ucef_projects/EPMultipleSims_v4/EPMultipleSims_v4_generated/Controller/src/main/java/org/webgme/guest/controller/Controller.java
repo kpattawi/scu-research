@@ -33,6 +33,8 @@ public class Controller extends ControllerBase {
     }
     
     // Kaleb // defining  global variables
+    int fuzzy_heat = 0;  // NEEDS TO BE GLOBAL VAR outside of while loop
+    int fuzzy_cool = 0;  // NEEDS TO BE GLOBAL VAR outside of while loop
     int numSockets = 1;  // Change this
     String[] varNames = new String[15];   // add more empty vals if sending more vars
     String[] doubles = new String[15];
@@ -80,10 +82,6 @@ public class Controller extends ControllerBase {
     String timestep_Reader = "";
     String timestep_Market = "";
     String timestep_Controller = "";
-
-      // REMOVE NEXT TWO LINES!! this was for testing preloading weather
-    // double[] outTemperature = new double[]{7.2,6.7,6.1,4.4,4.4,6.1,5,7.8,8.9,9.4,10,10.6,11.1,13.9,13.9,11.1,11.1,10.6,10.6,8.9,9.4,7.8,6.7,8.9,6.1,5.6,3.9,5.6,7.2,7.8,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10};
-    // int yeet = 0;
     // Kaleb //
     
     private void checkReceivedSubscriptions() {
@@ -368,23 +366,23 @@ public class Controller extends ControllerBase {
             // End Adaptive Setpoint Control
 
             // 0.5 degree fuzzy control (this oscillates indoor temp)
-            double offset=0.6;
-            if (zoneTemps[i]>=coolTemps[i]+0.5-offset){
-            Fuzzyheat = -1;
-            Fuzzycool = -1;
-            }else if (zoneTemps[i]>=coolTemps[i]-0.5-offset){
-            Fuzzyheat = -1;
-            }else if (zoneTemps[i]>=heatTemps[i]+0.5+offset){
-              Fuzzyheat = -1;
-            Fuzzycool = 1;
-            }else if (zoneTemps[i]>=heatTemps[i]-0.5+offset){
-            Fuzzycool = 1;
-            }else{
-            Fuzzyheat = 1;
-            Fuzzycool = 1;
+            double OFFSET = 0.6; // need to change slightly higher/lower so E+ doesnt have issues
+
+            // For Cooling 1 degree under Cooling setpoint:
+            if (zoneTemps[i] >= coolTemps[i]-.1){
+                fuzzy_cool = -1;
+            } else if (zoneTemps[i] <= coolTemps[i]-1.1){
+                fuzzy_cool = +1;
             }
-            coolTemps[i] = coolTemps[i] -offset+ Fuzzycool*offset;
-            heatTemps[i] = heatTemps[i] +offset+ Fuzzyheat*offset;
+            coolTemps[i] = coolTemps[i] - 0.6 +fuzzy_cool*OFFSET;   // -0.6 so that oscillates 0.1-1.1 degree under cooling setpoint
+
+            // For Heating 1 degree under Heating setpoint:
+            if (zoneTemps[i] >= heatTemps[i]+1.1){
+                fuzzy_heat = -1;
+            } else if (zoneTemps[i] <= heatTemps[i]+.1){
+                fuzzy_heat = +1;
+            }
+            heatTemps[i] = heatTemps[i] + 0.6 +fuzzy_heat*OFFSET;  // +0.6 so that oscillates 0.1-1.1 degree above heating setpoint
 
             System.out.println("heatTemps[i] = "+i+ heatTemps[i] );
             System.out.println("coolTemps[i] = "+i+ coolTemps[i] );

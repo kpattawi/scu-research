@@ -32,6 +32,9 @@ public class Controller extends ControllerBase {
     }
 
     // Kaleb // defining  global variables
+    double fuzzy_heat = 0;  // NEEDS TO BE GLOBAL VAR outside of while loop
+    double fuzzy_cool = 0;  // NEEDS TO BE GLOBAL VAR outside of while loop
+
     int numSockets = 1;  // Change this
     String[] varNames = new String[15];   // add more empty vals if sending more vars
     String[] doubles = new String[15];
